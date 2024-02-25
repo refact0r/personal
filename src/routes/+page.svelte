@@ -11,8 +11,8 @@
 		<p>hey there! i'm a student interested in comp sci, web dev, design, and more.</p>
 		<div class="links">
 			<a href="/projects"><h2>/projects</h2></a>
-			<h2>/blog</h2>
-			<h2>/info</h2>
+			<a href="/blog"><h2>/blog</h2></a>
+			<a href="/info"><h2>/info</h2></a>
 		</div>
 	</div>
 </main>
