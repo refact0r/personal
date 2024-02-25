@@ -10,9 +10,9 @@
 		</div>
 		<p>hey there! i'm a student interested in comp sci, web dev, design, and more.</p>
 		<div class="links">
-			<a href="/projects"><h2>/projects</h2></a>
-			<a href="/blog"><h2>/blog</h2></a>
-			<a href="/info"><h2>/info</h2></a>
+			<a href="/projects"><h2><span>/</span>projects</h2></a>
+			<a href="/blog"><h2><span>/</span>blog</h2></a>
+			<a href="/info"><h2><span>/</span>info</h2></a>
 		</div>
 	</div>
 </main>
@@ -35,6 +35,12 @@
 		width: 3.5rem;
 		height: 3.5rem;
 		border-radius: 50%;
+		transition: 1s;
+
+		&:hover {
+			cursor: pointer;
+			transform: rotate(360deg);
+		}
 	}
 
 	h1 {
@@ -49,6 +55,19 @@
 		h2 {
 			font-size: 1.7rem;
 			margin: 0;
+		}
+
+		a span {
+			display: inline-block;
+			width: 1ch;
+			transition: 0.2s;
+			transform: rotate(0deg);
+			transform-origin: 30% 60%;
+		}
+
+		a:hover span {
+			width: 2ch;
+			transform: rotate(72deg);
 		}
 	}
 
