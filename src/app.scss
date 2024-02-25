@@ -1,0 +1,31 @@
+:root {
+	--bg: hsl(220, 10%, 8%);
+	--text: hsl(220, 30%, 90%);
+	--blue: #26bbd9;
+	--purple: #6262ee;
+	--pink: #bd63ee;
+	font-family: 'Space Grotesk';
+	font-weight: 300;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	background: var(--bg);
+	color: var(--text);
+	margin: 0;
+	height: 100%;
+}
+
+h1,
+h2 {
+	font-family: 'Space Mono';
+	font-weight: 400;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
