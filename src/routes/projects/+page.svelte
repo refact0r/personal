@@ -1,5 +1,23 @@
 <script>
 	export let data;
+
+	async function importImage(image) {
+		const pictures = import.meta.glob(
+			'/src/content/images/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}',
+			{
+				query: {
+					enhanced: true
+				}
+			}
+		);
+
+		for (const [path, src] of Object.entries(pictures)) {
+			if (path.includes(image)) {
+				const img = await src();
+				return img.default.img.src;
+			}
+		}
+	}
 </script>
 
 <main>
@@ -7,8 +25,10 @@
 
 	<div class="grid">
 		{#each data.posts as post}
-			<a href={post.slug}>
-				<img src={post.image} alt={post.name} />
+			<a href={'/projects/' + post.slug}>
+				{#await importImage(post.image) then src}
+					<img {src} alt={post.name} />
+				{/await}
 				<h2>{post.name}</h2>
 				<p>{post.description}</p>
 			</a>
