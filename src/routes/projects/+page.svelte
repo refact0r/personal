@@ -1,3 +1,6 @@
+<script>
+</script>
+
 <main>
 	<h2>under construction</h2>
 </main>

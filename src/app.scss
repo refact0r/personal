@@ -8,6 +8,10 @@
 	font-weight: 300;
 }
 
+* {
+	box-sizing: border-box;
+}
+
 html {
 	height: 100%;
 }
@@ -19,6 +23,14 @@ body {
 	height: 100%;
 }
 
+.content {
+	min-height: 100vh;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+}
+
 h1,
 h2 {
 	font-family: 'Space Mono';
@@ -28,4 +40,17 @@ h2 {
 a {
 	color: inherit;
 	text-decoration: none;
+}
+
+.slash {
+	display: inline-block;
+	width: 1ch;
+	transition: 0.2s;
+	transform: rotate(0deg);
+	transform-origin: 30% 60%;
+}
+
+a:hover .slash {
+	width: 2ch;
+	transform: rotate(72deg);
 }
