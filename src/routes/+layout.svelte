@@ -24,8 +24,8 @@
 	{#key data.pathname}
 		<div
 			class="transition"
-			in:fly={{ duration: 300, x: 0, y: 100 }}
-			out:fly={{ duration: 300, x: -0, y: -100 }}
+			in:fly={{ duration: 300, delay: 100, x: 0, y: -100 }}
+			out:fly={{ duration: 300, x: -0, y: 100 }}
 		>
 			<slot />
 		</div>
@@ -35,13 +35,15 @@
 <style lang="scss">
 	header {
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
-		gap: 4rem;
-		padding: 2rem;
+		gap: 5rem;
+		padding: 0 5rem;
+		height: 6rem;
 		overflow: hidden;
 		transition: transform 0.2s ease;
 		transform: translateY(0);
+		flex-shrink: 0;
 
 		&.home {
 			transform: translateY(-70%);
@@ -58,13 +60,6 @@
 				.pfp {
 					width: 2rem;
 					height: 2rem;
-					border-radius: 50%;
-					transition: transform 1s;
-
-					&:hover {
-						cursor: pointer;
-						transform: rotate(360deg);
-					}
 				}
 			}
 
@@ -81,6 +76,11 @@
 			h2 {
 				font-size: 1.5rem;
 				margin: 0;
+			}
+
+			.slash &::after {
+				top: -6px;
+				left: 1.4px;
 			}
 		}
 	}

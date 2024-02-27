@@ -19,10 +19,10 @@
 
 <style lang="scss">
 	main {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		@include flex(row, center, center);
+
 		height: 100%;
+		max-height: calc(100vh - 6rem);
 	}
 
 	.row {
@@ -34,13 +34,6 @@
 	.pfp {
 		width: 3.5rem;
 		height: 3.5rem;
-		border-radius: 50%;
-		transition: 1s;
-
-		&:hover {
-			cursor: pointer;
-			transform: rotate(360deg);
-		}
 	}
 
 	h1 {

@@ -1,15 +1,41 @@
 <script>
+	export let data;
 </script>
 
 <main>
-	<h2>under construction</h2>
+	<h1>projects</h1>
+
+	<div class="grid">
+		{#each data.posts as post}
+			<a href={post.slug}>
+				<img src={post.image} alt={post.name} />
+				<h2>{post.name}</h2>
+				<p>{post.description}</p>
+			</a>
+		{/each}
+	</div>
 </main>
 
 <style>
 	main {
-		display: flex;
-		justify-content: center;
-		align-items: center;
 		height: 100%;
+		width: 100%;
+		padding: 0 5rem;
+	}
+
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+		gap: 3rem;
+		max-width: 100%;
+	}
+
+	img {
+		width: 100%;
+		max-width: 50rem;
+	}
+
+	a {
+		max-width: 50rem;
 	}
 </style>
