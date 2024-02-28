@@ -14,3 +14,21 @@ export async function getPosts(modules) {
 
 	return posts;
 }
+
+export async function importImage(image) {
+	const pictures = import.meta.glob(
+		'/src/content/images/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}',
+		{
+			query: {
+				enhanced: true
+			}
+		}
+	);
+
+	for (const [path, src] of Object.entries(pictures)) {
+		if (path.includes(image)) {
+			const img = await src();
+			return img.default.img.src;
+		}
+	}
+}

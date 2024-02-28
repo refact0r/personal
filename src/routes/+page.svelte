@@ -22,7 +22,7 @@
 		@include flex(row, center, center);
 
 		height: 100%;
-		max-height: calc(100vh - 6rem);
+		max-height: calc(100vh - 12rem);
 	}
 
 	.row {

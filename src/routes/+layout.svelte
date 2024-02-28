@@ -24,8 +24,8 @@
 	{#key data.pathname}
 		<div
 			class="transition"
-			in:fly={{ duration: 300, delay: 100, x: 0, y: -100 }}
-			out:fly={{ duration: 300, x: -0, y: 100 }}
+			in:fly={{ duration: 200, delay: 100, x: 0, y: -100 }}
+			out:fly={{ duration: 200, x: -0, y: 100 }}
 		>
 			<slot />
 		</div>
@@ -38,7 +38,7 @@
 		justify-content: space-between;
 		align-items: center;
 		gap: 5rem;
-		padding: 0 5rem;
+		padding: 0 4rem 0 5rem;
 		height: 6rem;
 		overflow: hidden;
 		transition: transform 0.2s ease;
@@ -81,6 +81,10 @@
 			.slash &::after {
 				top: -6px;
 				left: 1.4px;
+			}
+
+			a {
+				padding: 1rem;
 			}
 		}
 	}

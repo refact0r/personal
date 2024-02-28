@@ -1,23 +1,7 @@
 <script>
+	import { importImage } from '$lib/js/posts.js';
+
 	export let data;
-
-	async function importImage(image) {
-		const pictures = import.meta.glob(
-			'/src/content/images/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}',
-			{
-				query: {
-					enhanced: true
-				}
-			}
-		);
-
-		for (const [path, src] of Object.entries(pictures)) {
-			if (path.includes(image)) {
-				const img = await src();
-				return img.default.img.src;
-			}
-		}
-	}
 </script>
 
 <main>
@@ -38,7 +22,6 @@
 
 <style>
 	main {
-		height: 100%;
 		width: 100%;
 		padding: 0 5rem;
 	}
@@ -52,7 +35,7 @@
 
 	img {
 		width: 100%;
-		max-width: 50rem;
+		max-width: 100%;
 	}
 
 	a {

@@ -17,14 +17,10 @@ html {
 }
 
 body {
+	@include flex(column, default, default);
 	background: var(--bg);
 	color: var(--text);
 	margin: 0;
-	height: 100%;
-}
-
-.content {
-	@include flex(column, default, default);
 	min-height: 100vh;
 	height: 100%;
 	overflow-x: hidden;
@@ -79,5 +75,12 @@ a:hover .slash {
 
 	&::after {
 		transform: rotate(-72deg) scale(1, 1);
+	}
+}
+
+.content {
+	p {
+		font-size: 1.2rem;
+		line-height: 1.5;
 	}
 }
