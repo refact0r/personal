@@ -12,4 +12,4 @@ This project was built for the 2024 IPC Winter Hackathon by [refact0r](https://g
 
 (we won)
 
-This web app is a prerendered Sveltekit site, using localstorage to save user settings.
+This is a prerendered Sveltekit site, using localstorage to save user settings.

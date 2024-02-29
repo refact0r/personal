@@ -71,6 +71,7 @@ a {
 
 a:hover .slash {
 	width: 2ch;
+	margin-right: 0.2ch;
 	transform: rotate(72deg);
 
 	&::after {
@@ -83,4 +84,18 @@ a:hover .slash {
 		font-size: 1.2rem;
 		line-height: 1.5;
 	}
+}
+
+.link-arrow {
+	display: inline-block;
+	font-size: 1.5em;
+	line-height: 60%;
+	margin-left: 0.2ch;
+	margin-bottom: 0.1em;
+	vertical-align: middle;
+	transition: transform 0.2s;
+}
+
+a:hover .link-arrow {
+	transform: translate(0.2em, -0.2em);
 }

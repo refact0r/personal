@@ -10,4 +10,4 @@ Stay informed with quick 1 minute audio summaries of the top 5 news stories of t
 
 This project won 2nd place at EmP SmartHack Spring 2024.
 
-This web app consists of a Sveltekit frontend and a Python Quart server. AI models used: OpenAI GPT3.5 Turbo for summary, either OpenAI TTS-1 or ElevenLabs Turbo v2 for text to speech.
+It consists of a Sveltekit frontend and a Python Quart server. AI models used: OpenAI GPT3.5 Turbo for summary, either OpenAI TTS-1 or ElevenLabs Turbo v2 for text to speech.
