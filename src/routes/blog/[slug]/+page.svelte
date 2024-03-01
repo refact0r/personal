@@ -1,5 +1,5 @@
 <script>
-	import { importImage } from '$lib/js/posts.js';
+	import { formatDate } from '$lib/js/utils.js';
 
 	export let data;
 
@@ -7,12 +7,9 @@
 </script>
 
 <main>
-	<div class="head">
-		<h1>{metadata.name}</h1>
-	</div>
-	{#await importImage(metadata.image) then src}
-		<img {src} alt={metadata.name} />
-	{/await}
+	<h1>{metadata.name}</h1>
+	<p class="date">{formatDate(metadata.date)}</p>
+	<p class="description">{metadata.description}</p>
 	<div class="content">
 		<svelte:component this={content} />
 	</div>
@@ -21,27 +18,27 @@
 <style lang="scss">
 	main {
 		width: 100%;
-		max-width: 55rem;
-		padding: 0 5rem 5rem 5rem;
+		max-width: 60rem;
+		padding: 0 5rem 10rem 5rem;
 		margin: auto;
 	}
 
-	img {
-		width: 100%;
-		margin-bottom: 1rem;
+	.date {
+		margin: 1rem 0;
+		font-size: 1.4rem;
+		font-family: 'Space Mono', monospace;
+		color: var(--text-2);
 	}
 
-	.head {
-		@include flex(row, default, center);
-		gap: 2rem;
+	.description {
+		font-size: 1.2rem;
+		margin: 1rem 0 2rem 0;
+		font-style: italic;
+		color: var(--text-2);
+	}
 
-		a {
-			font-family: 'Space Mono', monospace;
-			font-size: 1.5rem;
-
-			&:first-of-type {
-				margin-left: auto;
-			}
-		}
+	h1 {
+		font-size: 2.6rem;
+		margin: 2rem 0;
 	}
 </style>

@@ -10,7 +10,7 @@
 	<div class="posts">
 		{#each data.posts as post}
 			<a href={'/projects/' + post.slug}>
-				{#await importImage(post.image) then src}
+				{#await importImage(post.images[0]) then src}
 					<img {src} alt={post.name} />
 				{/await}
 				<h2>{post.name}</h2>
@@ -36,5 +36,14 @@
 	img {
 		width: 100%;
 		max-width: 100%;
+	}
+
+	h2 {
+		font-weight: 400;
+		margin: 1.2rem 0;
+	}
+
+	p {
+		color: var(--text-2);
 	}
 </style>

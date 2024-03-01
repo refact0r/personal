@@ -19,9 +19,13 @@
 	<p class="description">
 		{metadata.description}
 	</p>
-	{#await importImage(metadata.image) then src}
-		<img {src} alt={metadata.name} />
-	{/await}
+	<div class="carousel">
+		{#each metadata.images as image}
+			{#await importImage(image) then src}
+				<img {src} alt={metadata.name} />
+			{/await}
+		{/each}
+	</div>
 	<div class="content">
 		<svelte:component this={content} />
 	</div>
@@ -31,11 +35,12 @@
 	main {
 		width: 100%;
 		max-width: 100rem;
-		padding: 0 5rem 5rem 5rem;
+		padding: 0 5rem 10rem 5rem;
 		margin: auto;
 	}
 
 	h1 {
+		font-size: 2.6rem;
 		margin: 0;
 	}
 
@@ -46,13 +51,15 @@
 
 	.description {
 		font-size: 1.2rem;
-		margin: 2rem auto;
+		margin: 2rem 0 2rem 0;
 		font-style: italic;
+		color: var(--text-2);
 	}
 
 	.head {
 		@include flex(row, default, flex-end);
 		gap: 2rem;
+		margin: 2rem 0 0 0;
 
 		a {
 			font-family: 'Space Mono', monospace;

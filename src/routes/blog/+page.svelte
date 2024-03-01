@@ -1,5 +1,5 @@
 <script>
-	import { importImage } from '$lib/js/posts.js';
+	import { formatDate } from '$lib/js/utils.js';
 
 	export let data;
 </script>
@@ -10,6 +10,7 @@
 	<div class="posts">
 		{#each data.posts as post}
 			<a href={'/blog/' + post.slug}>
+				<div class="date">{formatDate(post.date)}</div>
 				<h2>{post.name}</h2>
 				<p>{post.description}</p>
 			</a>
@@ -20,14 +21,38 @@
 <style lang="scss">
 	main {
 		width: 100%;
-		max-width: 55rem;
+		max-width: 60rem;
 		padding: 0 5rem;
 		margin: auto;
 	}
 
 	.posts {
 		@include flex(column, default, default);
-		gap: 1rem;
+		gap: 1.5rem;
 		max-width: 100%;
+	}
+
+	h2 {
+		font-weight: 400;
+		margin: 0;
+	}
+
+	.date {
+		font-size: 1.2rem;
+		font-family: 'Space Mono', monospace;
+		color: var(--text-2);
+		margin-top: 0.5rem;
+	}
+
+	a {
+		display: grid;
+		grid-template-columns: auto auto;
+		justify-content: left;
+		gap: 0 2rem;
+	}
+
+	p {
+		grid-column: 2;
+		color: var(--text-2);
 	}
 </style>

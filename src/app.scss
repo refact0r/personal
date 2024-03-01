@@ -1,7 +1,8 @@
 :root {
 	--bg: hsl(220, 10%, 8%);
-	--bg-2: hsl(220, 10%, 14%);
-	--text: hsl(220, 30%, 90%);
+	--bg-2: hsl(220, 10%, 15%);
+	--text: hsl(220, 30%, 85%);
+	--text-2: hsl(220, 20%, 65%);
 	--blue: #26bbd9;
 	--purple: #6262ee;
 	--pink: #bd63ee;
@@ -31,13 +32,32 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3,
+h4 {
 	font-family: 'Space Mono', monospace;
-	font-weight: 400;
+	font-weight: 700;
 }
 
 h1 {
 	font-size: 3rem;
+	margin: 2rem 0 3rem 0;
+}
+h2 {
+	font-size: 1.8rem;
+}
+h3 {
+	font-size: 1.4rem;
+}
+h4 {
+	font-size: 1.2rem;
+}
+
+code {
+	font-family: 'Space Mono', monospace;
+	background: var(--bg-2);
+	padding: 0 0.2em;
+	font-size: 0.9em;
 }
 
 a {
@@ -75,7 +95,7 @@ a.nav {
 			transform: rotate(0deg) scale(1, 1);
 		}
 		.slash {
-			margin-right: 0.3ch;
+			margin-right: 0.4ch;
 			transform: scale(0.5, 0.7) rotate(72deg);
 		}
 	}
@@ -85,7 +105,7 @@ a.external {
 	position: relative;
 	.arrow {
 		display: inline-block;
-		margin-left: 0.3ch;
+		margin-left: 0.4ch;
 		transition: 0.2s;
 	}
 	&:hover {
@@ -95,22 +115,33 @@ a.external {
 	}
 }
 
+blockquote {
+	border-left: 2px solid var(--text-2);
+	padding-left: 1.5rem;
+	margin: 2rem 0;
+	color: var(--text-2);
+}
+hr {
+	border: none;
+	border-top: 2px solid var(--bg-2);
+	margin: 2rem 0;
+}
+strong {
+	font-weight: 600;
+}
+
 .content {
 	p {
-		font-size: 1.2rem;
-		line-height: 1.5;
-	}
-	strong {
-		font-weight: 600;
+		font-size: 1.1rem;
+		line-height: 1.75;
 	}
 	a {
 		font-weight: 600;
 		text-decoration: underline;
 	}
-	code {
-		font-family: 'Space Mono', monospace;
-		background: var(--bg-2);
-		padding: 0 0.2em;
-		font-size: 0.9em;
+	h2,
+	h3,
+	h4 {
+		margin-top: 2rem;
 	}
 }
