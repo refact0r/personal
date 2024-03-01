@@ -21,9 +21,8 @@
 <style lang="scss">
 	main {
 		width: 100%;
-		max-width: 60rem;
-		padding: 0 5rem;
-		margin: auto;
+		max-width: 65rem;
+		margin: 0 auto 10rem auto;
 	}
 
 	.posts {

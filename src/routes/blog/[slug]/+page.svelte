@@ -18,9 +18,8 @@
 <style lang="scss">
 	main {
 		width: 100%;
-		max-width: 60rem;
-		padding: 0 5rem 10rem 5rem;
-		margin: auto;
+		max-width: 50rem;
+		margin: 0 auto 10rem auto;
 	}
 
 	.date {

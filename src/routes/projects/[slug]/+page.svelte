@@ -72,7 +72,8 @@
 	}
 
 	.content {
-		max-width: 55rem;
+		width: 100%;
+		max-width: 50rem;
 		margin: auto;
 	}
 </style>
