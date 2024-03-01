@@ -2,7 +2,7 @@ import { nameFromPath } from '$lib/js/posts.js';
 import { error } from '@sveltejs/kit';
 
 export async function load({ params }) {
-	const modules = import.meta.glob('/src/content/projects/*.md');
+	const modules = import.meta.glob('/src/content/blog/*.md');
 
 	let match = {};
 
@@ -15,8 +15,8 @@ export async function load({ params }) {
 
 	const post = await match?.resolver?.();
 
-	if (!post) {
-		throw error(404, 'project not found');
+	if (!post || !post.metadata.published) {
+		throw error(404, 'post not found');
 	}
 
 	return { post };

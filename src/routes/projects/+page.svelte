@@ -7,7 +7,7 @@
 <main>
 	<h1>projects</h1>
 
-	<div class="grid">
+	<div class="posts">
 		{#each data.posts as post}
 			<a href={'/projects/' + post.slug}>
 				{#await importImage(post.image) then src}
@@ -20,13 +20,13 @@
 	</div>
 </main>
 
-<style>
+<style lang="scss">
 	main {
 		width: 100%;
 		padding: 0 5rem;
 	}
 
-	.grid {
+	.posts {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
 		gap: 3rem;
@@ -36,9 +36,5 @@
 	img {
 		width: 100%;
 		max-width: 100%;
-	}
-
-	a {
-		max-width: 50rem;
 	}
 </style>

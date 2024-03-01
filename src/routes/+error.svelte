@@ -5,7 +5,7 @@
 <main>
 	{#if $page.error}
 		<h1 class="errorCode">{$page.status}</h1>
-		<h2 class="errorMessage">{$page.error.message}</h2>
+		<h2 class="errorMessage">{$page.error.message.toLowerCase()}</h2>
 	{/if}
 </main>
 

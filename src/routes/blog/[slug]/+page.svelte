@@ -9,16 +9,7 @@
 <main>
 	<div class="head">
 		<h1>{metadata.name}</h1>
-		<a class="external" href={metadata.website} target="_blank">
-			site<span class="arrow">/></span>
-		</a>
-		<a class="external" href={metadata.github} target="_blank">
-			github<span class="arrow">/></span>
-		</a>
 	</div>
-	<p class="description">
-		{metadata.description}
-	</p>
 	{#await importImage(metadata.image) then src}
 		<img {src} alt={metadata.name} />
 	{/await}
@@ -30,13 +21,9 @@
 <style lang="scss">
 	main {
 		width: 100%;
-		max-width: 100rem;
+		max-width: 55rem;
 		padding: 0 5rem 5rem 5rem;
 		margin: auto;
-	}
-
-	h1 {
-		margin: 0;
 	}
 
 	img {
@@ -44,14 +31,8 @@
 		margin-bottom: 1rem;
 	}
 
-	.description {
-		font-size: 1.2rem;
-		margin: 2rem auto;
-		font-style: italic;
-	}
-
 	.head {
-		@include flex(row, default, flex-end);
+		@include flex(row, default, center);
 		gap: 2rem;
 
 		a {
@@ -62,10 +43,5 @@
 				margin-left: auto;
 			}
 		}
-	}
-
-	.content {
-		max-width: 55rem;
-		margin: auto;
 	}
 </style>

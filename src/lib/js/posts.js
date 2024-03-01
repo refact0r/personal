@@ -11,8 +11,9 @@ export async function getPosts(modules) {
 	);
 
 	const posts = await Promise.all(postPromises);
+	const filtered = posts.filter((post) => post.published);
 
-	return posts;
+	return filtered;
 }
 
 export async function importImage(image) {

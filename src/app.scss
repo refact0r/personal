@@ -1,10 +1,11 @@
 :root {
 	--bg: hsl(220, 10%, 8%);
+	--bg-2: hsl(220, 10%, 14%);
 	--text: hsl(220, 30%, 90%);
 	--blue: #26bbd9;
 	--purple: #6262ee;
 	--pink: #bd63ee;
-	font-family: 'Space Grotesk';
+	font-family: 'Space Grotesk Variable', sans-serif;
 	font-weight: 300;
 }
 
@@ -14,6 +15,9 @@
 
 html {
 	height: 100%;
+	scrollbar-width: thin;
+	scrollbar-color: var(--bg-2) transparent;
+	scrollbar-gutter: stable;
 }
 
 body {
@@ -28,7 +32,7 @@ body {
 
 h1,
 h2 {
-	font-family: 'Space Mono';
+	font-family: 'Space Mono', monospace;
 	font-weight: 400;
 }
 
@@ -51,31 +55,43 @@ a {
 	}
 }
 
-.slash {
-	display: inline-block;
-	width: 1ch;
-	transition: 0.2s;
-	transform: rotate(0deg);
-	transform-origin: 30% 60%;
-
-	&::after {
-		content: '>';
-		display: block;
+a.nav {
+	position: relative;
+	.arrow {
 		position: absolute;
-		transform: rotate(-72deg) scale(0.5, 0);
-		top: -8px;
-		left: 2px;
-		transition: 0.2s;
+		top: -0.02em;
+		transform: rotate(-72deg) scale(1, 0.1);
+		transition: 0.3s;
+		transform-origin: 50% 53%;
+	}
+	.slash {
+		display: inline-block;
+		transition: 0.3s;
+		transform: scale(1, 1) rotate(0deg);
+		line-height: 0;
+	}
+	&:hover {
+		.arrow {
+			transform: rotate(0deg) scale(1, 1);
+		}
+		.slash {
+			margin-right: 0.3ch;
+			transform: scale(0.5, 0.7) rotate(72deg);
+		}
 	}
 }
 
-a:hover .slash {
-	width: 2ch;
-	margin-right: 0.2ch;
-	transform: rotate(72deg);
-
-	&::after {
-		transform: rotate(-72deg) scale(1, 1);
+a.external {
+	position: relative;
+	.arrow {
+		display: inline-block;
+		margin-left: 0.3ch;
+		transition: 0.2s;
+	}
+	&:hover {
+		.arrow {
+			transform: translate(0.2em, -0.2em);
+		}
 	}
 }
 
@@ -84,18 +100,17 @@ a:hover .slash {
 		font-size: 1.2rem;
 		line-height: 1.5;
 	}
-}
-
-.link-arrow {
-	display: inline-block;
-	font-size: 1.5em;
-	line-height: 60%;
-	margin-left: 0.2ch;
-	margin-bottom: 0.1em;
-	vertical-align: middle;
-	transition: transform 0.2s;
-}
-
-a:hover .link-arrow {
-	transform: translate(0.2em, -0.2em);
+	strong {
+		font-weight: 600;
+	}
+	a {
+		font-weight: 600;
+		text-decoration: underline;
+	}
+	code {
+		font-family: 'Space Mono', monospace;
+		background: var(--bg-2);
+		padding: 0 0.2em;
+		font-size: 0.9em;
+	}
 }

@@ -14,11 +14,17 @@
 		<a class="pfplink" href="/"><img class="pfp" src={pfp} alt="icon" /></a>
 		<a href="/"><h1>refact0r</h1></a>
 	</div>
-	<div class="links">
-		<a href="/projects"><h2><span class="slash">/</span>projects</h2></a>
-		<a href="/blog"><h2><span class="slash">/</span>blog</h2></a>
-		<a href="/info"><h2><span class="slash">/</span>info</h2></a>
-	</div>
+	<nav>
+		<a class="nav" href="/projects">
+			<span class="arrow">-></span><span class="slash">/</span>projects
+		</a>
+		<a class="nav" href="/blog">
+			<span class="arrow">-></span><span class="slash">/</span>blog
+		</a>
+		<a class="nav" href="/info">
+			<span class="arrow">-></span><span class="slash">/</span>info
+		</a>
+	</nav>
 </header>
 <div class="container">
 	{#key data.pathname}
@@ -69,22 +75,18 @@
 			}
 		}
 
-		.links {
+		nav {
 			display: flex;
 			gap: 2rem;
 
-			h2 {
+			a {
 				font-size: 1.5rem;
-				margin: 0;
+				font-family: 'Space Mono', monospace;
 			}
 
 			.slash &::after {
 				top: -6px;
 				left: 1.4px;
-			}
-
-			a {
-				padding: 1rem;
 			}
 		}
 	}
