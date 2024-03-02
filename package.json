@@ -33,6 +33,7 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource-variable/space-grotesk": "^5.0.16",
-		"@fontsource/space-mono": "^5.0.18"
+		"@fontsource/space-mono": "^5.0.18",
+		"embla-carousel-svelte": "^8.0.0"
 	}
 }
