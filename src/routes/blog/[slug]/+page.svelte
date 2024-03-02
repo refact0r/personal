@@ -26,7 +26,6 @@
 		margin: 1rem 0;
 		font-size: 1.4rem;
 		font-family: 'Space Mono', monospace;
-		color: var(--text-2);
 	}
 
 	.description {

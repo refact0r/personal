@@ -2,10 +2,10 @@
 	--bg: hsl(220, 10%, 8%);
 	--bg-2: hsl(220, 10%, 15%);
 	--text: hsl(220, 30%, 85%);
-	--text-2: hsl(220, 20%, 65%);
-	--blue: #26bbd9;
-	--purple: #6262ee;
-	--pink: #bd63ee;
+	--text-2: hsl(220, 12%, 65%);
+	--blue: hsl(190, 70%, 50%);
+	--purple: hsl(240, 80%, 66%);
+	--pink: hsl(279, 80%, 66%);
 	font-family: 'Space Grotesk Variable', sans-serif;
 	font-weight: 300;
 }
@@ -36,7 +36,7 @@ h2,
 h3,
 h4 {
 	font-family: 'Space Mono', monospace;
-	font-weight: 700;
+	font-weight: 400;
 }
 
 h1 {

@@ -78,7 +78,7 @@
 
 		nav {
 			display: flex;
-			gap: 2rem;
+			gap: 3rem;
 
 			a {
 				font-size: 1.5rem;
