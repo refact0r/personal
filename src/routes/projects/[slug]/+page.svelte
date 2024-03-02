@@ -24,17 +24,25 @@
 			{metadata.description}
 		</p>
 	</div>
-	<div class="embla" use:emblaCarouselSvelte={{ options }}>
-		<div class="embla__container">
-			{#each metadata.images as image}
-				<div class="embla__slide">
-					{#await importImage(image) then src}
-						<img {src} alt={metadata.name} />
-					{/await}
-				</div>
-			{/each}
+	{#if metadata.images.length > 1}
+		<div class="embla" use:emblaCarouselSvelte={{ options }}>
+			<div class="embla__container">
+				{#each metadata.images as image}
+					<div class="embla__slide">
+						{#await importImage(image) then src}
+							<img {src} alt={metadata.description} />
+						{/await}
+					</div>
+				{/each}
+			</div>
 		</div>
-	</div>
+	{:else}
+		<div class="single-image">
+			{#await importImage(metadata.images[0]) then src}
+				<img {src} alt={metadata.description} />
+			{/await}
+		</div>
+	{/if}
 	<div class="content">
 		<svelte:component this={content} />
 	</div>
@@ -52,9 +60,15 @@
 		margin: 0;
 	}
 
-	img {
+	.single-image {
 		width: 100%;
-		margin-bottom: 1rem;
+		max-width: 80rem;
+		margin: auto;
+
+		img {
+			width: 100%;
+			height: auto;
+		}
 	}
 
 	.head {
@@ -89,6 +103,7 @@
 		width: 100%;
 		max-width: 50rem;
 		margin: auto;
+		margin-top: 2rem;
 	}
 
 	.embla {
@@ -102,5 +117,10 @@
 		min-width: 0;
 		margin-left: 2rem;
 		margin-right: 2rem;
+
+		img {
+			width: 100%;
+			height: auto;
+		}
 	}
 </style>
