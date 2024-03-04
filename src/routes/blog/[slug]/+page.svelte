@@ -32,11 +32,12 @@
 		font-size: 1.2rem;
 		margin: 1rem 0 2rem 0;
 		font-style: italic;
-		color: var(--text-2);
+		color: var(--txt-2);
 	}
 
 	h1 {
 		font-size: 2.6rem;
 		margin: 2rem 0;
+		line-height: 1.3;
 	}
 </style>

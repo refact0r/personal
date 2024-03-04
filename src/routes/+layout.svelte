@@ -21,8 +21,8 @@
 		<a class="nav" href="/blog">
 			<span class="arrow">-></span><span class="slash">/</span>blog
 		</a>
-		<a class="nav" href="/info">
-			<span class="arrow">-></span><span class="slash">/</span>info
+		<a class="nav" href="/about">
+			<span class="arrow">-></span><span class="slash">/</span>about
 		</a>
 	</nav>
 </header>

@@ -39,7 +39,7 @@
 	.date {
 		font-size: 1.2rem;
 		font-family: 'Space Mono', monospace;
-		color: var(--text-2);
+		color: var(--txt-2);
 		margin-top: 0.5rem;
 	}
 
@@ -52,6 +52,6 @@
 
 	p {
 		grid-column: 2;
-		color: var(--text-2);
+		color: var(--txt-2);
 	}
 </style>

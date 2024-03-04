@@ -40,10 +40,10 @@
 
 	h2 {
 		font-weight: 400;
-		margin: 1.2rem 0;
+		margin: 1.2rem 0 0.6rem 0;
 	}
 
 	p {
-		color: var(--text-2);
+		color: var(--txt-2);
 	}
 </style>

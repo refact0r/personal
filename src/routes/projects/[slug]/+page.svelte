@@ -61,8 +61,7 @@
 	}
 
 	.single-image {
-		width: 100%;
-		max-width: 80rem;
+		width: 50%;
 		margin: auto;
 
 		img {
@@ -72,10 +71,9 @@
 	}
 
 	.head {
-		margin: 2rem 0 0 0;
+		margin: 2rem auto 3rem auto;
 		width: 100%;
 		max-width: 50rem;
-		margin: auto;
 
 		a {
 			font-family: 'Space Mono', monospace;
@@ -87,15 +85,15 @@
 		}
 
 		.row {
-			@include flex(row, default, flex-end);
+			@include flex(row, default, center);
 			gap: 2rem;
 		}
 
 		.description {
 			font-size: 1.2rem;
-			margin: 2rem 0 2rem 0;
+			margin: 1.5rem 0 2rem 0;
 			font-style: italic;
-			color: var(--text-2);
+			color: var(--txt-2);
 		}
 	}
 
@@ -103,7 +101,7 @@
 		width: 100%;
 		max-width: 50rem;
 		margin: auto;
-		margin-top: 2rem;
+		margin-top: 3rem;
 	}
 
 	.embla {
@@ -113,7 +111,7 @@
 		display: flex;
 	}
 	.embla__slide {
-		flex: 0 0 80rem;
+		flex: 0 0 50%;
 		min-width: 0;
 		margin-left: 2rem;
 		margin-right: 2rem;

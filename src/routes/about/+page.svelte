@@ -1,0 +1,105 @@
+<script>
+</script>
+
+<main>
+	<h1>about</h1>
+	<p>
+		hey there! i'm a student in seattle, wa who goes by the name refact0r online. i'm interested in
+		comp sci, web dev, design, among other topics. i'm passionate about building websites and apps
+		that are both functional and beautiful.
+	</p>
+	<div class="row">
+		<div class="col">
+			<h2>contact</h2>
+			<div class="info">discord -> @refact0r</div>
+			<div class="info">email -> refact0r.contact@gmail.com</div>
+		</div>
+		<div class="col">
+			<h2>links</h2>
+			<a href="https://github.com/refact0r" class="external"
+				>github profile<span class="arrow">/></span></a
+			>
+		</div>
+	</div>
+	<h2>languages</h2>
+	<div class="info">web -> js / ts / html / css / scss</div>
+	<div class="info">other -> python / dart / java</div>
+	<h2>tech</h2>
+	<div class="info">frameworks -> sveltekit / flutter / quart</div>
+	<div class="info">databases -> mongo / sqlite / isar</div>
+	<div class="info">cms -> sanity / decap</div>
+	<div class="info">tools -> vscode / figma / inkscape</div>
+	<br />
+	<br />
+	<br />
+	<h2>this site</h2>
+	<a href="https://github.com/refact0r/personal" class="external"
+		>github repo<span class="arrow">/></span></a
+	>
+	<div class="info">stack -> sveltekit / mdsvex / vite</div>
+	<div class="info">host -> vercel</div>
+	<div class="info">
+		fonts -> space mono / <span style="font-family: 'Space Grotesk'">space grotesk</span>
+	</div>
+	<div class="info">
+		colors ->
+		<div class="colors">
+			<div class="color" style="background: var(--bg); border: 1px solid var(--bg-2);">bg</div>
+			<div class="color" style="background: var(--bg-2);">bg-2</div>
+			<div class="color" style="background: var(--txt-2); color: var(--bg);">txt-2</div>
+			<div class="color" style="background: var(--txt); color: var(--bg);">txt</div>
+			<div class="color" style="background: var(--pink); color: var(--bg);">pink</div>
+			<div class="color" style="background: var(--purple); color: var(--bg);">purple</div>
+			<div class="color" style="background: var(--blue); color: var(--bg);">blue</div>
+		</div>
+	</div>
+</main>
+
+<style lang="scss">
+	main {
+		width: 100%;
+		max-width: 50rem;
+		margin: 0 auto 10rem auto;
+	}
+
+	h1 {
+		margin-bottom: 2rem;
+	}
+
+	p {
+		font-size: 1.1rem;
+		line-height: 1.75;
+	}
+
+	a {
+		font-family: 'Space Mono', monospace;
+		font-size: 1.2rem;
+	}
+
+	.row {
+		@include flex(row, space-between, default);
+		gap: 2.5rem;
+		margin: 2rem 0;
+		h2 {
+			margin-top: 0;
+		}
+		.info:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.info {
+		font-size: 1.2rem;
+		margin: 0.5rem 0;
+		font-family: 'Space Mono', monospace;
+	}
+
+	.colors {
+		display: inline-flex;
+	}
+
+	.color {
+		display: inline-block;
+		padding: 0 0.4rem;
+	}
+</style>
