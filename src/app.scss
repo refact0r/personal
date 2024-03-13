@@ -69,6 +69,24 @@ a {
 	text-decoration: none;
 }
 
+picture {
+	display: flex;
+}
+
+source {
+	display: block;
+}
+
+button {
+	border: none;
+	font: inherit;
+	color: inherit;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
 .pfp {
 	border-radius: 50%;
 	transition: 1s;

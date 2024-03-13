@@ -6,7 +6,21 @@
 
 	let { default: content, metadata } = data.post;
 
+	let emblaApi;
 	let options = { loop: true };
+
+	function emblaInit(event) {
+		emblaApi = event.detail;
+		console.log(emblaApi.slideNodes());
+	}
+
+	function emblaNext() {
+		emblaApi.scrollNext();
+	}
+
+	function emblaPrev() {
+		emblaApi.scrollPrev();
+	}
 </script>
 
 <main>
@@ -25,14 +39,18 @@
 		</p>
 	</div>
 	{#if metadata.images.length > 1}
-		<div class="embla" use:emblaCarouselSvelte={{ options }}>
-			<div class="embla__container">
-				{#each metadata.images as image}
-					<div class="embla__slide">
-						<Image {image} alt={metadata.description} />
-					</div>
-				{/each}
+		<div class="embla">
+			<div class="embla__viewport" use:emblaCarouselSvelte={{ options }} on:emblaInit={emblaInit}>
+				<div class="embla__container">
+					{#each metadata.images as image}
+						<div class="embla__slide">
+							<Image {image} alt={metadata.description} />
+						</div>
+					{/each}
+				</div>
 			</div>
+			<button class="embla__prev" on:click={emblaPrev}>&lt;-</button>
+			<button class="embla__next" on:click={emblaNext}>-></button>
 		</div>
 	{:else}
 		<div class="single-image">
@@ -57,7 +75,8 @@
 	}
 
 	.single-image {
-		width: 50%;
+		width: 70%;
+		max-width: 80rem;
 		margin: auto;
 	}
 
@@ -97,14 +116,42 @@
 
 	.embla {
 		overflow: hidden;
+		position: relative;
+	}
+	.embla__viewport {
 	}
 	.embla__container {
 		display: flex;
 	}
 	.embla__slide {
-		flex: 0 0 50%;
+		flex: 0 0 70%;
+		max-width: 80rem;
 		min-width: 0;
-		margin-left: 2rem;
-		margin-right: 2rem;
+		margin-left: 1.5rem;
+		margin-right: 1.5rem;
+	}
+	.embla__prev,
+	.embla__next {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: calc(15% - 3rem);
+		background: none;
+		opacity: 0;
+		color: gray;
+		font-size: 3rem;
+		font-family: 'Space Mono', monospace;
+		mix-blend-mode: difference;
+		transition: 0.2s;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+	.embla__next {
+		right: 0;
+	}
+	.embla__prev {
+		left: 0;
 	}
 </style>

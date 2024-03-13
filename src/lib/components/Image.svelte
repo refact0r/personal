@@ -15,7 +15,6 @@
 		for (const [path, src] of Object.entries(pictures)) {
 			if (path.includes(image)) {
 				const img = await src();
-				console.log(img);
 				return img.default;
 			}
 		}
@@ -25,7 +24,7 @@
 {#await importImage(image) then src}
 	<picture>
 		<source srcset={src.sources.avif} type="image/avif" />
-		<source srcset={src.sources.png} type="image/png" />
+		<source srcset={src.sources.webp} type="image/webp" />
 		<img {src} {alt} />
 	</picture>
 {/await}
