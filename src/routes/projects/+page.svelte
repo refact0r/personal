@@ -1,5 +1,5 @@
 <script>
-	import { importImage } from '$lib/js/posts.js';
+	import Image from '$lib/components/Image.svelte';
 
 	export let data;
 </script>
@@ -10,9 +10,7 @@
 	<div class="posts">
 		{#each data.posts as post}
 			<a href={'/projects/' + post.slug}>
-				{#await importImage(post.images[0]) then src}
-					<img {src} alt={post.name} />
-				{/await}
+				<Image image={post.images[0]} alt={post.description} />
 				<h2>{post.name}</h2>
 				<p>{post.description}</p>
 			</a>

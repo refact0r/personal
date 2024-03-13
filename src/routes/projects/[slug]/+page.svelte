@@ -1,5 +1,5 @@
 <script>
-	import { importImage } from '$lib/js/posts.js';
+	import Image from '$lib/components/Image.svelte';
 	import emblaCarouselSvelte from 'embla-carousel-svelte';
 
 	export let data;
@@ -29,18 +29,14 @@
 			<div class="embla__container">
 				{#each metadata.images as image}
 					<div class="embla__slide">
-						{#await importImage(image) then src}
-							<img {src} alt={metadata.description} />
-						{/await}
+						<Image {image} alt={metadata.description} />
 					</div>
 				{/each}
 			</div>
 		</div>
 	{:else}
 		<div class="single-image">
-			{#await importImage(metadata.images[0]) then src}
-				<img {src} alt={metadata.description} />
-			{/await}
+			<Image image={metadata.images[0]} alt={metadata.description} />
 		</div>
 	{/if}
 	<div class="content">
@@ -63,11 +59,6 @@
 	.single-image {
 		width: 50%;
 		margin: auto;
-
-		img {
-			width: 100%;
-			height: auto;
-		}
 	}
 
 	.head {
@@ -115,10 +106,5 @@
 		min-width: 0;
 		margin-left: 2rem;
 		margin-right: 2rem;
-
-		img {
-			width: 100%;
-			height: auto;
-		}
 	}
 </style>
