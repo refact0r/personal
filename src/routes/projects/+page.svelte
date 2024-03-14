@@ -36,11 +36,6 @@
 		max-width: 100%;
 	}
 
-	img {
-		width: 100%;
-		max-width: 100%;
-	}
-
 	h2 {
 		font-weight: 400;
 		margin: 1.2rem 0 0.6rem 0;

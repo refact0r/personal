@@ -25,19 +25,23 @@
 	}
 </script>
 
-{#await importImage(image) then src}
-	<picture>
+<picture>
+	{#await importImage(image) then src}
 		<source srcset={src.sources.avif} type="image/avif" {sizes} />
 		<source srcset={src.sources.webp} type="image/webp" {sizes} />
 		<img {src} {alt} onload="this.style.opacity=1" />
-	</picture>
-{/await}
+	{/await}
+</picture>
 
 <style lang="scss">
+	picture {
+		aspect-ratio: var(--aspect-ratio, auto);
+	}
+
 	img {
 		width: var(--width, 100%);
 		height: var(--height, auto);
-		aspect-ratio: var(--aspect-ratio, 16/9);
+		aspect-ratio: var(--aspect-ratio, auto);
 		object-fit: cover;
 		transition: opacity 0.2s;
 		opacity: 0;
