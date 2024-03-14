@@ -10,7 +10,11 @@
 	<div class="posts">
 		{#each data.posts as post}
 			<a href={'/projects/' + post.slug}>
-				<Image image={post.images[0]} alt={post.description} sizes="(min-width:0) 90vw" />
+				<Image
+					image={post.images[0]}
+					alt={post.description}
+					sizes="(min-width: 1200px) 50vw (min-width:0) 90vw"
+				/>
 				<h2>{post.name}</h2>
 				<p>{post.description}</p>
 			</a>
