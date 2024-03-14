@@ -39,15 +39,13 @@
 		</p>
 	</div>
 	{#if metadata.images.length > 1}
-		<div class="embla">
-			<div class="embla__viewport" use:emblaCarouselSvelte={{ options }} on:emblaInit={emblaInit}>
-				<div class="embla__container">
-					{#each metadata.images as image}
-						<div class="embla__slide">
-							<Image {image} alt={metadata.description} />
-						</div>
-					{/each}
-				</div>
+		<div class="embla" use:emblaCarouselSvelte={{ options }} on:emblaInit={emblaInit}>
+			<div class="embla__container">
+				{#each metadata.images as image}
+					<div class="embla__slide">
+						<Image {image} alt={metadata.description} sizes="(min-width:0) 100vw" />
+					</div>
+				{/each}
 			</div>
 			<button class="embla__prev" on:click={emblaPrev}>&lt;-</button>
 			<button class="embla__next" on:click={emblaNext}>-></button>
@@ -117,8 +115,6 @@
 	.embla {
 		overflow: hidden;
 		position: relative;
-	}
-	.embla__viewport {
 	}
 	.embla__container {
 		display: flex;

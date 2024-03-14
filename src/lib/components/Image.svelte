@@ -1,5 +1,7 @@
 <script>
-	export let image, alt;
+	export let image,
+		alt,
+		sizes = '';
 
 	async function importImage(image) {
 		const pictures = import.meta.glob(
@@ -7,7 +9,7 @@
 			{
 				query: {
 					enhanced: true,
-					w: '2000,1000'
+					w: '3000;3600;3200;2800;2400;2000;1600;1200;800'
 				}
 			}
 		);
@@ -23,8 +25,8 @@
 
 {#await importImage(image) then src}
 	<picture>
-		<source srcset={src.sources.avif} type="image/avif" />
-		<source srcset={src.sources.webp} type="image/webp" />
+		<source srcset={src.sources.avif} type="image/avif" {sizes} />
+		<source srcset={src.sources.webp} type="image/webp" {sizes} />
 		<img {src} {alt} />
 	</picture>
 {/await}
