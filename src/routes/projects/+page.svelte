@@ -13,7 +13,8 @@
 				<Image
 					image={post.images[0]}
 					alt={post.description}
-					sizes="(min-width: 1200px) 50vw (min-width:0) 90vw"
+					sizes="(min-width: 1200px) 50vw, 100vw"
+					--aspect-ratio="16/9"
 				/>
 				<h2>{post.name}</h2>
 				<p>{post.description}</p>

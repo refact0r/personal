@@ -43,7 +43,7 @@
 			<div class="embla__container">
 				{#each metadata.images as image}
 					<div class="embla__slide">
-						<Image {image} alt={metadata.description} sizes="(min-width:0) 100vw" />
+						<Image {image} alt={metadata.description} sizes="100vw" />
 					</div>
 				{/each}
 			</div>

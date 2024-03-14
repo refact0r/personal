@@ -1,4 +1,6 @@
 <script>
+	import { fade } from 'svelte/transition';
+
 	export let image,
 		alt,
 		sizes = '';
@@ -9,7 +11,7 @@
 			{
 				query: {
 					enhanced: true,
-					w: '3000;3600;3200;2800;2400;2000;1600;1200;800'
+					w: '2800;2400;2000;1600;1200;800'
 				}
 			}
 		);
@@ -27,13 +29,17 @@
 	<picture>
 		<source srcset={src.sources.avif} type="image/avif" {sizes} />
 		<source srcset={src.sources.webp} type="image/webp" {sizes} />
-		<img {src} {alt} />
+		<img {src} {alt} onload="this.style.opacity=1" />
 	</picture>
 {/await}
 
-<style>
+<style lang="scss">
 	img {
-		width: 100%;
-		height: auto;
+		width: var(--width, 100%);
+		height: var(--height, auto);
+		aspect-ratio: var(--aspect-ratio, 16/9);
+		object-fit: cover;
+		transition: opacity 0.2s;
+		opacity: 0;
 	}
 </style>
