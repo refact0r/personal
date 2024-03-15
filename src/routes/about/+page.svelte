@@ -80,9 +80,8 @@
 		<span style="font-family: 'Space Grotesk'">space grotesk</span>
 	</div>
 	<div class="info">
-		colors <span class="sub">-></span>
 		<div class="colors">
-			<div class="color" style="background: var(--bg); border: 1px solid var(--bg-2);">bg</div>
+			<div class="color" style="background: var(--bg); border: 2px solid var(--bg-2);">bg</div>
 			<div class="color" style="background: var(--bg-2);">bg-2</div>
 			<div class="color" style="background: var(--txt-2); color: var(--bg);">txt-2</div>
 			<div class="color" style="background: var(--txt); color: var(--bg);">txt</div>
@@ -134,11 +133,14 @@
 
 	.colors {
 		display: inline-flex;
+		margin-top: 0.2rem;
 	}
 
 	.color {
 		display: inline-block;
 		padding: 0 0.4rem;
+		width: 6rem;
+		text-align: center;
 	}
 
 	.sub {

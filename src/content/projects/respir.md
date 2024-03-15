@@ -2,7 +2,8 @@
 published: true
 name: respir
 description: breathing exercises to help you relax, focus, or sleep.
-images: [respir.png, respir2.png, respir3.png]
+thumbnail: respir.png
+images: [respir.png, respir2.png, respir3.png, respir4.png]
 github: https://github.com/refact0r/respir
 website: https://respir.netlify.app
 ---

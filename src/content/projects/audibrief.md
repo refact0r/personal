@@ -2,6 +2,7 @@
 published: true
 name: audibrief
 description: stay informed with quick audio summaries of the daily news.
+thumbnail: audibrief.png
 images: [audibrief.png]
 github: https://github.com/refact0r/audibrief
 website: https://audibrief.vercel.app

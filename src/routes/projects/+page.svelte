@@ -11,7 +11,7 @@
 		{#each data.posts as post}
 			<a href={'/projects/' + post.slug}>
 				<Image
-					image={post.images[0]}
+					image={post.thumbnail}
 					alt={post.description}
 					sizes="(min-width: 1200px) 50vw, 100vw"
 					--aspect-ratio="16/9"
