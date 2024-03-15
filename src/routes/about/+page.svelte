@@ -1,4 +1,16 @@
 <script>
+	let content = {
+		languages: {
+			web: ['js', 'ts', 'html', 'css', 'scss'],
+			other: ['python', 'dart', 'java']
+		},
+		tech: {
+			frameworks: ['sveltekit', 'flutter', 'quart'],
+			databases: ['mongo', 'sqlite', 'isar'],
+			cms: ['sanity', 'decap'],
+			tools: ['vscode', 'figma', 'inkscape']
+		}
+	};
 </script>
 
 <main>
@@ -8,41 +20,67 @@
 		comp sci, web dev, design, among other topics. i'm passionate about building websites and apps
 		that are both functional and beautiful.
 	</p>
+	<br />
 	<div class="row">
 		<div class="col">
 			<h2>contact</h2>
-			<div class="info">discord -> @refact0r</div>
-			<div class="info">email -> refact0r.contact@gmail.com</div>
+			<div class="info">discord <span class="sub">-></span> @refact0r</div>
+			<div class="info">
+				email <span class="sub">-></span>
+				<a href="https://github.com/refact0r" class="external"
+					>refact0r.contact@gmail.com<span class="arrow">/></span>
+				</a>
+			</div>
 		</div>
 		<div class="col">
 			<h2>links</h2>
 			<a href="https://github.com/refact0r" class="external"
-				>github profile<span class="arrow">/></span></a
-			>
+				>github profile<span class="arrow">/></span>
+			</a>
 		</div>
 	</div>
+	<br />
 	<h2>languages</h2>
-	<div class="info">web -> js / ts / html / css / scss</div>
-	<div class="info">other -> python / dart / java</div>
+	{#each Object.keys(content.languages) as category}
+		<div class="info">
+			{category} <span class="sub">-></span>
+			{#each content.languages[category] as item}
+				{item}
+				{#if item !== content.languages[category][content.languages[category].length - 1]}
+					<span class="sub">/</span>&nbsp;
+				{/if}
+			{/each}
+		</div>
+	{/each}
+	<br />
 	<h2>tech</h2>
-	<div class="info">frameworks -> sveltekit / flutter / quart</div>
-	<div class="info">databases -> mongo / sqlite / isar</div>
-	<div class="info">cms -> sanity / decap</div>
-	<div class="info">tools -> vscode / figma / inkscape</div>
-	<br />
-	<br />
+	{#each Object.keys(content.tech) as category}
+		<div class="info">
+			{category} <span class="sub">-></span>
+			{#each content.tech[category] as item}
+				{item}
+				{#if item !== content.tech[category][content.tech[category].length - 1]}
+					<span class="sub">/</span>&nbsp;
+				{/if}
+			{/each}
+		</div>
+	{/each}
 	<br />
 	<h2>this site</h2>
 	<a href="https://github.com/refact0r/personal" class="external"
 		>github repo<span class="arrow">/></span></a
 	>
-	<div class="info">stack -> sveltekit / mdsvex / vite</div>
-	<div class="info">host -> vercel</div>
 	<div class="info">
-		fonts -> space mono / <span style="font-family: 'Space Grotesk'">space grotesk</span>
+		stack <span class="sub">-></span> sveltekit <span class="sub">/</span> mdsvex
+		<span class="sub">/</span> vite
+	</div>
+	<div class="info">host <span class="sub">-></span> vercel</div>
+	<div class="info">
+		fonts <span class="sub">-></span> space mono <span class="sub">/</span>
+		<span style="font-family: 'Space Grotesk'">space grotesk</span>
 	</div>
 	<div class="info">
-		colors ->
+		colors <span class="sub">-></span>
 		<div class="colors">
 			<div class="color" style="background: var(--bg); border: 1px solid var(--bg-2);">bg</div>
 			<div class="color" style="background: var(--bg-2);">bg-2</div>
@@ -101,5 +139,9 @@
 	.color {
 		display: inline-block;
 		padding: 0 0.4rem;
+	}
+
+	.sub {
+		color: var(--txt-2);
 	}
 </style>
