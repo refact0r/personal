@@ -1,13 +1,18 @@
 ---
 published: true
-name: "papers: the unix time-sharing system"
+name: "the unix time-sharing system"
+icon: "ph:files"
 description: an overview of the design and features of the UNIX operating system.
 date: 2024-02-24
 ---
 
+<script>
+    import Icon from '~icons/ph/files';
+</script>
+
 ---
 
-Welcome to the first post in my "papers" series. In this series, I will read, summarize, and comment on interesting or influential papers in computer science. I hope to gain a deeper understanding of the field and improve my communication skills.
+Welcome to my first "papers" (<Icon class="icon" />) post . In this series of posts, I will try to read, summarize, and comment on interesting or influential papers in computer science. I hope to gain a deeper understanding of the field and improve my communication skills.
 
 ---
 

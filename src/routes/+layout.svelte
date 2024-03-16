@@ -2,6 +2,7 @@
 	import '../app.scss';
 	import '@fontsource/space-mono';
 	import '@fontsource-variable/space-grotesk';
+	import 'iconify-icon';
 	import { page } from '$app/stores';
 	import pfp from '$lib/assets/pfp.svg';
 	import { fly } from 'svelte/transition';
