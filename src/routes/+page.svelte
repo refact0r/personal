@@ -1,12 +1,33 @@
 <script>
-	import pfp from '$lib/assets/pfp.svg';
+	import pfpin from '$lib/assets/pfpin.json';
+	import { onMount } from 'svelte';
+
+	let lottieElem;
+
+	onMount(async () => {
+		const lottie = await import('lottie-web');
+		const animation = lottie.loadAnimation({
+			name: 'pfp',
+			container: lottieElem,
+			renderer: 'svg',
+			loop: false,
+			autoplay: true,
+			animationData: pfpin
+		});
+		animation.addEventListener('complete', () => {
+			lottieElem.classList.add('pfp');
+		});
+		return () => {
+			animation.destroy;
+		};
+	});
 </script>
 
 <main>
 	<div class="container">
 		<div class="row">
 			<h1>refact0r</h1>
-			<img class="pfp" src={pfp} alt="icon" />
+			<div class="pfpstart" bind:this={lottieElem}></div>
 		</div>
 		<p>hey there! i'm a student interested in comp sci, web dev, design, and more.</p>
 		<nav>
@@ -37,9 +58,15 @@
 		gap: 2.5rem;
 	}
 
+	// .pfp {
+	// 	width: 3.5rem;
+	// 	height: 3.5rem;
+	// }
+
+	.pfpstart,
 	.pfp {
-		width: 3.5rem;
-		height: 3.5rem;
+		width: 4rem;
+		height: 4rem;
 	}
 
 	h1 {
