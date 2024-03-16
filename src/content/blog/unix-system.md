@@ -119,3 +119,7 @@ The paper lists the following successful features of UNIX:
 The UNIX system didn't pioneer any significant new ideas about operating systems, but it did bring together many existing ideas in a simple and elegant way. The system was not perfect but has been the basis for many operating systems used today, including Linux and Mac OS.
 
 This paper is a fascinating insight into the state of computing in the 1970s. Many of the features of UNIX are still in use today. They may seem trivial, but their integration was a significant achievement at the time. It is interesting to see how these features were first implemented. Reading this paper has given me a new appreciation for the design of operating systems. Finally, I think the paper itself is a great example of how to write about a complex system in a way that is easy to understand.
+
+### Source
+
+<https://dsf.berkeley.edu/cs262/unix.pdf>
