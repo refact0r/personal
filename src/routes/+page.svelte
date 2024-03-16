@@ -1,12 +1,27 @@
 <script>
 	import pfp from '$lib/assets/pfp.svg';
+	import { onMount } from 'svelte';
+	import * as rive from '@rive-app/canvas';
+
+	onMount(() => {
+		const r = new rive.Rive({
+			src: '/pfp.riv',
+			canvas: document.getElementById('canvas'),
+			autoplay: true,
+			animations: 'Timeline 1',
+			onLoad: () => {
+				r.resizeDrawingSurfaceToCanvas();
+			}
+		});
+	});
 </script>
 
 <main>
 	<div class="container">
 		<div class="row">
 			<h1>refact0r</h1>
-			<img class="pfp" src={pfp} alt="icon" />
+			<!-- <img class="pfp" src={pfp} alt="icon" /> -->
+			<canvas id="canvas" width="70" height="70"></canvas>
 		</div>
 		<p>hey there! i'm a student interested in comp sci, web dev, design, and more.</p>
 		<nav>

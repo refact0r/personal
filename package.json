@@ -36,6 +36,7 @@
 	"dependencies": {
 		"@fontsource-variable/space-grotesk": "^5.0.17",
 		"@fontsource/space-mono": "^5.0.19",
+		"@rive-app/canvas": "^2.10.4",
 		"embla-carousel-svelte": "^8.0.0",
 		"iconify-icon": "^2.0.0"
 	}
