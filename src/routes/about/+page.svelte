@@ -72,9 +72,8 @@
 	>
 	<div class="info">
 		stack <span class="sub">-></span> sveltekit <span class="sub">/</span> mdsvex
-		<span class="sub">/</span> vite
+		<span class="sub">/</span> vite <span class="sub">/</span> vercel
 	</div>
-	<div class="info">host <span class="sub">-></span> vercel</div>
 	<div class="info">
 		fonts <span class="sub">-></span> space mono <span class="sub">/</span>
 		<span style="font-family: 'Space Grotesk'">space grotesk</span>
@@ -133,7 +132,7 @@
 
 	.colors {
 		display: inline-flex;
-		margin-top: 0.2rem;
+		margin-top: 0.4rem;
 	}
 
 	.color {
