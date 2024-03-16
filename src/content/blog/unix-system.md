@@ -12,7 +12,7 @@ date: 2024-02-24
 
 ---
 
-Welcome to my first "papers" (<Icon class="icon" />) post . In this series of posts, I will try to read, summarize, and comment on interesting or influential papers in computer science. I hope to gain a deeper understanding of the field and improve my communication skills.
+Welcome to my first "papers" (<Icon class="icon" />) post . In this series of posts, I will try to read, summarize, and comment on influential or interesting papers in computer science. I hope to gain a deeper understanding of the field and improve my communication skills.
 
 ---
 
