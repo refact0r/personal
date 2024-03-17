@@ -13,7 +13,7 @@
 
 		ctx = canvas.getContext('2d');
 
-		const dpi = window.devicePixelRatio || 1; // Handle cases without devicePixelRatio
+		const dpi = window.devicePixelRatio * 2 || 2; // Handle cases without devicePixelRatio
 		canvas.width = canvas.parentNode.clientWidth * dpi;
 		canvas.height = canvas.parentNode.clientHeight * dpi;
 
@@ -29,7 +29,7 @@
 	}
 
 	function drawDot(x, y, radius, intensity) {
-		ctx.fillStyle = `hsla(220, 10%, 30%, ${intensity})`;
+		ctx.fillStyle = `hsla(220, 11%, 30%, ${intensity})`;
 		ctx.beginPath();
 		ctx.arc(x, y, radius, 0, Math.PI * 2);
 		ctx.fill();
@@ -37,8 +37,8 @@
 
 	// Function to draw the entire grid of dots
 	function drawDots() {
-		const dotRadius = Math.ceil(canvas.width / 800);
-		const dotSpacing = dotRadius * 10;
+		const dotRadius = Math.ceil(canvas.width / 600);
+		const dotSpacing = dotRadius * 12;
 		console.log(dotRadius, dotSpacing);
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		for (let x = dotRadius; x < canvas.width; x += dotSpacing) {
@@ -46,7 +46,7 @@
 				const dx = Math.abs(x - mouseX);
 				const dy = Math.abs(y - mouseY);
 				const distance = Math.sqrt(dx * dx + dy * dy);
-				const maxDistance = dotSpacing * 10;
+				const maxDistance = dotSpacing * 7;
 				const intensity = 0.3 + 0.7 * Math.max(0, 1 - distance / maxDistance);
 				drawDot(x, y, dotRadius, intensity);
 			}
@@ -132,6 +132,7 @@
 	h1 {
 		font-size: 3.5rem;
 		margin: 0;
+		color: var(--txt-0);
 	}
 
 	nav {

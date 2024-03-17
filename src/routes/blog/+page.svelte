@@ -34,6 +34,7 @@
 	h2 {
 		font-weight: 400;
 		margin: 0;
+		color: var(--txt);
 	}
 
 	.date {
