@@ -38,11 +38,12 @@
 
 	h2 {
 		font-weight: 400;
-		margin: 1.2rem 0 0.6rem 0;
+		margin: 1rem 0 0.8rem 0;
 		color: var(--txt);
 	}
 
 	p {
 		color: var(--txt-2);
+		margin: 0;
 	}
 </style>

@@ -20,26 +20,16 @@
 		comp sci, web dev, design, among other topics. i'm passionate about building websites and apps
 		that are both functional and beautiful.
 	</p>
+	<h2>links</h2>
+	<a href="https://github.com/refact0r" class="external"
+		>github profile<span class="arrow">/></span>
+	</a>
 	<br />
-	<div class="row">
-		<div class="col">
-			<h2>contact</h2>
-			<div class="info">discord <span class="sub">-></span> @refact0r</div>
-			<div class="info">
-				email <span class="sub">-></span>
-				<a href="mailto:refact0r.contact@gmail.com" class="external"
-					>refact0r.contact@gmail.com<span class="arrow">/></span>
-				</a>
-			</div>
-		</div>
-		<div class="col">
-			<h2>links</h2>
-			<a href="https://github.com/refact0r" class="external"
-				>github profile<span class="arrow">/></span>
-			</a>
-		</div>
-	</div>
 	<br />
+	<!-- <div class="row">
+		<div class="col"></div>
+		<div class="col"></div>
+	</div> -->
 	<h2>languages</h2>
 	{#each Object.keys(content.languages) as category}
 		<div class="info">
@@ -113,17 +103,17 @@
 		font-size: 1.2rem;
 	}
 
-	.row {
-		@include flex(row, space-between, default);
-		gap: 2.5rem;
-		margin: 2rem 0;
-		h2 {
-			margin-top: 0;
-		}
-		.info:last-child {
-			margin-bottom: 0;
-		}
-	}
+	// .row {
+	// 	@include flex(row, space-between, default);
+	// 	gap: 2.5rem;
+	// 	margin: 2rem 0;
+	// 	h2 {
+	// 		margin-top: 0;
+	// 	}
+	// 	.info:last-child {
+	// 		margin-bottom: 0;
+	// 	}
+	// }
 
 	.info {
 		font-size: 1.2rem;
