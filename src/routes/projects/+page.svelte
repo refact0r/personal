@@ -29,7 +29,7 @@
 <style lang="scss">
 	main {
 		width: 100%;
-		padding: 0 5rem;
+		padding: 0 5rem 5rem 5rem;
 	}
 
 	.posts {
