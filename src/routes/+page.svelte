@@ -23,20 +23,20 @@
 		return ctx;
 	}
 
-	const charSize = 80;
-	const fontSize = `${charSize}px 'Space Mono'`;
-	const charHeight = charSize * 1;
-	const charWidth = charSize * 1;
 	async function drawGrid(ctx) {
 		if (!canvas) return;
 
+		const charSize = 60;
+		const fontSize = `${charSize}px 'Space Mono'`;
+		const charHeight = charSize * 1;
+		const charWidth = charSize * 1;
 		ctx.font = fontSize;
 		ctx.fillStyle = `hsla(220, 10%, 15%, 0.5)`;
 
-		for (let y = 0; y <= canvas.height / charHeight; y++) {
-			for (let x = 0; x <= canvas.width / charWidth; x++) {
+		for (let y = 0; y <= canvas.height; y += charHeight) {
+			for (let x = 0; x <= canvas.width; x += charWidth) {
 				const char = randomChar();
-				ctx.fillText(char, x * charWidth, y * charHeight);
+				ctx.fillText(char, x, y);
 				// await new Promise((resolve) => setTimeout(resolve, 10));
 			}
 		}
@@ -153,6 +153,6 @@
 	canvas {
 		width: 100%;
 		height: 100%;
-		// image-rendering: pixelated;
+		image-rendering: pixelated;
 	}
 </style>
