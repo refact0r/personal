@@ -1,4 +1,5 @@
 <script>
+	import PageHead from '$lib/components/PageHead.svelte';
 	import Image from '$lib/components/Image.svelte';
 	import emblaCarouselSvelte from 'embla-carousel-svelte';
 
@@ -22,6 +23,8 @@
 		emblaApi.scrollPrev();
 	}
 </script>
+
+<PageHead title={metadata.name} description={metadata.description} />
 
 <main>
 	<div class="head">

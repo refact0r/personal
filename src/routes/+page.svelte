@@ -1,4 +1,5 @@
 <script>
+	import PageHead from '$lib/components/PageHead.svelte';
 	import pfpin from '$lib/assets/pfpin.json';
 	import { onMount } from 'svelte';
 
@@ -20,6 +21,8 @@
 		});
 	});
 </script>
+
+<PageHead title="refact0r" description="refact0r's personal website." />
 
 <main>
 	<div class="container">

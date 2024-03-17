@@ -1,10 +1,13 @@
 <script>
+	import PageHead from '$lib/components/PageHead.svelte';
 	import { formatDate } from '$lib/js/utils.js';
 
 	export let data;
 
 	let { default: content, metadata } = data.post;
 </script>
+
+<PageHead title={metadata.name} description={metadata.description} />
 
 <main>
 	<h1>

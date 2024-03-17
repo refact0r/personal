@@ -1,4 +1,6 @@
 <script>
+	import PageHead from '$lib/components/PageHead.svelte';
+
 	let status = 'submit ->';
 	const handleSubmit = async (data) => {
 		status = 'submitting...';
@@ -22,6 +24,8 @@
 		}
 	};
 </script>
+
+<PageHead title="contact" description="ways to get in touch." />
 
 <main>
 	<h1>contact</h1>

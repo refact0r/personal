@@ -1,8 +1,11 @@
 <script>
+	import PageHead from '$lib/components/PageHead.svelte';
 	import Image from '$lib/components/Image.svelte';
 
 	export let data;
 </script>
+
+<PageHead title="projects" description="projects i've worked on." />
 
 <main>
 	<h1>projects</h1>
