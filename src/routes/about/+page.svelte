@@ -142,8 +142,4 @@
 		width: 6rem;
 		text-align: center;
 	}
-
-	.sub {
-		color: var(--txt-2);
-	}
 </style>

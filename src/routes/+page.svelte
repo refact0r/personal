@@ -38,6 +38,9 @@
 			<a class="nav" href="/about">
 				<span class="arrow">-></span><span class="slash">/</span>about
 			</a>
+			<a class="nav" href="/contact">
+				<span class="arrow">-></span><span class="slash">/</span>contact
+			</a>
 		</nav>
 	</div>
 </main>
