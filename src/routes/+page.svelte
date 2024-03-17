@@ -46,8 +46,8 @@
 				const dx = Math.abs(x - mouseX);
 				const dy = Math.abs(y - mouseY);
 				const distance = Math.sqrt(dx * dx + dy * dy);
-				const maxDistance = dotSpacing * 7;
-				const intensity = 0.3 + 0.7 * Math.max(0, 1 - distance / maxDistance);
+				const maxDistance = dotSpacing * 5;
+				const intensity = 0.2 + 0.7 * Math.max(0, 1 - distance / maxDistance);
 				drawDot(x, y, dotRadius, intensity);
 			}
 		}
