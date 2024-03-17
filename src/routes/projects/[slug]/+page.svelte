@@ -71,7 +71,7 @@
 	}
 
 	h1 {
-		font-size: 2.6rem;
+		font-size: 2.5rem;
 		margin: 0;
 	}
 
@@ -82,7 +82,7 @@
 	}
 
 	.head {
-		margin: 2rem auto 3rem auto;
+		margin: 1rem auto 3rem auto;
 		width: 100%;
 		max-width: 50rem;
 

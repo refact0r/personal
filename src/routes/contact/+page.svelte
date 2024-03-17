@@ -115,7 +115,6 @@
 
 	button {
 		font-family: 'Space Mono', monospace;
-		font-weight: 400;
 		padding: 1rem 1.2rem;
 		&:hover {
 			border: 2px solid var(--txt-2);

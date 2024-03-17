@@ -74,11 +74,11 @@ The parent process can call "wait" to wait for the child process to finish. When
 
 ## The shell
 
-The shell is the command interpreter of UNIX. It is a program that reads commands from the user and executes them. Users can type commands in the format "command argument1 argument2". The shell will search for the command in the file system and execute it.
+The shell is the command interpreter of UNIX. It is a program that reads commands from the user and executes them. Users can type commands in the format `command argument1 argument2`. The shell will search for the command in the file system and execute it.
 
 ### Command I/O
 
-Programs executed in the shell start off with two open files. File 0 is used for input, and File 1 is used for output. The shell can redirect these files to other files or devices. For example, the command "command file1 >file2" will cause "command" to read input from "file1" and write output to "file2". The inputs and outputs of commands can also be piped together using the "|" operator. For example, "command1 | command2" will cause the output of "command1" to be the input of "command2". This system allows for commands to be easily combined and manipulated.
+Programs executed in the shell start off with two open files. File 0 is used for input, and File 1 is used for output. The shell can redirect these files to other files or devices. For example, the command `command file1 >file2` will cause `command` to read input from `file1` and write output to `file2`. The inputs and outputs of commands can also be piped together using the "|" operator. For example, `command1 | command2` will cause the output of `command1` to be the input of `command2`. This system allows for commands to be easily combined and manipulated.
 
 ### Multitasking
 
@@ -118,7 +118,7 @@ The paper lists the following successful features of UNIX:
 
 The UNIX system didn't pioneer any significant new ideas about operating systems, but it did bring together many existing ideas in a simple and elegant way. The system was not perfect but has been the basis for many operating systems used today, including Linux and Mac OS.
 
-This paper is a fascinating insight into the state of computing in the 1970s. Many of the features of UNIX are still in use today. They may seem trivial, but their integration was a significant achievement at the time. It is interesting to see how these features were first implemented. Reading this paper has given me a new appreciation for the design of operating systems. Finally, I think the paper itself is a great example of how to write about a complex system in a way that is easy to understand.
+This paper is a fascinating insight into the state of computing in the 1970s. Many of the features of UNIX are still in use today. They may seem trivial now, but their integration was a significant achievement at the time. It is interesting to see how these features were first implemented. Reading this paper has given me a new appreciation for the design of operating systems. Finally, I think the paper itself is a great example of how to write about a complex system in a way that is easy to understand.
 
 ### Source
 

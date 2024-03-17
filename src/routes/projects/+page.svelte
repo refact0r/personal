@@ -40,9 +40,9 @@
 	}
 
 	h2 {
-		font-weight: 400;
 		margin: 1rem 0 0.8rem 0;
 		color: var(--txt);
+		font-size: 1.6rem;
 	}
 
 	p {

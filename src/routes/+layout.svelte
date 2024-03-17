@@ -57,7 +57,7 @@
 		justify-content: space-between;
 		align-items: center;
 		gap: 5rem;
-		padding: 0 4rem 0 5rem;
+		padding: 0 5rem;
 		height: 6rem;
 		overflow: hidden;
 		transition: transform 0.2s ease;
@@ -83,9 +83,9 @@
 			}
 
 			h1 {
-				font-size: 1.5rem;
+				font-size: 1.4rem;
+				color: var(--txt);
 				margin: 0;
-				font-weight: 400;
 			}
 		}
 
@@ -94,7 +94,7 @@
 			gap: 3rem;
 
 			a {
-				font-size: 1.5rem;
+				font-size: 1.4rem;
 				font-family: 'Space Mono', monospace;
 			}
 

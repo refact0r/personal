@@ -41,7 +41,7 @@
 	}
 
 	h1 {
-		font-size: 2.6rem;
+		font-size: 2.5rem;
 		margin: 2rem 0;
 		line-height: 1.3;
 	}

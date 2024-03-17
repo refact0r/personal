@@ -24,7 +24,7 @@
 <style lang="scss">
 	main {
 		width: 100%;
-		max-width: 65rem;
+		max-width: 60rem;
 		margin: 0 auto 10rem auto;
 	}
 

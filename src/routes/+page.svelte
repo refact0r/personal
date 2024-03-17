@@ -59,7 +59,7 @@
 	.row {
 		display: flex;
 		align-items: center;
-		gap: 2.5rem;
+		gap: 2rem;
 	}
 
 	// .pfp {
@@ -69,27 +69,27 @@
 
 	.pfpstart,
 	.pfp {
-		width: 4rem;
-		height: 4rem;
+		width: 3.75rem;
+		height: 3.75rem;
 	}
 
 	h1 {
-		font-size: 3.5rem;
+		font-size: 3.2rem;
 		margin: 0;
 	}
 
 	nav {
 		display: flex;
-		gap: 2.5rem;
+		gap: 2rem;
 
 		a {
-			font-size: 1.7rem;
+			font-size: 1.6rem;
 			font-family: 'Space Mono', monospace;
 		}
 	}
 
 	p {
-		font-size: 1.3rem;
-		margin: 2rem 0;
+		font-size: 1.2rem;
+		margin: 1.5rem 0 1.5rem 0;
 	}
 </style>
