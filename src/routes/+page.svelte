@@ -5,8 +5,10 @@
 	let lottieElem;
 	let canvas;
 	let ctx;
-	let mouseX = 0;
-	let mouseY = 0;
+	let mouseX = -1000;
+	let mouseY = -1000;
+	let initOpacity = 0;
+	let timer;
 
 	function initCanvas() {
 		if (!canvas) return;
@@ -28,8 +30,9 @@
 		});
 	}
 
-	function drawDot(x, y, radius, intensity) {
-		ctx.fillStyle = `hsla(220, 11%, 30%, ${intensity})`;
+	function drawDot(x, y, radius) {
+		ctx.fillStyle = `hsla(${190 + (100 * (y / canvas.height + x / canvas.width)) / 2}, 70%, 70%, 0.7)`;
+		ctx.fillStyle = `hsla(220, 11%, 50%, 1)`;
 		ctx.beginPath();
 		ctx.arc(x, y, radius, 0, Math.PI * 2);
 		ctx.fill();
@@ -37,18 +40,28 @@
 
 	// Function to draw the entire grid of dots
 	function drawDots() {
+		if (!canvas) return;
+		if (initOpacity < 1) {
+			initOpacity += 0.01;
+			canvas.style.opacity = initOpacity;
+		} else {
+			clearInterval(timer);
+		}
 		const dotRadius = Math.ceil(canvas.width / 600);
-		const dotSpacing = dotRadius * 12;
+		const dotSpacing = Math.ceil(canvas.width / 37);
 		console.log(dotRadius, dotSpacing);
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		for (let x = dotRadius; x < canvas.width; x += dotSpacing) {
-			for (let y = dotRadius; y < canvas.height; y += dotSpacing) {
+		for (let x = dotRadius * 3; x < canvas.width; x += dotSpacing) {
+			let offset;
+			if (x % (dotSpacing * 2) === dotRadius * 3) offset = 0;
+			else offset = dotSpacing / 2;
+			for (let y = dotRadius * 3 + offset; y < canvas.height; y += dotSpacing) {
 				const dx = Math.abs(x - mouseX);
 				const dy = Math.abs(y - mouseY);
 				const distance = Math.sqrt(dx * dx + dy * dy);
 				const maxDistance = dotSpacing * 5;
-				const intensity = 0.2 + 0.7 * Math.max(0, 1 - distance / maxDistance);
-				drawDot(x, y, dotRadius, intensity);
+				const intensity = 1 + 2 * Math.max(0, 1 - distance / maxDistance);
+				drawDot(x, y, dotRadius * intensity);
 			}
 		}
 	}
@@ -70,6 +83,7 @@
 		});
 		initCanvas();
 		drawDots();
+		timer = setInterval(drawDots, 10);
 		return () => {
 			animation.destroy;
 		};
@@ -96,6 +110,9 @@
 			<a class="nav" href="/about">
 				<span class="arrow">-></span><span class="slash">/</span>about
 			</a>
+			<a class="nav" href="/contact">
+				<span class="arrow">-></span><span class="slash">/</span>contact
+			</a>
 		</nav>
 	</div>
 </main>
@@ -103,7 +120,6 @@
 <style lang="scss">
 	main {
 		@include flex(row, center, center);
-
 		height: 100%;
 		max-height: calc(100vh - 12rem);
 	}
@@ -113,9 +129,11 @@
 	}
 
 	.row {
+		justify-content: space-between;
 		display: flex;
 		align-items: center;
 		gap: 2.5rem;
+		margin: 1rem 0 0 0;
 	}
 
 	// .pfp {
@@ -138,6 +156,7 @@
 	nav {
 		display: flex;
 		gap: 2.5rem;
+		justify-content: space-between;
 
 		a {
 			font-size: 1.7rem;
@@ -147,16 +166,18 @@
 
 	p {
 		font-size: 1.3rem;
-		margin: 2rem 0;
+		margin: 2rem 0 2rem 0;
 	}
 
 	.background {
-		position: absolute;
-		top: -10rem;
-		left: -10rem;
-		bottom: -10rem;
-		right: -10rem;
+		// position: absolute;
+		// top: -10rem;
+		// left: -10rem;
+		// bottom: -10rem;
+		// right: -10rem;
 		z-index: -1;
+		height: 20rem;
+		width: 47rem;
 	}
 
 	canvas {
