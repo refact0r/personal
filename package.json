@@ -16,6 +16,7 @@
 		"@iconify-json/ph": "^1.1.11",
 		"@playwright/test": "^1.42.1",
 		"@sveltejs/adapter-auto": "^3.1.1",
+		"@sveltejs/adapter-vercel": "^5.1.1",
 		"@sveltejs/enhanced-img": "^0.1.8",
 		"@sveltejs/kit": "^2.5.3",
 		"@sveltejs/vite-plugin-svelte": "^3.0.2",
