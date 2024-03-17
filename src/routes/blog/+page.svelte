@@ -41,7 +41,7 @@
 		font-size: 1.2rem;
 		font-family: 'Space Mono', monospace;
 		color: var(--txt-2);
-		margin-top: 0.5rem;
+		margin-top: 0.3rem;
 	}
 
 	a {

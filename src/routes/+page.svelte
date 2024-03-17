@@ -2,24 +2,22 @@
 	import pfpin from '$lib/assets/pfpin.json';
 	import { onMount } from 'svelte';
 
-	let lottieElem;
+	let lottie;
 
 	onMount(async () => {
-		const lottie = await import('lottie-web');
+		lottie = await import('lottie-web');
+		let node = document.querySelector('.pfpstart');
 		const animation = lottie.loadAnimation({
 			name: 'pfp',
-			container: lottieElem,
+			container: node,
 			renderer: 'svg',
 			loop: false,
 			autoplay: true,
 			animationData: pfpin
 		});
 		animation.addEventListener('complete', () => {
-			lottieElem.classList.add('pfp');
+			node.classList.add('pfp');
 		});
-		return () => {
-			animation.destroy;
-		};
 	});
 </script>
 
@@ -27,7 +25,7 @@
 	<div class="container">
 		<div class="row">
 			<h1>refact0r</h1>
-			<div class="pfpstart" bind:this={lottieElem}></div>
+			<div class="pfpstart"></div>
 		</div>
 		<p>hey there! i'm a student interested in comp sci, web dev, design, and more.</p>
 		<nav>

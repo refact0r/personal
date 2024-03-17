@@ -16,7 +16,7 @@
 <main>
 	<h1>about</h1>
 	<p>
-		hey there! i'm a student in seattle, wa who goes by the name refact0r online. i'm interested in
+		hey there! i'm a student in seattle, wa, who goes by the name refact0r online. i'm interested in
 		comp sci, web dev, design, among other topics. i'm passionate about building websites and apps
 		that are both functional and beautiful.
 	</p>
@@ -84,6 +84,7 @@
 			<div class="color" style="background: var(--bg-2);">bg-2</div>
 			<div class="color" style="background: var(--txt-2); color: var(--bg);">txt-2</div>
 			<div class="color" style="background: var(--txt); color: var(--bg);">txt</div>
+			<div class="color" style="background: var(--txt-0); color: var(--bg);">txt-0</div>
 			<div class="color" style="background: var(--pink); color: var(--bg);">pink</div>
 			<div class="color" style="background: var(--purple); color: var(--bg);">purple</div>
 			<div class="color" style="background: var(--blue); color: var(--bg);">blue</div>
