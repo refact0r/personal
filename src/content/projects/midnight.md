@@ -12,15 +12,15 @@ website: https://betterdiscord.app/theme/midnight
     import Image from '$lib/components/Image.svelte';
 </script>
 
-Midnight is a dark, rounded, and customizable theme for Discord. It is designed to be visually appealing but simple and performant, with minor improvements such as animations, corner rounding, and the Figtree font. The theme is completely customizable through CSS variables, and present "flavors" are available in the Github repository (including catppuccin!).
+Midnight is a dark, rounded, and customizable theme for Discord. It is designed to be visually appealing but simple and performant, with minor improvements such as animations, corner rounding, and the Figtree font. The theme is completely customizable through CSS variables, and present "flavors" are available in the Github repository (including Catppuccin!).
 
 ### discord vs themes
 
-The theming situation with Discord is quite interesting. Custom clients/themes/mods are against TOS, but millions of people use them anyway (and Discord doesn't seem to care). Discord's default dark theme is very boring and bland. When they finally added new themes after years of requests, the themes were locked behind a paywall. So that's why so many people use custom Discord clients.
+The theming situation with Discord is quite interesting. Custom clients/themes/mods are against TOS, but millions of people use them anyway (and Discord doesn't seem to care). Discord's default dark theme is boring and bland. When they finally added new themes after years of requests, the themes were locked behind a paywall. So that's why custom clients and themes are so popular.
 
 ### a brief history
 
-The journey of this theme began with the typing test <https://monkeytype.com>. The website had a customizable theme system, so I made a super dark, bluish theme. Surprisingly, it was well received and was added to the website (my 4th ever pull request).
+The journey of midnight began with the typing test <https://monkeytype.com>. The website had a customizable theme system, so I made a super dark, bluish theme. Surprisingly, it was well received and was added to the website (my 4th ever pull request!).
 
 <Image image="midnight-mt.png" alt="the original monkeytype midnight theme" sizes="50rem"/>
 
@@ -32,7 +32,7 @@ The first version of midnight was essentially a port of the Monkeytype theme col
 
 <Image image="midnight-v1.png" alt="the first version of midnight discord" sizes="50rem"/>
 
-Eventually I added some CSS tweaks, such as separating the chat panels into rounded boxes (inspired by the Zelk theme), and adding MacOS-style window control buttons. The more I added, the more I discovered how terrible Discord's CSS is. Almost half the theme was dedicated to fixing Discord's CSS so that their own variables would apply correctly. It was a bit of a mess, but it worked.
+Eventually I added some CSS tweaks, such as separating the chat panels into rounded boxes (inspired by the Zelk theme), and adding MacOS-style window control buttons (inspired by the Tokyo Night theme). The more I added, the more I discovered how terrible Discord's CSS is. Almost half the theme was dedicated to fixing Discord's CSS so that their own variables would apply correctly. It was a bit of a mess, but it worked.
 
 ### rewrites
 
@@ -44,4 +44,4 @@ In late 2023 disaster struck, as Discord updated all of their CSS classes, break
 
 ### concluding thoughts
 
-And that's basically where the theme is now. I was really quite surprised with its success, gaining over 165,000 downloads on BetterDiscord and nearly 300 GitHub stars. I'm happy that I've been able to make something that so many people use. This project has also taught me so much about CSS. Its probably been my longest running project so far, and I don't see it ending anytime soon.
+And that's basically where the theme is now. I have been surprised with its success, gaining over 165,000 downloads on BetterDiscord and nearly 300 GitHub stars. I'm happy that I've been able to make something that so many people enjoy using. This project has also taught me a ton about CSS. Its been my longest running project so far, and I don't see it ending anytime soon.
