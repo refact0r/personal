@@ -1,7 +1,8 @@
 :root {
 	--bg: hsl(220, 10%, 8%);
 	--bg-2: hsl(220, 10%, 15%);
-	--txt: hsl(220, 30%, 85%);
+	--txt-0: hsl(220, 45%, 90%);
+	--txt: hsl(220, 30%, 80%);
 	--txt-2: hsl(220, 11%, 60%);
 	--blue: hsl(190, 70%, 50%);
 	--purple: hsl(240, 80%, 66%);
@@ -38,6 +39,7 @@ h4 {
 	font-family: 'Space Mono', monospace;
 	font-weight: 400;
 	line-height: 1.3;
+	color: var(--txt-0);
 }
 
 h1 {

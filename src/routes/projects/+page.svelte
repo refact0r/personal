@@ -39,6 +39,7 @@
 	h2 {
 		font-weight: 400;
 		margin: 1.2rem 0 0.6rem 0;
+		color: var(--txt);
 	}
 
 	p {
