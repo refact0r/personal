@@ -10,6 +10,15 @@
 	export let data;
 </script>
 
+<svelte:head>
+	<script
+		async
+		defer
+		src="https://analytics.us.umami.is/script.js"
+		data-website-id="e82247ab-f7f5-44bc-a27b-0f2b08462811"
+	></script>
+</svelte:head>
+
 <header class:home={$page.url.pathname === '/'}>
 	<div class="row">
 		<a class="pfplink" href="/"><img class="pfp" src={pfp} alt="icon" /></a>
