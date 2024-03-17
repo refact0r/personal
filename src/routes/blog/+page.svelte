@@ -9,9 +9,9 @@
 
 	<div class="posts">
 		{#each data.posts as post}
-			<a href={'/blog/' + post.slug}>
+			<a href={'/blog/' + post.slug} class="link">
 				<div class="date">{formatDate(post.date)}</div>
-				<h2><iconify-icon icon={post.icon} />{post.name}</h2>
+				<h2><iconify-icon icon={post.icon} />{post.name}<span class="arrow">-></span></h2>
 				<p>{post.description}</p>
 			</a>
 		{/each}
@@ -32,7 +32,7 @@
 	}
 
 	h2 {
-		font-weight: 400;
+		font-size: 1.6rem;
 		margin: 0;
 		color: var(--txt);
 	}

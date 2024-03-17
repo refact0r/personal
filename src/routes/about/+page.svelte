@@ -27,7 +27,7 @@
 			<div class="info">discord <span class="sub">-></span> @refact0r</div>
 			<div class="info">
 				email <span class="sub">-></span>
-				<a href="https://github.com/refact0r" class="external"
+				<a href="mailto:refact0r.contact@gmail.com" class="external"
 					>refact0r.contact@gmail.com<span class="arrow">/></span>
 				</a>
 			</div>
