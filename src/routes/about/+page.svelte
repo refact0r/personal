@@ -90,35 +90,15 @@
 <style lang="scss">
 	main {
 		width: 100%;
-		max-width: 50rem;
+		max-width: 54rem;
 		margin: 0 auto 10rem auto;
-	}
-
-	h1 {
-		margin-bottom: 2rem;
-	}
-
-	p {
-		font-size: 1.1rem;
-		line-height: 1.75;
+		padding: 0 2rem;
 	}
 
 	a {
 		font-family: 'Space Mono', monospace;
 		font-size: 1.2rem;
 	}
-
-	// .row {
-	// 	@include flex(row, space-between, default);
-	// 	gap: 2.5rem;
-	// 	margin: 2rem 0;
-	// 	h2 {
-	// 		margin-top: 0;
-	// 	}
-	// 	.info:last-child {
-	// 		margin-bottom: 0;
-	// 	}
-	// }
 
 	.info {
 		font-size: 1.2rem;
@@ -129,6 +109,7 @@
 	.colors {
 		display: inline-flex;
 		margin-top: 0.4rem;
+		flex-wrap: wrap;
 	}
 
 	.color {

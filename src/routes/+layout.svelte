@@ -56,7 +56,6 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		gap: 5rem;
 		padding: 0 5rem;
 		height: 6rem;
 		overflow: hidden;
@@ -115,5 +114,22 @@
 		grid-column-end: 2;
 		grid-row-start: 1;
 		grid-row-end: 2;
+	}
+
+	@media (max-width: 800px) {
+		header {
+			padding: 0 2rem;
+			gap: 2rem;
+
+			nav {
+				gap: 2rem;
+			}
+		}
+	}
+
+	@media (max-width: 650px) {
+		header nav {
+			display: none;
+		}
 	}
 </style>

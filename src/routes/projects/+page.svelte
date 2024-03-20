@@ -20,7 +20,7 @@
 					--aspect-ratio="16/9"
 				/>
 				<h2>{post.name}<span class="arrow">-></span></h2>
-				<p>{post.description}</p>
+				<div class="description">{post.description}</div>
 			</a>
 		{/each}
 	</div>
@@ -28,7 +28,6 @@
 
 <style lang="scss">
 	main {
-		width: 100%;
 		padding: 0 5rem 5rem 5rem;
 	}
 
@@ -40,13 +39,18 @@
 	}
 
 	h2 {
-		margin: 1rem 0 0.8rem 0;
+		margin: 1rem 0 0.6rem 0;
 		color: var(--txt);
 		font-size: 1.6rem;
 	}
 
-	p {
-		color: var(--txt-2);
-		margin: 0;
+	@media (max-width: 800px) {
+		main {
+			padding-left: 2rem;
+			padding-right: 2rem;
+		}
+		.posts {
+			grid-template-columns: auto;
+		}
 	}
 </style>

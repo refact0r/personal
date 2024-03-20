@@ -14,10 +14,6 @@ website: https://betterdiscord.app/theme/midnight
 
 Midnight is a dark, rounded, and customizable theme for Discord. It is designed to be visually appealing but simple and performant, with minor improvements such as animations, corner rounding, and the Figtree font. The theme is completely customizable through CSS variables, and present "flavors" are available in the Github repository (including Catppuccin!).
 
-### discord vs themes
-
-The theming situation with Discord is quite interesting. Custom clients/themes/mods are against TOS, but millions of people use them anyway (and Discord doesn't seem to care). Discord's default dark theme is boring and bland. When they finally added new themes after years of requests, the themes were locked behind a paywall. So that's why custom clients and themes are so popular.
-
 ### a brief history
 
 The journey of midnight began with the typing test <https://monkeytype.com>. The website had a customizable theme system, so I made a super dark, bluish theme. Surprisingly, it was well received and was added to the website (my 4th ever pull request!).
@@ -25,6 +21,10 @@ The journey of midnight began with the typing test <https://monkeytype.com>. The
 <Image image="midnight-mt.png" alt="the original monkeytype midnight theme" sizes="50rem"/>
 
 I also began customizing various aspects of the Monkeytype interface using custom CSS. I had a lot of fun messing around and experimenting with CSS. Around the same time I discovered BetterDiscord, and I decided to tackle the challenge of creating a Discord theme myself.
+
+### discord vs themes
+
+The theming situation with Discord is quite interesting. Custom clients/themes/mods are against TOS, but millions of people use them anyway (and Discord doesn't seem to care). Discord's default dark theme is boring and bland. When they finally added new themes after years of requests, the themes were locked behind a paywall. So that's why custom clients and themes are so popular.
 
 ### v1
 

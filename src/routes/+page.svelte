@@ -54,6 +54,7 @@
 
 		height: 100%;
 		max-height: calc(100vh - 12rem);
+		margin: 0 2rem;
 	}
 
 	.row {
@@ -90,6 +91,18 @@
 
 	p {
 		font-size: 1.2rem;
-		margin: 1.5rem 0 1.5rem 0;
+		margin: 1.25rem 0;
+	}
+
+	@media (max-width: 600px) {
+		nav {
+			flex-direction: column;
+			gap: 1rem;
+		}
+		.row {
+			flex-direction: column-reverse;
+			gap: 0.5rem;
+			align-items: flex-start;
+		}
 	}
 </style>

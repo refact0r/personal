@@ -15,7 +15,7 @@
 			<a href={'/blog/' + post.slug} class="link">
 				<div class="date">{formatDate(post.date)}</div>
 				<h2><iconify-icon icon={post.icon} />{post.name}<span class="arrow">-></span></h2>
-				<p>{post.description}</p>
+				<div class="description">{post.description}</div>
 			</a>
 		{/each}
 	</div>
@@ -24,8 +24,9 @@
 <style lang="scss">
 	main {
 		width: 100%;
-		max-width: 60rem;
+		max-width: 54rem;
 		margin: 0 auto 10rem auto;
+		padding: 2rem;
 	}
 
 	.posts {
@@ -44,18 +45,28 @@
 		font-size: 1.2rem;
 		font-family: 'Space Mono', monospace;
 		color: var(--txt-2);
-		margin-top: 0.3rem;
+		margin-top: 0.15rem;
 	}
 
 	a {
 		display: grid;
 		grid-template-columns: auto auto;
 		justify-content: left;
-		gap: 0 2rem;
+		gap: 0.8rem 2rem;
 	}
 
-	p {
+	.description {
 		grid-column: 2;
-		color: var(--txt-2);
+	}
+
+	@media (max-width: 600px) {
+		a {
+			grid-template-columns: auto;
+			gap: 0.8rem;
+
+			.description {
+				grid-column: 1;
+			}
+		}
 	}
 </style>

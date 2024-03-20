@@ -30,7 +30,6 @@
 <main>
 	<h1>contact</h1>
 	<p>ways to get in touch.</p>
-	<br />
 	<div class="info">discord <span class="sub">-></span> @refact0r</div>
 	<div class="info">
 		email <span class="sub">-></span>
@@ -41,7 +40,7 @@
 	<br />
 	<br />
 	<br />
-	<h3>form</h3>
+	<h3>contact form</h3>
 	<form on:submit|preventDefault={handleSubmit}>
 		<input type="text" name="name" placeholder="name" required />
 		<input type="email" name="email" placeholder="email" required />
@@ -53,17 +52,13 @@
 <style lang="scss">
 	main {
 		width: 100%;
-		max-width: 50rem;
+		max-width: 54rem;
 		margin: 0 auto 10rem auto;
+		padding: 0 2rem;
 	}
 
 	h1 {
 		margin-bottom: 2rem;
-	}
-
-	p {
-		font-size: 1.1rem;
-		line-height: 1.75;
 	}
 
 	a {
@@ -95,11 +90,11 @@
 		font-size: 1.1rem;
 		border: 2px solid var(--bg-3);
 		transition: 0.2s;
+		background-color: var(--bg-2);
 		border-radius: 0.5rem;
 
 		&:focus {
 			outline: none;
-			background-color: var(--bg-2);
 			border: 2px solid var(--txt-2);
 		}
 	}
@@ -118,6 +113,12 @@
 		padding: 1rem 1.2rem;
 		&:hover {
 			border: 2px solid var(--txt-2);
+		}
+	}
+
+	@media (max-width: 600px) {
+		form {
+			grid-template-columns: auto;
 		}
 	}
 </style>
