@@ -14,7 +14,7 @@
 	<script
 		async
 		defer
-		src="https://analytics.us.umami.is/script.js"
+		src="/stats/script.js"
 		data-website-id="e82247ab-f7f5-44bc-a27b-0f2b08462811"
 	></script>
 </svelte:head>
