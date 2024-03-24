@@ -4,5 +4,8 @@
 			"source": "/stats/:match*",
 			"destination": "https://analytics.us.umami.is/:match*"
 		}
-	]
+	],
+	"git": {
+		"deploymentEnabled": false
+	}
 }
