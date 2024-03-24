@@ -4,7 +4,7 @@
 	import '@fontsource-variable/space-grotesk';
 	import 'iconify-icon';
 	import { page } from '$app/stores';
-	import pfp from '$lib/assets/pfp.svg';
+	import Logo from '$lib/components/Logo.svelte';
 	import { fly } from 'svelte/transition';
 
 	export let data;
@@ -21,7 +21,7 @@
 
 <header class:home={$page.url.pathname === '/'}>
 	<div class="row">
-		<a class="pfplink" href="/"><img class="pfp" src={pfp} alt="icon" /></a>
+		<a class="pfplink" href="/"><Logo --width="2rem" --height="2rem" /></a>
 		<a href="/"><h1>refact0r</h1></a>
 	</div>
 	<nav>
@@ -74,11 +74,6 @@
 
 			.pfplink {
 				display: flex;
-
-				.pfp {
-					width: 2rem;
-					height: 2rem;
-				}
 			}
 
 			h1 {

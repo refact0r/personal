@@ -6,7 +6,7 @@
 	let lottie;
 
 	onMount(async () => {
-		lottie = await import('lottie-web');
+		lottie = await import('lottie-web/build/player/lottie_light.min.js');
 		let node = document.querySelector('.pfpstart');
 		const animation = lottie.loadAnimation({
 			name: 'pfp',

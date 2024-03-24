@@ -3,7 +3,7 @@ published: true
 name: midnight
 description: a dark, rounded discord theme
 thumbnail: midnight.png
-images: [midnight2.png, midnight-ctp.png, midnight-nord.png, midnight-vc.png, midnight.png]
+images: [midnight2.png, midnight-ctp.png, midnight-vc.png, midnight.png]
 github: https://github.com/refact0r/midnight-discord
 website: https://betterdiscord.app/theme/midnight
 ---
