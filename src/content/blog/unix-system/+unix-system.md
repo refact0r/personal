@@ -16,7 +16,7 @@ Welcome to my first "papers" (<Icon class="icon" />) post . In this series of po
 
 ---
 
-The UNIX Time-Sharing System is a paper written by Dennis M. Ritchie and Ken Thompson in 1974. It describes the UNIX operating system, which was developed at Bell Labs in the late 1960s and early 1970s. This paper is very influential in the history of computer science, and it has had a lasting impact on the design of operating systems and programming languages.
+***The UNIX Time-Sharing System*** is a paper published by Dennis M. Ritchie and Ken Thompson in 1974. It describes the UNIX operating system, which was developed at Bell Labs in the late 1960s and early 1970s. This paper is very influential in the history of computer science, and it has had a lasting impact on the design of operating systems and programming languages.
 
 UNIX was developed on PDP computers, or Programmed Data Processor computers built by Digital Equipment Corporation. The paper boasts that UNIX can run on hardware "costing as little as $40,000." This is an interesting snapshot into the cost of computers at the time. Also fascinating is the following description of UNIX's size: the entire operating system only occupied 42kb. The system was originally written in assembly language, but it was later rewritten in C, a programming language designed by Dennis Ritchie. C was much easier to understand and write, and is still one of the most widely used programming languages today.
 
@@ -122,4 +122,4 @@ This paper is a fascinating insight into the state of computing in the 1970s. Ma
 
 ### Source
 
-<https://dsf.berkeley.edu/cs262/unix.pdf>
+[1] D. M. Ritchie and K. Thompson, “The UNIX time-sharing system,” Commun. ACM, vol. 17, no. 7, pp. 365–375, Jul. 1974, doi: 10.1145/361011.361061. <https://dsf.berkeley.edu/cs262/unix.pdf>

@@ -2,7 +2,7 @@ import { nameFromPath } from '$lib/js/posts.js';
 import { error } from '@sveltejs/kit';
 
 export async function load({ params }) {
-	const modules = import.meta.glob('/src/content/blog/*.md');
+	const modules = import.meta.glob('/src/content/blog/*/*.md');
 
 	let match = {};
 

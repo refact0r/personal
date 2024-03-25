@@ -184,6 +184,10 @@ strong {
 	font-weight: 600;
 }
 
+figure {
+	margin: 0;
+}
+
 .content {
 	a {
 		font-weight: 600;
@@ -192,6 +196,14 @@ strong {
 
 	picture {
 		margin: 2rem 0;
+	}
+
+	figure {
+		margin: 2rem 0;
+
+		picture {
+			margin: 0;
+		}
 	}
 }
 

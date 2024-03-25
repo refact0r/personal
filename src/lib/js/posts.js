@@ -1,5 +1,5 @@
 export function nameFromPath(path) {
-	return path.split('/').slice(-1)[0].split('.')[0];
+	return path.split('/').slice(-1)[0].split('.')[0].replace(/^\++/, '');
 }
 
 export async function getPosts(modules) {

@@ -6,8 +6,8 @@
 		sizes = '';
 
 	async function importImage(image) {
-		const pictures = import.meta.glob(
-			'/src/content/images/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}',
+		const blogPictures = import.meta.glob(
+			`/src/content/blog/*/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}`,
 			{
 				query: {
 					enhanced: true,
@@ -16,7 +16,17 @@
 			}
 		);
 
-		for (const [path, src] of Object.entries(pictures)) {
+		const projectPictures = import.meta.glob(
+			`/src/content/projects/*/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}`,
+			{
+				query: {
+					enhanced: true,
+					w: '2400;2000;1600;1200;800'
+				}
+			}
+		);
+
+		for (const [path, src] of Object.entries({ ...blogPictures, ...projectPictures })) {
 			if (path.includes(image)) {
 				const img = await src();
 				return img.default;
