@@ -32,7 +32,11 @@ ImageNet contains images in a variety of resolutions, so the authors of the pape
 
 ## the architecture
 
-The AlexNet architecture consists of 5 convolutional layers followed by 3 fully-connected layers. The convolutional layers are responsible for learning and detecting features, while the fully connected layers are responsible for making the final classification. The network uses the ReLU activation function, which helps the network learn faster and prevents the vanishing gradient problem.
+The AlexNet architecture consists of 5 convolutional layers followed by 3 fully-connected layers. The convolutional layers are responsible for learning and detecting features, while the fully connected layers are responsible for making the final classification.
+
+<CaptionImage image="alexnet-diagram.png" alt="diagram of the AlexNet architecture" sizes="50rem"/>
+
+The diagram above illustrates the AlexNet architecture. You can see the flow of data through the network, from the input image, through 8 layers, to the final output. The numbers represent the dimensions of the data at each layer. The two rows represent the split between the two GPUs that were used for the network.
 
 <CaptionImage image="layer.png" alt="kernels from the first convolutional layer of AlexNet" sizes="50rem"/>
 
@@ -45,10 +49,6 @@ The network uses a local response normalization (LRN) layer. Normalization scale
 The network also uses pooling layers, which summarize the outputs of neighboring groups of neurons. Pooling helps reduce the dimensions of the data, making the network more efficient. Specifically, the network uses overlapping pooling, where the pooling regions are allowed to overlap. This helps the network better capture small details and translations in the input images.
 
 The ImageNet paper was not the first to describe using GPUs for training neural networks, but it was one of the first to demonstrate their power for deep learning. The network was spread across two NVIDIA GTX 580 GPUs, with each GPU processing a portion of the data in parallel. This allowed the network to train much faster than if it were trained on a CPU. Still, training the network on 1.2 million images took 5-6 days. With modern GPUs, training a similar network would take a fraction of the time. However, modern networks are much larger and more complex, so training times are often even longer.
-
-<CaptionImage image="alexnet-diagram.png" alt="diagram of the AlexNet architecture" sizes="50rem"/>
-
-The diagram above illustrates the AlexNet architecture. You can see the flow of data through the network, from the input image, through 8 layers, to the final output. The numbers represent the dimensions of the data at each layer. The two rows represent the split between the two GPUs.
 
 ## overfitting
 
