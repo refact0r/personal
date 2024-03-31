@@ -36,7 +36,7 @@
 	}
 
 	h2 {
-		font-size: 1.6rem;
+		font-size: 1.5rem;
 		margin: 0;
 		color: var(--txt);
 	}
@@ -45,7 +45,7 @@
 		font-size: 1.2rem;
 		font-family: 'Space Mono', monospace;
 		color: var(--txt-2);
-		margin-top: 0.15rem;
+		margin-top: 0.2rem;
 	}
 
 	a {
