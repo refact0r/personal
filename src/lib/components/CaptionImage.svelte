@@ -10,7 +10,10 @@
 <figure>
 	<Image {image} {alt} {sizes} />
 	{#if alt !== ''}
-		<figcaption>{alt} <a href={source}>source</a></figcaption>
+		<figcaption>
+			{alt}{#if source !== ''}
+				<a href={source}>source</a>{/if}
+		</figcaption>
 	{/if}
 </figure>
 
