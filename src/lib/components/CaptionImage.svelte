@@ -3,13 +3,14 @@
 
 	export let image,
 		alt = '',
+		source = '',
 		sizes = '';
 </script>
 
 <figure>
 	<Image {image} {alt} {sizes} />
 	{#if alt !== ''}
-		<figcaption>{alt}</figcaption>
+		<figcaption>{alt} <a href={source}>source</a></figcaption>
 	{/if}
 </figure>
 

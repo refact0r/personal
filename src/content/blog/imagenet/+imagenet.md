@@ -34,11 +34,11 @@ ImageNet contains images in a variety of resolutions, so the authors of the pape
 
 The AlexNet architecture consists of 5 convolutional layers followed by 3 fully-connected layers. The convolutional layers are responsible for learning and detecting features, while the fully connected layers are responsible for making the final classification.
 
-<CaptionImage image="alexnet-diagram.png" alt="diagram of the AlexNet architecture" sizes="50rem"/>
+<CaptionImage image="alexnet-diagram.png" alt="diagram of the AlexNet architecture." source="https://www.pinecone.io/learn/series/image-search/imagenet/" sizes="50rem"/>
 
 The diagram above illustrates the AlexNet architecture. You can see the flow of data through the network, from the input image, through 8 layers, to the final output. The numbers represent the dimensions of the data at each layer. The two rows represent the split between the two GPUs that were used for the network.
 
-<CaptionImage image="layer.png" alt="kernels from the first convolutional layer of AlexNet" sizes="50rem"/>
+<CaptionImage image="layer.png" alt="kernels from the first convolutional layer of AlexNet." source="https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf" sizes="50rem"/>
 
 The image above shows the 11x11x3 kernels, or filters, from the first convolutional layer of AlexNet. You can see how they learn to detect basic features like edges and patterns.
 
