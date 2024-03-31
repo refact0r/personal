@@ -54,7 +54,7 @@
 
 		height: 100%;
 		max-height: calc(100vh - 12rem);
-		margin: 0 2rem;
+		margin: 0 1.5rem;
 	}
 
 	.row {

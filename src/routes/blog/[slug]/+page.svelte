@@ -23,8 +23,9 @@
 <style lang="scss">
 	main {
 		width: 100%;
-		max-width: 50rem;
+		max-width: 53rem;
 		margin: 0 auto 10rem auto;
+		padding: 1.5rem;
 	}
 
 	.date {

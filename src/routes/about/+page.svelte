@@ -90,9 +90,9 @@
 <style lang="scss">
 	main {
 		width: 100%;
-		max-width: 54rem;
+		max-width: 53rem;
 		margin: 0 auto 10rem auto;
-		padding: 0 2rem;
+		padding: 1.5rem;
 	}
 
 	a {

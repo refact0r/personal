@@ -46,8 +46,8 @@
 
 	@media (max-width: 800px) {
 		main {
-			padding-left: 2rem;
-			padding-right: 2rem;
+			padding-left: 1.5rem;
+			padding-right: 1.5rem;
 		}
 		.posts {
 			grid-template-columns: auto;

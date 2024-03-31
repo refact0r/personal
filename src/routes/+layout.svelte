@@ -113,11 +113,11 @@
 
 	@media (max-width: 800px) {
 		header {
-			padding: 0 2rem;
-			gap: 2rem;
+			padding: 0 1.5rem;
+			gap: 1.5rem;
 
 			nav {
-				gap: 2rem;
+				gap: 1.5rem;
 			}
 		}
 	}

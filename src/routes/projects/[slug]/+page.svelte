@@ -30,12 +30,14 @@
 	<div class="head">
 		<div class="row">
 			<h1>{metadata.name}</h1>
-			<a class="external" href={metadata.website} target="_blank">
-				site<span class="arrow">/></span>
-			</a>
-			<a class="external" href={metadata.github} target="_blank">
-				github<span class="arrow">/></span>
-			</a>
+			<div class="links">
+				<a class="external" href={metadata.website} target="_blank">
+					site<span class="arrow">/></span>
+				</a>
+				<a class="external" href={metadata.github} target="_blank">
+					github<span class="arrow">/></span>
+				</a>
+			</div>
 		</div>
 		<p class="description">
 			{metadata.description}
@@ -50,8 +52,8 @@
 					</div>
 				{/each}
 			</div>
-			<button class="embla__prev" on:click={emblaPrev}>&lt;-</button>
-			<button class="embla__next" on:click={emblaNext}>-></button>
+			<button class="embla__prev" on:click={emblaPrev}><span>&lt;-</span></button>
+			<button class="embla__next" on:click={emblaNext}><span>-></span></button>
 		</div>
 	{:else}
 		<div class="single-image">
@@ -66,13 +68,14 @@
 <style lang="scss">
 	main {
 		width: 100%;
-		padding: 0 0 10rem 0;
+		padding: 0 0rem 10rem 0rem;
 		margin: auto;
 	}
 
 	h1 {
 		font-size: 2.5rem;
 		margin: 0;
+		margin-right: auto;
 	}
 
 	.single-image {
@@ -83,21 +86,19 @@
 
 	.head {
 		margin: 1rem auto 3rem auto;
+		padding: 0 1.5rem;
 		width: 100%;
-		max-width: 50rem;
+		max-width: 53rem;
 
 		a {
 			font-family: 'Space Mono', monospace;
 			font-size: 1.5rem;
-
-			&:first-of-type {
-				margin-left: auto;
-			}
 		}
 
-		.row {
+		.row,
+		.links {
 			@include flex(row, default, center);
-			gap: 2rem;
+			gap: 1rem 2rem;
 		}
 
 		.description {
@@ -110,9 +111,10 @@
 
 	.content {
 		width: 100%;
-		max-width: 50rem;
+		max-width: 53rem;
 		margin: auto;
 		margin-top: 3rem;
+		padding: 0 1.5rem;
 	}
 
 	.embla {
@@ -136,15 +138,21 @@
 		bottom: 0;
 		width: calc(15% - 3rem);
 		background: none;
-		opacity: 0;
-		color: gray;
-		font-size: 3rem;
-		font-family: 'Space Mono', monospace;
-		mix-blend-mode: difference;
-		transition: 0.2s;
 
-		&:hover {
+		span {
+			display: inline-block;
+			opacity: 0;
+			color: var(--txt-0);
+			font-size: 3rem;
+			font-family: 'Space Mono', monospace;
+			mix-blend-mode: exclusion;
+			transform: scale(1);
+			transition: 0.2s;
+		}
+
+		&:hover span {
 			opacity: 1;
+			transform: scale(1.5);
 		}
 	}
 	.embla__next {
@@ -152,5 +160,38 @@
 	}
 	.embla__prev {
 		left: 0;
+	}
+
+	@media (max-width: 800px) {
+		.embla__slide {
+			flex: 0 0 calc(100% - 3rem);
+			max-width: 50rem;
+		}
+		.embla__prev,
+		.embla__next {
+			width: 20%;
+			span {
+				opacity: 1;
+			}
+		}
+		.embla__prev {
+			text-align: left;
+			padding-left: 1rem;
+		}
+		.embla__next {
+			text-align: right;
+			padding-right: 1rem;
+		}
+		.single-image {
+			width: calc(100% - 3rem);
+		}
+	}
+
+	@media (max-width: 650px) {
+		.head {
+			.row {
+				flex-wrap: wrap;
+			}
+		}
 	}
 </style>
