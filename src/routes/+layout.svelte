@@ -12,7 +12,6 @@
 
 <svelte:head>
 	<script
-		async
 		defer
 		src="/stats/script.js"
 		data-website-id="e82247ab-f7f5-44bc-a27b-0f2b08462811"
