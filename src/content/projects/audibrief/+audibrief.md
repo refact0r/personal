@@ -8,7 +8,7 @@ github: https://github.com/refact0r/audibrief
 website: https://audibrief.vercel.app
 ---
 
-Audibrief is a web app that provides quick audio summaries of the daily news. It gets the top 5 news articles of the day from Google News and then uses AI to summarize and narrate them, creating  easily digestible 1 minute audio summaries.
+Audibrief is a web app that provides quick audio summaries of the daily news. It gets the top 5 news articles of the day from Google News and then uses AI to summarize and narrate them, creating easily digestible 1 minute audio summaries.
 
 This project won 2nd place at EmP SmartHack Spring 2024.
 

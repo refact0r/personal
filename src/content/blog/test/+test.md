@@ -16,4 +16,4 @@ hello world
 - list item 1
 - list item 2
 
-*italic*
+_italic_

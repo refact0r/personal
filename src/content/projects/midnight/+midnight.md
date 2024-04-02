@@ -36,7 +36,7 @@ Eventually I added some CSS tweaks, such as separating the chat panels into roun
 
 ### rewrites
 
-The thing with Discord themes is that they are never finished. Discord is constantly changing, and the theme has to be updated to keep up. In late 2022, I decided to rewrite the theme, removing redundant selectors, fixing most of the bugs in the process, and adding a new teal blue accent color. A similar process happened in July 2023, when I rewrote the theme again, this time adding  corner rounding.
+The thing with Discord themes is that they are never finished. Discord is constantly changing, and the theme has to be updated to keep up. In late 2022, I decided to rewrite the theme, removing redundant selectors, fixing most of the bugs in the process, and adding a new teal blue accent color. A similar process happened in July 2023, when I rewrote the theme again, this time adding corner rounding.
 
 In late 2023 disaster struck, as Discord updated all of their CSS classes, breaking the theme completely. This prompted another rewrite. Thanks to the help of contributors, I was able to add even more features and improvements. In early 2024 I joined the Catppuccin discord server, and was inspired to create a Catppuccin-themed variant (which in my opinion is better than the offical Catppuccin discord theme). Thanks to a few contributors, a ton of new "flavors" were added as well.
 

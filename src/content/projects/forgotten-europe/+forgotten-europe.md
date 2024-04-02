@@ -1,6 +1,6 @@
 ---
 published: true
-name: forgotten europe 
+name: forgotten europe
 description: website for the forgotten europe project
 thumbnail: fep.png
 images: [fep2.png]

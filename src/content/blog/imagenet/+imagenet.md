@@ -1,7 +1,7 @@
 ---
 published: true
-name: "imagenet classification with deep convolutional neural networks"
-icon: "ph:files"
+name: 'imagenet classification with deep convolutional neural networks'
+icon: 'ph:files'
 description: a breakthrough computer vision neural network
 date: 2024-03-24
 ---
@@ -10,7 +10,7 @@ date: 2024-03-24
     import CaptionImage from '$lib/components/CaptionImage.svelte';
 </script>
 
-***ImageNet Classification with Deep Convolutional Neural Networks*** was published in 2012 by Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton. It introduced the AlexNet architecture, which won the ImageNet Large Scale Visual Recognition Challenge in 2012 by a large margin. The paper is considered one of the most influential papers in the fields of deep learning and computer vision because it demonstrated the power of neural networks for image classification tasks.
+**_ImageNet Classification with Deep Convolutional Neural Networks_** was published in 2012 by Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton. It introduced the AlexNet architecture, which won the ImageNet Large Scale Visual Recognition Challenge in 2012 by a large margin. The paper is considered one of the most influential papers in the fields of deep learning and computer vision because it demonstrated the power of neural networks for image classification tasks.
 
 ## context
 

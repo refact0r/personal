@@ -1,7 +1,7 @@
 ---
 published: true
-name: "the unix time-sharing system"
-icon: "ph:files"
+name: 'the unix time-sharing system'
+icon: 'ph:files'
 description: an overview of the design and features of the UNIX operating system.
 date: 2024-02-24
 ---
@@ -16,7 +16,7 @@ Welcome to my first "papers" (<Icon class="icon" />) post . In this series of po
 
 ---
 
-***The UNIX Time-Sharing System*** is a paper published by Dennis M. Ritchie and Ken Thompson in 1974. It describes the UNIX operating system, which was developed at Bell Labs in the late 1960s and early 1970s. This paper is very influential in the history of computer science, and it has had a lasting impact on the design of operating systems and programming languages.
+**_The UNIX Time-Sharing System_** is a paper published by Dennis M. Ritchie and Ken Thompson in 1974. It describes the UNIX operating system, which was developed at Bell Labs in the late 1960s and early 1970s. This paper is very influential in the history of computer science, and it has had a lasting impact on the design of operating systems and programming languages.
 
 UNIX was developed on PDP computers, or Programmed Data Processor computers built by Digital Equipment Corporation. The paper boasts that UNIX can run on hardware "costing as little as $40,000." This is an interesting snapshot into the cost of computers at the time. Also fascinating is the following description of UNIX's size: the entire operating system only occupied 42kb. The system was originally written in assembly language, but it was later rewritten in C, a programming language designed by Dennis Ritchie. C was much easier to understand and write, and is still one of the most widely used programming languages today.
 
@@ -38,7 +38,7 @@ The UNIX file system is designed to be able to handle multiple disks. This is do
 
 ### File protection
 
-THe UNIX file system protects files from unauthorized access. Each file has an owner, along with 6 bits that specify read, write, and execute permissions. A 7th bit be used to give the current user the same permissions as the owner during the execution of a program. There can  also be a "super-user" who has unrestricted access to all files.
+THe UNIX file system protects files from unauthorized access. Each file has an owner, along with 6 bits that specify read, write, and execute permissions. A 7th bit be used to give the current user the same permissions as the owner during the execution of a program. There can also be a "super-user" who has unrestricted access to all files.
 
 ### File I/O
 

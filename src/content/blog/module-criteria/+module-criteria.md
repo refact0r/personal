@@ -1,12 +1,12 @@
 ---
 published: true
-name: "on the criteria to be used in decomposing systems into modules"
-icon: "ph:files"
+name: 'on the criteria to be used in decomposing systems into modules'
+icon: 'ph:files'
 description: a better method of modularizing software systems
 date: 2024-03-30
 ---
 
-**On the Criteria To Be Used in Decomposing Systems into Modules** is a paper published by David Parnas in 1972 at Carnegie Mellon. It introduced a new method of modularizing software that focused on information hiding. The paper is considered a seminal work because it established modular design principles that have become fundamental in modern software development.
+**_On the Criteria To Be Used in Decomposing Systems into Modules_** is a paper published by David Parnas in 1972 at Carnegie Mellon. It introduced a new method of modularizing software that focused on information hiding. The paper is considered a seminal work because it established modular design principles that have become fundamental in modern software development.
 
 ## modularization
 
@@ -125,4 +125,4 @@ This hierarchical structure offers additional benefits over information hiding m
 
 Parnas' paper demonstrated why the traditional "flowchart" modularization can be flawed, and proposed criteria for modularization based on information hiding. This method has become fundamental in modern software development because of its various benefits. Modern staples like object-oriented programming, component architecture, microservices, and unit testing all rely on modular design principles.
 
-As for me, reading this paper transformed my perspective on  code organization. I already understood modularization and its benefits, but I mostly relied on the principle of reducing redundant code to guide my design. Parnas' paper demonstrated that there is more to it than saving time typing, especially when working on large systems with other people. I'll definitely be thinking more about information hiding and module hierarchy in future projects. It is quite remarkable how a paper from 1972 can still have such direct relevance today.
+As for me, reading this paper transformed my perspective on code organization. I already understood modularization and its benefits, but I mostly relied on the principle of reducing redundant code to guide my design. Parnas' paper demonstrated that there is more to it than saving time typing, especially when working on large systems with other people. I'll definitely be thinking more about information hiding and module hierarchy in future projects. It is quite remarkable how a paper from 1972 can still have such direct relevance today.
