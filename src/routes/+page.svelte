@@ -58,8 +58,7 @@
 	}
 
 	.row {
-		display: flex;
-		align-items: center;
+		@include flex(row, null, center);
 		gap: 2rem;
 	}
 

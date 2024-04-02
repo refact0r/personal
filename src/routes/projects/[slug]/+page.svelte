@@ -97,7 +97,7 @@
 
 		.row,
 		.links {
-			@include flex(row, default, center);
+			@include flex(row, null, center);
 			gap: 1rem 2rem;
 		}
 

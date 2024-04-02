@@ -10,14 +10,6 @@
 	export let data;
 </script>
 
-<svelte:head>
-	<script
-		defer
-		src="/stats/script.js"
-		data-website-id="e82247ab-f7f5-44bc-a27b-0f2b08462811"
-	></script>
-</svelte:head>
-
 <header class:home={$page.url.pathname === '/'}>
 	<div class="row">
 		<a class="pfplink" href="/" aria-label="homepage"><Logo --width="2rem" --height="2rem" /></a>
@@ -67,9 +59,8 @@
 		}
 
 		.row {
-			display: flex;
+			@include flex(row, null, center);
 			gap: 1.5rem;
-			align-items: center;
 
 			.pfplink {
 				display: flex;

@@ -18,7 +18,7 @@ Midnight is a dark, rounded, and customizable theme for Discord. It is designed 
 
 The journey of midnight began with the typing test <https://monkeytype.com>. The website had a customizable theme system, so I made a super dark, bluish theme. Surprisingly, it was well received and was added to the website (my 4th ever pull request!).
 
-<CaptionImage image="midnight-mt.png" alt="the original monkeytype midnight theme" sizes="50rem"/>
+<CaptionImage image="midnight-mt.png" alt="the original monkeytype midnight theme" sizes="50rem" loading="lazy"/>
 
 I also began customizing various aspects of the Monkeytype interface using custom CSS. I had a lot of fun messing around and experimenting with CSS. Around the same time I discovered BetterDiscord, and I decided to tackle the challenge of creating a Discord theme myself.
 
@@ -30,7 +30,7 @@ The theming situation with Discord is quite interesting. Custom clients/themes/m
 
 The first version of midnight was essentially a port of the Monkeytype theme colors into Discord, by overwriting Discord's color variables. I did change the colors to be less blue and more readable though.
 
-<CaptionImage image="midnight-v1.png" alt="the first version of midnight discord" sizes="50rem"/>
+<CaptionImage image="midnight-v1.png" alt="the first version of midnight discord" sizes="50rem" loading="lazy"/>
 
 Eventually I added some CSS tweaks, such as separating the chat panels into rounded boxes (inspired by the Zelk theme), and adding MacOS-style window control buttons (inspired by the Tokyo Night theme). The more I added, the more I discovered how terrible Discord's CSS is. Almost half the theme was dedicated to fixing Discord's CSS so that their own variables would apply correctly. It was a bit of a mess, but it worked.
 
@@ -40,7 +40,7 @@ The thing with Discord themes is that they are never finished. Discord is consta
 
 In late 2023 disaster struck, as Discord updated all of their CSS classes, breaking the theme completely. This prompted another rewrite. Thanks to the help of contributors, I was able to add even more features and improvements. In early 2024 I joined the Catppuccin discord server, and was inspired to create a Catppuccin-themed variant (which in my opinion is better than the offical Catppuccin discord theme). Thanks to a few contributors, a ton of new "flavors" were added as well.
 
-<CaptionImage image="midnight-ctp.png" alt="midnight's catppuccin flavor" sizes="50rem"/>
+<CaptionImage image="midnight-ctp.png" alt="midnight's catppuccin flavor" sizes="50rem" loading="lazy"/>
 
 ### concluding thoughts
 

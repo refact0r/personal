@@ -24,7 +24,7 @@ html {
 }
 
 body {
-	@include flex(column, default, default);
+	@include flex(column);
 	background: var(--bg);
 	color: var(--txt);
 	margin: 0;

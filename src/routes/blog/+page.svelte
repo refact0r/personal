@@ -30,7 +30,7 @@
 	}
 
 	.posts {
-		@include flex(column, default, default);
+		@include flex(column);
 		gap: 1.5rem;
 		max-width: 100%;
 	}

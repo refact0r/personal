@@ -4,11 +4,12 @@
 	export let image,
 		alt = '',
 		source = '',
-		sizes = '';
+		sizes = '',
+		loading;
 </script>
 
 <figure>
-	<Image {image} {alt} {sizes} />
+	<Image {image} {alt} {sizes} {loading} />
 	{#if alt !== ''}
 		<figcaption>
 			{alt}{#if source !== ''}

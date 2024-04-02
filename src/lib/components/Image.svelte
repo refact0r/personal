@@ -3,7 +3,8 @@
 
 	export let image,
 		alt,
-		sizes = '';
+		sizes = '',
+		loading = 'eager';
 
 	async function importImage(image) {
 		const blogPictures = import.meta.glob(
@@ -39,7 +40,7 @@
 	{#await importImage(image) then src}
 		<source srcset={src.sources.avif} type="image/avif" {sizes} />
 		<source srcset={src.sources.webp} type="image/webp" {sizes} />
-		<img {src} {alt} onload="this.style.opacity=1" />
+		<img {src} {alt} {loading} onload="this.style.opacity=1" />
 	{/await}
 </picture>
 

@@ -14,7 +14,7 @@
 
 <style lang="scss">
 	main {
-		@include flex(column, center, center);
+		@include flex(column);
 
 		height: 100%;
 		max-height: calc(100vh - 6rem);
