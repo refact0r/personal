@@ -19,7 +19,8 @@ const config = {
 		}),
 		paths: {
 			relative: false
-		}
+		},
+		inlineStyleThreshold: Infinity
 	}
 };
 
