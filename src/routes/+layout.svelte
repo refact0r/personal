@@ -1,6 +1,7 @@
 <script>
 	import '../app.scss';
-	import '@fontsource/space-mono';
+	import '@fontsource/space-mono/latin-400.css';
+	import '@fontsource/space-mono/latin-400-italic.css';
 	import '@fontsource-variable/space-grotesk';
 	import 'iconify-icon';
 	import { page } from '$app/stores';
