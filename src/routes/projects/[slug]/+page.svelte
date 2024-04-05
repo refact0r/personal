@@ -8,11 +8,12 @@
 	let { default: content, metadata } = data.post;
 
 	let emblaApi;
-	let options = { loop: true };
+	let options = { loop: true, align: 'center' };
+	let loop = true;
 
 	function emblaInit(event) {
 		emblaApi = event.detail;
-		console.log(emblaApi.slideNodes());
+		loop = emblaApi.internalEngine().slideLooper.canLoop();
 	}
 
 	function emblaNext() {
@@ -43,23 +44,23 @@
 			{metadata.description}
 		</p>
 	</div>
-	{#if metadata.images.length > 1}
-		<div class="embla" use:emblaCarouselSvelte={{ options }} on:emblaInit={emblaInit}>
-			<div class="embla__container">
-				{#each metadata.images as image}
-					<div class="embla__slide">
-						<Image {image} alt={metadata.description} sizes="100vw" />
-					</div>
-				{/each}
-			</div>
-			<button class="embla__prev" on:click={emblaPrev}><span>&lt;-</span></button>
-			<button class="embla__next" on:click={emblaNext}><span>-></span></button>
+	<!-- {#if metadata.images.length > 1} -->
+	<div class="embla" use:emblaCarouselSvelte={{ options }} on:emblaInit={emblaInit}>
+		<div class="embla__container" class:loop>
+			{#each metadata.images as image}
+				<div class="embla__slide" class:tall={metadata.aspect_ratio === 'tall'}>
+					<Image {image} alt={metadata.description} sizes="100vw" />
+				</div>
+			{/each}
 		</div>
-	{:else}
+		<button class="embla__prev" on:click={emblaPrev}><span>&lt;-</span></button>
+		<button class="embla__next" on:click={emblaNext}><span>-></span></button>
+	</div>
+	<!-- {:else}
 		<div class="single-image">
 			<Image image={metadata.images[0]} alt={metadata.description} />
 		</div>
-	{/if}
+	{/if} -->
 	<div class="content">
 		<svelte:component this={content} />
 	</div>
@@ -123,6 +124,11 @@
 	}
 	.embla__container {
 		display: flex;
+		justify-content: center;
+
+		&.loop {
+			justify-content: unset;
+		}
 	}
 	.embla__slide {
 		flex: 0 0 70%;
@@ -130,6 +136,11 @@
 		min-width: 0;
 		margin-left: 1.5rem;
 		margin-right: 1.5rem;
+
+		&.tall {
+			flex: 0 0 20%;
+			max-width: 20rem;
+		}
 	}
 	.embla__prev,
 	.embla__next {
