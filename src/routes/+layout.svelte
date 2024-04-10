@@ -10,6 +10,66 @@
 	import { fly } from 'svelte/transition';
 
 	export let data;
+
+	const pages = [
+		{ name: 'projects', path: '/projects' },
+		{ name: 'blog', path: '/blog' },
+		{ name: 'about', path: '/about' },
+		{ name: 'contact', path: '/contact' }
+	];
+
+	// give me some method to remember the previous page path
+	let prevTwoPages = ['', ''];
+	$: {
+		prevTwoPages = [prevTwoPages[1], data.pathname];
+		console.log(prevTwoPages);
+	}
+
+	function xy(path, isIn = true) {
+		if (path === '/') {
+			return {
+				x: 0,
+				y: isIn ? '-40vh' : '40vh'
+			};
+		} else if (prevTwoPages[0] === '/') {
+			return {
+				x: 0,
+				y: isIn ? '40vh' : '-40vh'
+			};
+		}
+		const currIdx = pages.findIndex((page) => path.startsWith(page.path));
+		const prevIdx = pages.findIndex((page) => prevTwoPages[0].startsWith(page.path));
+		if (currIdx == prevIdx) {
+			const currLength = path.split('/').length;
+			const prevLength = prevTwoPages[0].split('/').length;
+			if (currLength === prevLength) {
+				return {
+					x: 0,
+					y: 0
+				};
+			} else if (path.split('/').length > prevTwoPages[0].split('/').length) {
+				return {
+					x: 0,
+					y: isIn ? '40vh' : '-40vh'
+				};
+			} else {
+				return {
+					x: 0,
+					y: isIn ? '-40vh' : '40vh'
+				};
+			}
+		} else if (currIdx > prevIdx) {
+			return {
+				x: isIn ? '40vh' : '-40vh',
+				y: 0
+			};
+		} else {
+			return {
+				x: isIn ? '-40vh' : '40vh',
+				y: 0
+			};
+		}
+	}
 </script>
 
 <header class:home={$page.url.pathname === '/'}>
@@ -18,26 +78,26 @@
 		<a href="/"><h1>refact0r</h1></a>
 	</div>
 	<nav>
-		<a class="nav" href="/projects">
-			<span class="arrow">-></span><span class="slash">/</span>projects
-		</a>
-		<a class="nav" href="/blog">
-			<span class="arrow">-></span><span class="slash">/</span>blog
-		</a>
-		<a class="nav" href="/about">
-			<span class="arrow">-></span><span class="slash">/</span>about
-		</a>
-		<a class="nav" href="/contact">
-			<span class="arrow">-></span><span class="slash">/</span>contact
-		</a>
+		{#each pages as { name, path }}
+			<a class="nav" href={path}>
+				<span class="arrow">-></span><span class="slash">/</span>{name}
+			</a>
+		{/each}
 	</nav>
 </header>
 <div class="container">
 	{#key data.pathname}
 		<div
 			class="transition"
-			in:fly={{ duration: 200, delay: 100, x: 0, y: -100 }}
-			out:fly={{ duration: 200, x: -0, y: 100 }}
+			in:fly={{
+				duration: 150,
+				delay: 50,
+				...xy(data.pathname)
+			}}
+			out:fly={{
+				duration: 150,
+				...xy(data.pathname, false)
+			}}
 		>
 			<slot />
 		</div>
