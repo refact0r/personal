@@ -6,6 +6,8 @@
 		source = '',
 		sizes = '',
 		loading;
+
+	source = source.replace(/</g, '').replace(/>/g, '');
 </script>
 
 <figure>

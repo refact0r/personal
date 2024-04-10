@@ -65,7 +65,7 @@ Both feeds contain optional fields for other information like vehicle bearing, o
 
 Its worth discussing Onebusaway at this point. Onebusaway was created by University of Washington students Brian Ferris and Kari Watkins in 2008. It gained popularity in the Seattle area because it was the first app to provide realtime bus data to the public. Google hired Brian Ferris in 2011 and subsequently implemented real-time transit data in Google Maps later that year. Because of this, and the numerous other apps that have appeared since, Onebusaway is not as prominent. However, as an open source project, it has been used by many transit agencies for their official apps, including New York's MTA. Even though the mobile interface is a bit dated, I still prefer it over other apps because of the straightforward design.
 
-<CaptionImage image="onebusaway.jpg" alt="the onebusaway app." sizes="50rem" source="https://www.flickr.com/photos/sounderbruce/albums/72157670324755475" --width="20rem"/>
+<CaptionImage image="onebusaway.jpg" alt="the onebusaway app." sizes="20rem" source="<https://www.flickr.com/photos/sounderbruce/albums/72157670324755475>" --width="20rem"/>
 
 ## predicting arrival times
 
