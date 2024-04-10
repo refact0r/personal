@@ -56,5 +56,6 @@
 		object-fit: cover;
 		transition: opacity 0.2s;
 		opacity: 0;
+		margin: auto;
 	}
 </style>

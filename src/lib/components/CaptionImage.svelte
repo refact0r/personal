@@ -12,7 +12,8 @@
 	<Image {image} {alt} {sizes} {loading} />
 	{#if alt !== ''}
 		<figcaption>
-			{alt}{#if source !== ''}
+			{alt}
+			{#if source !== ''}
 				<a href={source}>source</a>{/if}
 		</figcaption>
 	{/if}

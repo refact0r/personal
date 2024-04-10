@@ -122,4 +122,4 @@ This paper is a fascinating insight into the state of computing in the 1970s. Ma
 
 ### Source
 
-[1] D. M. Ritchie and K. Thompson, “The UNIX time-sharing system,” Commun. ACM, vol. 17, no. 7, pp. 365–375, Jul. 1974, doi: 10.1145/361011.361061. <https://dsf.berkeley.edu/cs262/unix.pdf>
+<https://dsf.berkeley.edu/cs262/unix.pdf>

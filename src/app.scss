@@ -66,14 +66,14 @@ code {
 	background: var(--bg-2);
 	padding: 0 0.3em;
 	font-size: 1rem;
-	border-radius: 0.2rem;
+	border-radius: 0.25rem;
 }
 
 pre {
 	font-family: 'Space Mono', monospace;
 	background: var(--bg-2);
 	padding: 0.75rem;
-	border-radius: 0.2rem;
+	border-radius: 0.5rem;
 	overflow-x: auto;
 	font-size: 1rem;
 
@@ -83,8 +83,9 @@ pre {
 	}
 }
 
-ol > li {
+li {
 	font-size: 1.1rem;
+	margin: 0.75rem 0;
 }
 
 a {
@@ -210,6 +211,7 @@ figure {
 	a {
 		font-weight: 600;
 		text-decoration: underline;
+		word-break: break-all;
 	}
 
 	picture {
