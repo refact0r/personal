@@ -3,6 +3,7 @@
 	import '@fontsource/space-mono/latin-400.css';
 	import '@fontsource/space-mono/latin-400-italic.css';
 	import '@fontsource-variable/space-grotesk';
+	import '$lib/assets/prism-material-oceanic.css';
 	import 'iconify-icon';
 	import { page } from '$app/stores';
 	import Logo from '$lib/components/Logo.svelte';
