@@ -18,11 +18,9 @@
 		{ name: 'contact', path: '/contact' }
 	];
 
-	// give me some method to remember the previous page path
 	let prevTwoPages = ['', ''];
 	$: {
 		prevTwoPages = [prevTwoPages[1], data.pathname];
-		console.log(prevTwoPages);
 	}
 
 	function xy(path, isIn = true) {
@@ -90,12 +88,12 @@
 		<div
 			class="transition"
 			in:fly={{
-				duration: 150,
+				duration: 100,
 				delay: 50,
 				...xy(data.pathname)
 			}}
 			out:fly={{
-				duration: 150,
+				duration: 100,
 				...xy(data.pathname, false)
 			}}
 		>

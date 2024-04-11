@@ -40,7 +40,7 @@
 	{#await importImage(image) then src}
 		<source srcset={src.sources.avif} type="image/avif" {sizes} />
 		<source srcset={src.sources.webp} type="image/webp" {sizes} />
-		<img {src} {alt} {loading} onload="this.style.opacity=1" />
+		<img {src} {alt} {loading} onload="this.style.opacity=1" width={src.img.w} height={src.img.h} />
 	{/await}
 </picture>
 
