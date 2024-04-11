@@ -29,12 +29,12 @@
 		if (path === '/') {
 			return {
 				x: 0,
-				y: isIn ? '-40vh' : '40vh'
+				y: isIn ? '-20vh' : '20vh'
 			};
 		} else if (prevTwoPages[0] === '/') {
 			return {
 				x: 0,
-				y: isIn ? '40vh' : '-40vh'
+				y: isIn ? '20vh' : '-20vh'
 			};
 		}
 		const currIdx = pages.findIndex((page) => path.startsWith(page.path));
@@ -50,22 +50,22 @@
 			} else if (path.split('/').length > prevTwoPages[0].split('/').length) {
 				return {
 					x: 0,
-					y: isIn ? '40vh' : '-40vh'
+					y: isIn ? '20vh' : '-20vh'
 				};
 			} else {
 				return {
 					x: 0,
-					y: isIn ? '-40vh' : '40vh'
+					y: isIn ? '-20vh' : '20vh'
 				};
 			}
 		} else if (currIdx > prevIdx) {
 			return {
-				x: isIn ? '40vh' : '-40vh',
+				x: isIn ? '20vw' : '-20vw',
 				y: 0
 			};
 		} else {
 			return {
-				x: isIn ? '-40vh' : '40vh',
+				x: isIn ? '-20vw' : '20vw',
 				y: 0
 			};
 		}
@@ -112,7 +112,7 @@
 		padding: 0 5rem;
 		height: 6rem;
 		overflow: hidden;
-		transition: transform 0.2s ease;
+		transition: transform 0.1s ease;
 		transform: translateY(0);
 		flex-shrink: 0;
 
