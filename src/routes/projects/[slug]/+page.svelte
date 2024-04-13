@@ -49,7 +49,7 @@
 		<div class="embla__container" class:loop>
 			{#each metadata.images as image}
 				<div class="embla__slide" class:tall={metadata.aspect_ratio === 'tall'}>
-					<Image {image} alt={metadata.description} sizes="100vw" />
+					<Image {image} alt={metadata.description} sizes="(min-width: 800px) 80vw, 100vw" />
 				</div>
 			{/each}
 		</div>
