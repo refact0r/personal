@@ -85,7 +85,7 @@ pre {
 
 li {
 	font-size: 1.1rem;
-	margin: 0.75rem 0;
+	margin: 0.5rem 0;
 }
 
 a {
@@ -224,6 +224,12 @@ figure {
 		picture {
 			margin: 0;
 		}
+	}
+
+	ol,
+	ul {
+		font-size: 1.1rem;
+		line-height: 1.75;
 	}
 }
 

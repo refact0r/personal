@@ -14,25 +14,35 @@ date: 2024-04-13
 
 ## context
 
-In the late 1990s and early 2000s, Google was experiencing rapid growth and needed a file system that could handle the demands of its applications, like its search engine. Traditional monolithic storage systems did not scale well and were expensive. Google decided to use cheap commodity hardware to build a distributed file system in order to create a scalable and cost-effective solution. But, this meant that the file system had to handle high failure rates of commodity hardware.
+In the late 1990s and early 2000s, Google was experiencing rapid growth and needed a file system that could handle the demands of its applications. Traditional monolithic storage systems did not scale well and were expensive. Google decided to use cheap commodity hardware to build a distributed file system in that was both scalable and cost-effective. This meant that the file system had to handle high failure rates of commodity hardware.
 
-Google designed GFS to be reliable, performant, and available, much like other file systems. However, GFS was optimized for Google's specific needs, such as large files and high read/write throughput.
+Google designed GFS to be reliable, performant, and available, much like other file systems. However, GFS was also optimized for Google's specific requirements, such as:
+
+- working with large, multi-GB files
+- providing high throughput for reads and writes
+- handling concurrent access from multiple clients
+
+Initially, GFS was designed for production applications, but it also began to be used for research and development. The authors note that further improvements were needed to deal with the undisciplined nature of human users (which I found amusing).
 
 ## architecture
 
-GFS is built around clusters, which are a collection of machines that form a single file system. Each cluster consists of a single master server and multiple chunkservers and clients. The chunkservers store the actual file data, which is split into chunks that are replicated across chunkservers for redundancy. The master manages metadata, like file names, locations, and access control information. The clients, which are typically application servers, interact with both the master server and chunkservers to read and write data. These are all commodity Linux machines connected by a high-speed network.
+GFS is built around clusters, which are a collection of machines that form a single file system. Each cluster consists of a single master server and multiple chunkservers and clients. These are all commodity Linux machines connected by a high-speed network.
+
+- Chunkservers store the actual file data, which is split into chunks. Chunks are replicated across chunkservers for redundancy.
+- The master manages metadata, like file names, locations, and access control information. It also coordinates global operations like chunk creation, replication, and garbage collection.
+- Clients, which are typically application servers, interact with both the master server and chunkservers to read and write data.
 
 <CaptionSVG svg="gfs-diagram.svg" alt="diagram of the GFS architecture."/>
 
 ## single master
 
-When a client wants to read or write a file, it first contacts the master server to get the metadata for the file. The master server returns the handles and locations of the chunks corresponding to the file. The client can then read or write the data directly from the chunkservers. This single master design simplifies the system and allows for centralized control of metadata. It doesn't bottleneck the system because clients don't need to transfer data through the master server.
+When a client wants to read or write a file, it first contacts the master server to get the metadata for the file. The master server returns the handles (IDs) and locations of the chunks corresponding to the file. The client can then read or write the data directly from the chunkservers. This single master design simplifies the system and allows for centralized control of metadata. It doesn't bottleneck the system because clients don't need to transfer data through the master server.
 
 ## metadata
 
 The GFS master stores 3 types of metadata:
 
-1. File and chunk namespaces
+1. File and chunk namespaces (names, paths, and IDs)
 2. Mappings from files to chunks
 3. Locations of each chunk's replicas
 
@@ -44,9 +54,13 @@ Unlike the other two types of metadata, the locations of each chunk's replicas a
 
 ## consistency
 
-GFS provides a relaxed consistency model. It guarantees that all clients see the same data, but does not guarantee that the data is the most up-to-date. This is because GFS is optimized for high read/write throughput and large files, not for strict consistency.
+GFS provides a relaxed consistency model, meaning it does not have strict guarantees about the consistency of data after mutations, which are defined as changes to data.
 
-File namespace mutations, such as file creation, are handled exclusively by the master, and are atomic, which means they are either fully completed or not at all.
+File namespace mutations, such as file creation, are atomic, meaning they are either fully completed or not at all.
+
+GFS does not make this guarantee for data mutations. It only guarantees that the data is "consistent", meaning all replicas are the same. Depending on the way the data is written, it may or may not be "defined", meaning mutations may be interrupted by other mutations.
+
+This relaxed consistency model is simple and efficient to implement, but it means applications using GFS must work around its limitations. For example, applications should prefer append-only writes to avoid conflicts between clients writing to the same file.
 
 ## chunk size
 
@@ -54,9 +68,9 @@ GFS chunks are typically 64MB large, which was much larger than typical file sys
 
 However, large chunks may lead to hot spots when many clients access the same file, and thus the same chunk. To mitigate this, Google stored files that were prone to hot spots with a higher replication factor, meaning there were more copies available. The paper suggests a long-term solution would be to allow clients to read from each other.
 
-## mutations and leases
+## leases
 
-A mutation is an operation that changes the metadata or contents of a chunk. Mutations must be performed on every replica of a chunk to maintain consistency. This is achieved through "leases". The master grants one replica a chunk lease, making it a "primary". The primary then decides the order future mutations are applied to the rest of the replicas. This system is designed to minimize management overhead from the master.
+Mutations must be performed on every replica of a chunk to maintain consistency. This is achieved through "leases". The master grants one replica a chunk lease, making it a "primary". The primary then decides the order future mutations are applied to the rest of the replicas. This system is designed to minimize management overhead from the master.
 
 ## data flow
 
@@ -64,7 +78,7 @@ Leases determine the flow of control, but not the actual flow of data from the c
 
 ## record appends
 
-In a traditional write operation, the client specifies the offset, or position, in the file to write to. Concurrent writes to the same chunk can cause a corrupt mixture from multiple clients. Instead, GFS uses "record appends", where the client only provides the data, not the offset. GFS repeatedly attempts to append the data to the last chunk until it succeeds, guaranteeing that the data is written at least once atomically. This eliminates the need for complex locks and coordination between clients when writing to the same file.
+In a traditional write operation, the client specifies the offset, or position, in the file to write to. Concurrent writes to the same chunk can cause a corrupt mixture from multiple clients. Instead, GFS uses "record appends", where the client only provides the data, not the offset. GFS repeatedly attempts to append the data to the last chunk until it succeeds, guaranteeing that the data is written at least once atomically. This eliminates the need for complex locks and coordination between clients writing to the same file.
 
 ## snapshots
 
@@ -108,4 +122,12 @@ Because of GFS's scale and use of commodity hardware, it is expected that there 
 
 ## performance
 
-A large section of the paper is dedicated to performance benchmarks and evaluation, which will likely have no meaning to you as a reader. However, it is safe to say that GFS proved to be impressive in many of its target areas, such as throughput and availability.
+A large section of the paper is dedicated to performance benchmarks and evaluation, which are not very relevant. It is safe to say that GFS performed well in target areas such as throughput and availability.
+
+The example clusters discussed had 100-200TB of total storage, and read rates around 500MB/s. To me, this was quite a lot for 2003 (Youtube didn't exist yet!). It would be interesting to compare these numbers to modern systems, given the advancements in hardware and increase in scale in the past two decades.
+
+## conclusion
+
+The Google File System was an important paper that demonstrated how to build a reliable and efficient distributed file system using commodity hardware, and demonstrated the success of this system at a large scale. It powered massive applications such as Google's search engine. The design decisions of GFS have influenced many distributed file systems, such as Hadoop Distributed File System (HDFS). While GFS itself was replaced by its successor, Colossus, in 2010, its principles continue to be relevant in the field of distributed systems.
+
+For me, this paper demonstrated the complexity of designing large-scale systems. Many of GFS's design decisions seemed counterintuitive at first, but actually served to improve performance or reliability. I found it especially interesting how GFS was able to minimize transfers of data between servers while still maintaining consistency and capabilities such as snapshots. I don't think I'll be designing a distributed file system anytime soon, but this paper was a great learning experience nonetheless.
