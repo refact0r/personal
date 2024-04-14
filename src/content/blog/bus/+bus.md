@@ -7,8 +7,18 @@ date: 2024-04-09
 ---
 
 <script>
-    import CaptionImage from '$lib/components/CaptionImage.svelte';
+    import gttp from './gttp.png';
+    import onebusaway from './onebusaway.jpg';
+    import histogram from './histogram.png';
+    import scatter from './scatter.png';
 </script>
+
+<style>
+    img {
+        width: 100%;
+        height: auto;
+    }
+</style>
 
 This strange little project started one April afternoon in 2022 when I was waiting for the bus to take me home from school. For some context, my school is unfortunately located in a way that it takes a transfer across two buses to get home, meaning there are multiple possible routes. Because the whole trip takes about 50 minutes on average, I'm always looking for the fastest route.
 
@@ -25,7 +35,7 @@ ___
 
 Initially, I used Google Maps to get bus ETAs and plan my routes, but I later tried other apps including Onebusaway, Transit, and Moovit. Turns out, they all get their data from the same source: a [GTFS](https://gtfs.org/) (General Transit Feed Specification) feed. The G in GTFS initially stood for Google, who developed it in 2005 for use in the [Google Transit Trip Planner](https://googleblog.blogspot.com/2005/12/public-transit-via-google.html).
 
-<CaptionImage image="gttp.png" alt="Google Transit Trip Planner in 2005." sizes="50rem" source="http://googlesystem.blogspot.com/2005/12/google-transit-trip-planner.html" />
+<img src={gttp} alt="Google Transit Trip Planner in 2005." />
 
 Nowadays, GTFS is a standardized format used by countless transit agencies around the world. It includes both static and realtime data.
 
@@ -72,7 +82,7 @@ Its worth discussing Onebusaway at this point. Onebusaway was created by Univers
 
 Even though the interface is a bit dated, I still prefer Onebusaway because of the straightforward map view that allows me to see information for any nearby bus stop. Google maps and Transit are more suited for planning out entire trips in advance. Onebusaway is also more reliable in my experience, but the data should be the same across all apps.
 
-<CaptionImage image="onebusaway.jpg" alt="the onebusaway app." sizes="20rem" source="<https://www.flickr.com/photos/sounderbruce/albums/72157670324755475>" --width="20rem"/>
+<img src={onebusaway} alt="the onebusaway app."/>
 
 ## predicting arrival times
 
@@ -94,7 +104,7 @@ The first issue I ran into is that the actual arrival times are not provided in 
 
 I then compared the predicted arrival times to the actual arrival times. My script would periodically fetch the GTFS realtime data, and compare the predicted arrival times to the actual arrival times for every single stop and bus. I ran this script for 24 hours because I was rushed writing my math paper. The script generated a ton of data, 9626073 data points and 700MB in 24 hours. Below is a histogram of the prediction error. I calculated prediction error as the difference between the predicted arrival time and the actual arrival time. Positive values indicate that a bus arrived later than predicted, and negative values indicate that a bus arrived earlier than predicted.
 
-<CaptionImage image="histogram.png" alt="histogram of prediction error for King County Metro buses" sizes="50rem" loading="lazy"/>
+<img src={histogram} alt="histogram of prediction error for King County Metro buses"/>
 
 You can see that the majority of the predictions are within 500 seconds of the actual arrival time, or about 8 minutes. There are some outliers significantly higher than this, likely due to the prediction algorithm not being able to account for factors like schedule changes or cancelled buses. There is a slight positive skew, which indicates that predictions tend to be earlier than late. This good for bus riders because it is better to arrive at a bus stop early than miss a bus entirely.
 
@@ -102,7 +112,7 @@ I also calculated the mean absolute error, which is the average of the absolute 
 
 I graphed the mean absolute error on a scatter plot, with the x-axis being the relative time the prediction was made. I wanted to see if the predictions got more accurate as the bus got closer to the stop, which would make sense.
 
-<CaptionImage image="scatter.png" alt="scatter plot of mean absolute error vs time to arrival" sizes="50rem" loading="lazy"/>
+<img src={scatter} alt="scatter plot of mean absolute error vs time to arrival" />
 
 It's a pretty fuzzy graph due to the sheer number of data points (I set the alpha of each point to the minimum of 0.01, but it still doesn't really differentiate density). The graph does show a slight trend of predictions getting more accurate as the bus gets closer to the stop on the right side of the graph. It also shows the extent of inaccuracy in the predictions. Some of this is definitely due to issues with my methodology, but it's safe to assume that predictions made an hour before the bus arrives are not very reliable.
 
