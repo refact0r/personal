@@ -66,16 +66,18 @@ code {
 	background: var(--bg-2);
 	padding: 0 0.3em;
 	font-size: 1rem;
-	border-radius: 0.25rem;
+	// border-radius: 0.25rem;
+	font-variant-ligatures: no-contextual;
 }
 
 pre {
 	font-family: 'Space Mono', monospace;
 	background: var(--bg-2);
 	padding: 0.75rem;
-	border-radius: 0.5rem;
+	// border-radius: 0.5rem;
 	overflow-x: auto;
 	font-size: 1rem;
+	max-width: calc(100vw - 3rem);
 
 	code {
 		background: none;

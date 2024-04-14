@@ -8,7 +8,7 @@
 		const pictures = import.meta.glob(`/src/content/*/*/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}`, {
 			query: {
 				enhanced: true,
-				w: '2400;2000;1600;1200;800'
+				w: '2400;2000;1600;1200;800;400'
 			}
 		});
 
@@ -25,7 +25,14 @@
 	{#await importImage(image) then src}
 		<source srcset={src.sources.avif} type="image/avif" {sizes} />
 		<source srcset={src.sources.webp} type="image/webp" {sizes} />
-		<img {src} {alt} {loading} onload="this.style.opacity=1" width={src.img.w} height={src.img.h} />
+		<img
+			src={src.img.src}
+			{alt}
+			{loading}
+			onload="this.style.opacity=1"
+			width={src.img.w}
+			height={src.img.h}
+		/>
 	{/await}
 </picture>
 

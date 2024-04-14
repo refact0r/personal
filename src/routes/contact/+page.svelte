@@ -91,7 +91,7 @@
 		border: 2px solid var(--bg-3);
 		transition: 0.2s;
 		background-color: var(--bg-2);
-		border-radius: 0.5rem;
+		// border-radius: 0.5rem;
 
 		&:focus {
 			outline: none;

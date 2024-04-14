@@ -38,6 +38,7 @@
     "@fontsource/space-mono": "^5.0.19",
     "embla-carousel-svelte": "^8.0.1",
     "iconify-icon": "^2.0.0",
-    "lottie-web": "^5.12.2"
+    "lottie-web": "^5.12.2",
+    "shiki": "^1.3.0"
   }
 }
