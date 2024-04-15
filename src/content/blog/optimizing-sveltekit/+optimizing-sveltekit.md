@@ -323,3 +323,12 @@ export default config;
 ```
 
 ## results
+
+I'm not going to re-test the performance improvement of each change, but I can show that my site is much faster now. I've gone back and disabled each optimization to measure the impact.
+
+PageSpeed Insights/Lighthouse mobile (unoptimized vs optimized):
+
+<div class="sidebyside">
+    <Image image="pagespeed-mobile-unoptimized.png" alt="unoptimized pagespeed mobile score" />
+    <Image image="pagespeed-mobile-optimized.png" alt="optimized pagespeed mobile score" />
+<div>
