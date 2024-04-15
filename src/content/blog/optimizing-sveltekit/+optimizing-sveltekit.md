@@ -11,15 +11,15 @@ date: 2024-04-14
 </script>
 
 <style lang="scss">
-    .comparison {
+    figure {
         margin: 1.5rem 0;
     }
-    .comparison figure {
+    figure .comparison {
         display: flex;
         margin: 0;
         overflow: hidden;
     }
-    .comparison figcaption {
+    figure figcaption {
         font-size: 1rem;
         text-align: center;
         margin-top: 1.5rem;
@@ -35,11 +35,11 @@ date: 2024-04-14
     .details p {
         margin: 0;
     }
-    :global(.comparison picture) {
+    :global(figure picture) {
         margin: 0;
     }
     @media (max-width: 700px) {
-        .comparison figure {
+        figure .comparison {
             flex-direction: column;
         }
         .details {
@@ -82,7 +82,7 @@ The great thing about prerendering is that you don't have to change the structur
 
 ## static adapter
 
-I also switched to `@sveltejs/adapter-static` from the Vercel adapter. Since the entire site is already prerendered, it shouldn't make much of a performance difference when hosting on Vercel. But it does eliminate usage of serverless functions, and gives me the flexibility to host the site on other static hosting services.
+I also switched to `@sveltejs/adapter-static` from the auto adapter. Since the entire site is already prerendered, it shouldn't make much of a performance difference on Vercel. But it does eliminate usage of serverless functions, and gives me the flexibility to host the site on other static hosting services.
 
 `svelte.config.js`:
 
@@ -105,8 +105,8 @@ Images are essential to site performance because they are usually the largest fi
 
 Traditional image formats like JPEG and PNG are not very efficient. Modern formats like AVIF and WebP have better compression, so they take up less space and load faster. These should be used whenever possible.
 
-<div class="comparison">
-    <figure>
+<figure>
+    <div class="comparison">
         <Image image="beach.png" alt="a dark, stormy beach" sizes="40rem" />
         <div class="details">
             <div>
@@ -126,13 +126,13 @@ Traditional image formats like JPEG and PNG are not very efficient. Modern forma
                 <code>24KB</code>
             </div>
         </div>
-    </figure>
+    </div>
     <figcaption>file size comparison of different image formats</figcaption>
-</div>
+</figure>
 
 Loading a high resolution image on a low resolution or small screen is also a waste of resources. Images should be sized appropriately for users' screens.
 
-These optimizations can be achieved using an html `<picture>` element with multiple `<source>` elements, which allow the browser to automatically choose the best format and size for the user. The final `<img>` element serves as a fallback for older browsers.
+These optimizations can be achieved using an html `<picture>` element with multiple `<source>` elements, which allows the browser to automatically choose the best format and size for the user. The final `<img>` element serves as a fallback for older browsers.
 
 ```html
 <picture>
@@ -223,23 +223,47 @@ And this is the actual image component `Image.svelte`:
 
 Since images in my project live in subdirectories of `src/content`, I use Vite's `import.meta.glob` to get all images in these directories, and then loop through them to find and import the right image. This might seem inefficient, but everything will be prerendered and bundled at build time, so it doesn't matter.
 
-Notice the `query` option in the `import.meta.glob`. Setting `enhanced: true` enables the enhanced behavior and allows me to pass in options like `w: '2400;2000;1600;1200;800;400'` to tell `vite-imagetools` to generate multiple sizes of each image at build time. The generated source sets can then be passed into the `<source>` elements.
+Notice the `query` option in the `import.meta.glob`. Setting `enhanced: true` enables the enhanced behavior and allows me to pass in options like `w:'2400;2000;1600;1200;800;400'` to tell `vite-imagetools` to generate multiple sizes of each image at build time. The generated source sets can then be passed into the `<source>` elements.
 
 One benefit of this approach is that it allows me to set image `width` and `height` properties dynamically, which is useful for preventing content layout shift (CLS) when the image loads. However, other image properties like `sizes`, `alt` and `loading` must be passed into the component as props. CSS variables can also be passed in as props to control the image's aspect ratio, width, and height.
 
 Using the component like this:
 
 ```svelte
-<Image image="midnight-v1.png" alt="the first version of midnight discord" sizes="50rem" loading="lazy"/>
+<Image 
+    image="midnight-v1.png" 
+    alt="the first version of midnight discord" 
+    sizes="50rem" 
+    loading="lazy"
+/>
 ```
 
 will generate the following HTML:
 
 ```html
 <picture class="s-wHckl4XSACcy">
-    <source srcset="/@imagetools/96f598a3997db083bb980220332563939ad2af87 2400w, /@imagetools/3721f5c8ad64319e1caf708047983b695ca7cd9c 2000w, /@imagetools/c632f76e9f05cce9734ea7535e5ad14005b03ebe 1600w, /@imagetools/ca1280947df6e073f98d88310a4d8d812506b1fe 1200w, /@imagetools/313d81b7490cb9d75120ffa6db820dccb5e4edf9 800w" type="image/avif" sizes="50rem" class="s-wHckl4XSACcy">
-    <source srcset="/@imagetools/409d509e52dff92a06fce5fd818c590d8fe99a57 2400w, /@imagetools/8eb3809cde82244f11df59d43b7734affea18154 2000w, /@imagetools/432ab6b89a1a4a3fa4e996d0f492697f6f118e25 1600w, /@imagetools/a4c6b9e6fe20b891b5af00eecf8eea4dcce899eb 1200w, /@imagetools/fb0883bc11fbc55ebe49fcdab73417ebf6d524b1 800w" type="image/webp" sizes="50rem" class="s-wHckl4XSACcy">
-    <img src="/@imagetools/fd74dd053b2780680a1011c3316a12f93316e8de" alt="the first version of midnight discord" loading="lazy" onload="this.style.opacity=1" width="2400" height="1347" class="s-wHckl4XSACcy" style="opacity: 1;">
+    <source 
+        srcset="/@imagetools/96f598a3997db083bb980220332563939ad2af87 2400w, /@imagetools/3721f5c8ad64319e1caf708047983b695ca7cd9c 2000w, /@imagetools/c632f76e9f05cce9734ea7535e5ad14005b03ebe 1600w, /@imagetools/ca1280947df6e073f98d88310a4d8d812506b1fe 1200w, /@imagetools/313d81b7490cb9d75120ffa6db820dccb5e4edf9 800w" 
+        type="image/avif" 
+        sizes="50rem" 
+        class="s-wHckl4XSACcy"
+    />
+    <source 
+        srcset="/@imagetools/409d509e52dff92a06fce5fd818c590d8fe99a57 2400w, /@imagetools/8eb3809cde82244f11df59d43b7734affea18154 2000w, /@imagetools/432ab6b89a1a4a3fa4e996d0f492697f6f118e25 1600w, /@imagetools/a4c6b9e6fe20b891b5af00eecf8eea4dcce899eb 1200w, /@imagetools/fb0883bc11fbc55ebe49fcdab73417ebf6d524b1 800w" 
+        type="image/webp" 
+        sizes="50rem" 
+        class="s-wHckl4XSACcy"
+    />
+    <img 
+        src="/@imagetools/fd74dd053b2780680a1011c3316a12f93316e8de" 
+        alt="the first version of midnight discord" 
+        loading="lazy" 
+        onload="this.style.opacity=1" 
+        width="2400" 
+        height="1347" 
+        class="s-wHckl4XSACcy" 
+        style="opacity: 1;"
+    />
 </picture>
 ```
 
@@ -304,8 +328,20 @@ export async function handle({ event, resolve }) {
 Now, in the build output HTML, the font files will be preloaded:
 
 ```html
-<link rel="preload" as="font" type="font/woff2" href="/_app/immutable/assets/space-mono-latin-400-italic.DaE23bd9.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="/_app/immutable/assets/space-mono-latin-400-normal.Co7bH5Hm.woff2" crossorigin>
+<link 
+    rel="preload" 
+    as="font" 
+    type="font/woff2" 
+    href="/_app/immutable/assets/space-mono-latin-400-italic.DaE23bd9.woff2" 
+    crossorigin
+/>
+<link 
+    rel="preload"
+    as="font"
+    type="font/woff2"
+    href="/_app/immutable/assets/space-mono-latin-400-normal.Co7bH5Hm.woff2"
+    crossorigin
+/>
 ```
 
 ## inline css
