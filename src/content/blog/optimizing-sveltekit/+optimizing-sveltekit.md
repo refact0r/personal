@@ -10,7 +10,63 @@ date: 2024-04-14
     import Image from '$lib/components/Image.svelte';
 </script>
 
-After building this site, I've started down the rabbit hole of making it as smooth and fast as possible. To be fair, SvelteKit is already really fast out of the box, so there wasn't that much to do. But there were still ways to improve performance.
+<style lang="scss">
+    .comparison {
+        margin: 1.5rem 0;
+    }
+    .comparison figure {
+        display: flex;
+        margin: 0;
+        overflow: hidden;
+    }
+    .comparison figcaption {
+        font-size: 1rem;
+        text-align: center;
+        margin-top: 1.5rem;
+    }
+    .details {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem;
+        width: 10rem;
+        background: var(--bg-2);
+    }
+    .details p {
+        margin: 0;
+    }
+    :global(.comparison picture) {
+        margin: 0;
+    }
+    @media (max-width: 700px) {
+        .comparison figure {
+            flex-direction: column;
+        }
+        .details {
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .details div {
+            text-align: center;
+        }
+    }
+
+    .sidebyside {
+        gap: 1rem;
+        display: flex;
+        margin: 1.5rem 0;
+    }
+    .sidebyside.vertical {
+        flex-direction: column;
+    }
+    :global(.sidebyside picture) {
+        margin: 0;
+    }
+</style>
+
+After building this site, I've started down the rabbit hole of making it as smooth and fast as possible. To be fair, SvelteKit is already really fast out of the box, so there wasn't a ton to do. But there were still some ways to improve performance.
 
 ## prerendering
 
@@ -26,7 +82,7 @@ The great thing about prerendering is that you don't have to change the structur
 
 ## static adapter
 
-I also switched to `@sveltejs/adapter-static` from the Vercel adapter. Since the entire site is already prerendered, it shouldn't make much of a performance difference when hosting on Vercel. But it does eliminate serverless functions, and gives me flexibility to host the site on any static hosting service.
+I also switched to `@sveltejs/adapter-static` from the Vercel adapter. Since the entire site is already prerendered, it shouldn't make much of a performance difference when hosting on Vercel. But it does eliminate usage of serverless functions, and gives me the flexibility to host the site on other static hosting services.
 
 `svelte.config.js`:
 
@@ -74,50 +130,6 @@ Traditional image formats like JPEG and PNG are not very efficient. Modern forma
     <figcaption>file size comparison of different image formats</figcaption>
 </div>
 
-<style lang="scss">
-    .comparison {
-        margin: 1.5rem 0;
-    }
-    .comparison figure {
-        display: flex;
-        margin: 0;
-        overflow: hidden;
-    }
-    .comparison figcaption {
-        font-size: 1rem;
-        text-align: center;
-        margin-top: 1.5rem;
-    }
-    .details {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1.5rem;
-        width: 10rem;
-        background: var(--bg-2);
-    }
-    .details p {
-        margin: 0;
-    }
-    :global(.comparison picture) {
-        margin: 0;
-    }
-    @media (max-width: 700px) {
-        .comparison figure {
-            flex-direction: column;
-        }
-        .details {
-            flex-direction: row;
-            width: 100%;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-        .details div {
-            text-align: center;
-        }
-    }
-</style>
-
 Loading a high resolution image on a low resolution or small screen is also a waste of resources. Images should be sized appropriately for users' screens.
 
 These optimizations can be achieved using an html `<picture>` element with multiple `<source>` elements, which allow the browser to automatically choose the best format and size for the user. The final `<img>` element serves as a fallback for older browsers.
@@ -163,7 +175,7 @@ And this is the actual image component `Image.svelte`:
         const pictures = import.meta.glob(`/src/content/*/*/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}`, {
             query: {
                 enhanced: true,
-                w: '2400;2000;1600;1200;800'
+                w: '2400;2000;1600;1200;800;400'
             }
         });
 
@@ -211,7 +223,7 @@ And this is the actual image component `Image.svelte`:
 
 Since images in my project live in subdirectories of `src/content`, I use Vite's `import.meta.glob` to get all images in these directories, and then loop through them to find and import the right image. This might seem inefficient, but everything will be prerendered and bundled at build time, so it doesn't matter.
 
-Notice the `query` option in the `import.meta.glob`. Setting `enhanced: true` enables the enhanced behavior and allows me to pass in options like `w: '2400;2000;1600;1200;800'` to tell `vite-imagetools` to generate multiple sizes of each image at build time. The generated source sets can then be passed into the `<source>` elements.
+Notice the `query` option in the `import.meta.glob`. Setting `enhanced: true` enables the enhanced behavior and allows me to pass in options like `w: '2400;2000;1600;1200;800;400'` to tell `vite-imagetools` to generate multiple sizes of each image at build time. The generated source sets can then be passed into the `<source>` elements.
 
 One benefit of this approach is that it allows me to set image `width` and `height` properties dynamically, which is useful for preventing content layout shift (CLS) when the image loads. However, other image properties like `sizes`, `alt` and `loading` must be passed into the component as props. CSS variables can also be passed in as props to control the image's aspect ratio, width, and height.
 
@@ -324,11 +336,26 @@ export default config;
 
 ## results
 
-I'm not going to re-test the performance improvement of each change, but I can show that my site is much faster now. I've gone back and disabled each optimization to measure the impact.
+I'm not going to individually test the performance improvement of each change, but I can show that they combine to make my site much faster. I've gone back and disabled each optimization to measure the impact. I ran [WebPageTest](https://www.webpagetest.org/) on the page <https://www.refact0r.dev/blog/bus>, which is my largest blog post. It is hosted on Vercel's free tier. Here are the results:
 
-PageSpeed Insights/Lighthouse mobile (unoptimized vs optimized):
+mobile (unoptimized vs optimized):
 
-<div class="sidebyside">
-    <Image image="pagespeed-mobile-unoptimized.png" alt="unoptimized pagespeed mobile score" />
-    <Image image="pagespeed-mobile-optimized.png" alt="optimized pagespeed mobile score" />
-<div>
+<div class="sidebyside vertical">
+    <Image image="webpagetest-mobile-unoptimized.png" alt="unoptimized webpagetest mobile score" />
+    <Image image="webpagetest-mobile-optimized.png" alt="optimized webpagetest mobile score" />
+</div>
+
+desktop (unoptimized vs optimized):
+
+<div class="sidebyside vertical">
+    <Image image="webpagetest-desktop-unoptimized.png" alt="unoptimized webpagetest desktop score" />
+    <Image image="webpagetest-desktop-optimized.png" alt="optimized webpagetest desktop score" />
+</div>
+
+You can see from the page weight on right that the optimized site is much smaller, primarily due to the image optimizations. Speed index has improved from 1.8s to 1.2s on mobile and 0.9s to 0.5s on desktop. Improvements of this scale are definitely noticeable by users. On desktop there is no difference, but total blocking time has decreased to basically zero on mobile, likely due to the inlined CSS and preloaded fonts. The site is now much faster and more efficient.
+
+## conclusion
+
+There are still a few things I'd like to do, such as setting more detailed `sizes` attributes on all images and eventually using the `<enhanced:img>` component. But for now, I'm happy with the performance of my site.
+
+I hope this post has been helpful or at least interesting. If you have any feedback, feel free to [contact me](/contact).

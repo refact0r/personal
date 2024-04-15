@@ -1,3 +1,5 @@
+import { dev } from '$app/environment';
+
 export function nameFromPath(path) {
 	return path.split('/').slice(-1)[0].split('.')[0].replace(/^\++/, '');
 }
@@ -10,8 +12,11 @@ export async function getPosts(modules) {
 		}))
 	);
 
-	const posts = await Promise.all(postPromises);
-	const filtered = posts.filter((post) => post.published);
+	let posts = await Promise.all(postPromises);
 
-	return filtered;
+	if (!dev) {
+		posts = posts.filter((post) => post.published);
+	}
+
+	return posts;
 }
