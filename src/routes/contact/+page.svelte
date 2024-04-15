@@ -29,7 +29,7 @@
 
 <main>
 	<h1>contact</h1>
-	<p>ways to get in touch.</p>
+	<p>ways to get in touch, in order from fastest to slowest.</p>
 	<div class="info">discord <span class="sub">-></span> @refact0r</div>
 	<div class="info">
 		email <span class="sub">-></span>

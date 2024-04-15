@@ -7,7 +7,7 @@
 	let { default: content, metadata } = data.post;
 </script>
 
-<PageHead title={metadata.name} description={metadata.description} />
+<PageHead title={metadata.name} description={metadata.description} type="article" />
 
 <main>
 	<h1>
