@@ -71,7 +71,7 @@ After building this site, I've started down the rabbit hole of making it as smoo
 
 ## prerendering
 
-Since this site doesn't have any dynamic content, I can use prerending. This essentially makes SvelteKit into a static site generator (SSG) like Eleventy or Hugo. SvelteKit (through Vite) will render all the pages at build time to generate static HTML files. This is good for performance because the pages don't require any extra server-side or client-side Javascript to load. However, unlike other SSGs, prerendered SvelteKit still allows for client-side hydration, so I can still use smooth client-side routing and transitions.
+Since this site doesn't have any dynamic content, I can use prerendering. This essentially makes SvelteKit into a static site generator (SSG) like Eleventy or Hugo. SvelteKit (through Vite) will render all the pages at build time to generate static HTML files. This is good for performance because the pages don't require any extra server-side or client-side Javascript to load. However, unlike other SSGs, prerendered SvelteKit still allows for client-side hydration, so I can still use smooth client-side routing and transitions.
 
 To enable prerendering on all pages, I added this to the root `+layout.js`:
 
@@ -174,6 +174,7 @@ And this is the actual image component `Image.svelte`:
 
     async function importImage(image) {
         const pictures = import.meta.glob(`/src/content/*/*/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}`, {
+            import: 'default',
             query: {
                 enhanced: true,
                 w: '2400;2000;1600;1200;800;400'
@@ -182,8 +183,7 @@ And this is the actual image component `Image.svelte`:
 
         for (const [path, src] of Object.entries(pictures)) {
             if (path.includes(image)) {
-                const img = await src();
-                return img.default;
+                return await src();
             }
         }
     }
@@ -224,7 +224,7 @@ And this is the actual image component `Image.svelte`:
 
 Since images in my project live in subdirectories of `src/content`, I use Vite's `import.meta.glob` to get all images in these directories, and then loop through them to find and import the right image. This might seem inefficient, but everything will be prerendered and bundled at build time, so it doesn't matter.
 
-Notice the `query` option in the `import.meta.glob`. Setting `enhanced: true` enables the enhanced behavior and allows me to pass in options like `w:'2400;2000;1600;1200;800;400'` to tell `vite-imagetools` to generate multiple sizes of each image at build time. The generated source sets can then be passed into the `<source>` elements.
+Notice the `query` option in the `import.meta.glob`. Setting `enhanced: true` enables the enhanced behavior and allows me to pass in options like `w:'2400;2000;1600;1200;800;400'`, which tells `vite-imagetools` to generate multiple sizes of each image at build time. The generated source sets can then be passed into the `<source>` elements.
 
 One benefit of this approach is that it allows me to set image `width` and `height` properties dynamically, which is useful for preventing content layout shift (CLS) when the image loads. However, other image properties like `sizes`, `alt` and `loading` must be passed into the component as props. CSS variables can also be passed in as props to control the image's aspect ratio, width, and height.
 

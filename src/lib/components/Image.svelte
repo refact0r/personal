@@ -6,6 +6,7 @@
 
 	async function importImage(image) {
 		const pictures = import.meta.glob(`/src/content/*/*/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}`, {
+			import: 'default',
 			query: {
 				enhanced: true,
 				w: '2400;2000;1600;1200;800;400'
@@ -14,8 +15,7 @@
 
 		for (const [path, src] of Object.entries(pictures)) {
 			if (path.includes(image)) {
-				const img = await src();
-				return img.default;
+				return await src();
 			}
 		}
 	}
