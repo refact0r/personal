@@ -32,12 +32,19 @@
 	<meta property="og:type" content={type} />
 	<meta property="og:description" content={description} />
 	<meta property="og:url" content={$page.url.href} />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@refact_r" />
+	<meta name="twitter:creator" content="@refact_r" />
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:description" content={description} />
 	{#if ogImage}
 		{#await importOgImage() then image}
 			<meta property="og:image" content={$page.url.origin + image.src} />
 			<meta property="og:image:width" content={image.w} />
 			<meta property="og:image:height" content={image.h} />
 			<meta property="og:image:alt" content={title} />
+			<meta name="twitter:image" content={$page.url.origin + image.src} />
+			<meta name="twitter:image:alt" content={title} />
 		{/await}
 	{/if}
 </svelte:head>
