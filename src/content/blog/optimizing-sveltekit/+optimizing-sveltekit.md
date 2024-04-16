@@ -1,9 +1,10 @@
 ---
-published: false
+published: true
 name: 'optimizing my sveltekit blog'
 icon: 'ph:code'
 description: improving performance on a static sveltekit site
-date: 2024-04-14
+date: 2024-04-15
+ogImage: 'og-image.png' 
 ---
 
 <script>
@@ -70,7 +71,7 @@ After building this site, I've started down the rabbit hole of making it as smoo
 
 ## prerendering
 
-Since this site doesn't have any dynamic content, I can tell SvelteKit to prerender all the pages. This essentially makes SvelteKit into a static site generator (SSG) like Eleventy or Hugo. SvelteKit will render all the pages at build time to generate static HTML files. This is good for performance because the pages don't require any extra server-side or client-side Javascript to load. However, unlike other SSGs, prerendered SvelteKit still allows for client-side hydration, so I can still use smooth client-side routing and transitions.
+Since this site doesn't have any dynamic content, I can use prerending. This essentially makes SvelteKit into a static site generator (SSG) like Eleventy or Hugo. SvelteKit (through Vite) will render all the pages at build time to generate static HTML files. This is good for performance because the pages don't require any extra server-side or client-side Javascript to load. However, unlike other SSGs, prerendered SvelteKit still allows for client-side hydration, so I can still use smooth client-side routing and transitions.
 
 To enable prerendering on all pages, I added this to the root `+layout.js`:
 
@@ -82,7 +83,7 @@ The great thing about prerendering is that you don't have to change the structur
 
 ## static adapter
 
-I also switched to `@sveltejs/adapter-static` from the auto adapter. Since the entire site is already prerendered, it shouldn't make much of a performance difference on Vercel. But it does eliminate usage of serverless functions, and gives me the flexibility to host the site on other static hosting services.
+I also switched to `@sveltejs/adapter-static` from the auto adapter. Since the entire site is already prerendered, it shouldn't make much of a performance difference. But it does eliminate usage of serverless functions, and gives me the flexibility to host the site on other static hosting services.
 
 `svelte.config.js`:
 
@@ -144,11 +145,11 @@ These optimizations can be achieved using an html `<picture>` element with multi
 
 Generating all the different formats and sizes for each image manually is tedious, so I'd like to automate this process.
 
-SvelteKit actually has a built-in image component that can accomplish this, called `<enhanced:img>`. However, it only supports static imports at the moment, so I can't use it with blog posts or project pages (but dynamic images will probably be supported eventually). The `svelte-image` library seems to solve this, but I decided to write my own image component for simplicity and more fine-grained control.
+SvelteKit actually has a built-in image component that can accomplish this, called `<enhanced:img>`. Back when I started building the site it was still quite buggy and did not fully support the type of dynamic importing I use for project/blog page images. The `svelte-image` library seemed to be a good solution, but I decided to write my own image component for simplicity and more fine-grained control.
 
-Even though I cannot use the `<enhanced:img>` component itself, I can still take advantage of its `enhanced` query to generate the different sizes and formats for each image. This actually relies on the amazing `vite-imagetools` plugin, which provides a ton of different directives for image processing.
+Even though I am not using the `<enhanced:img>` component itself, I can still take advantage of its `enhanced` query to generate the different sizes and formats for each image. This relies on the amazing `vite-imagetools` plugin, which provides a ton of different directives for image processing.
 
-To do this, `enhancedImages` needs to be added to `vite.config.js`:
+To do this, `enhancedImages` needs to be added to `vite.fconfig.js`:
 
 ```js
 import { enhancedImages } from '@sveltejs/enhanced-img';
@@ -393,5 +394,7 @@ You can see from the page weight on right that the optimized site is much smalle
 ## conclusion
 
 There are still a few things I'd like to do, such as setting more detailed `sizes` attributes on all images and eventually using the `<enhanced:img>` component. But for now, I'm happy with the performance of my site.
+
+All the source code is available on [GitHub](https://github.com/refact0r/personal).
 
 I hope this post has been helpful or at least interesting. If you have any feedback, feel free to [contact me](/contact).

@@ -25,7 +25,7 @@
 	}
 </script>
 
-<PageHead title={metadata.name} description={metadata.description} />
+<PageHead title={metadata.name} description={metadata.description} ogImage={metadata.images[0]} />
 
 <main>
 	<div class="head">

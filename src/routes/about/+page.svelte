@@ -118,4 +118,8 @@
 		width: 5.5rem;
 		text-align: center;
 	}
+
+	h1 {
+		margin-bottom: 2rem;
+	}
 </style>
