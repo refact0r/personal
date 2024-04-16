@@ -34,12 +34,11 @@
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
 	{#if image}
-		<!-- {#await importOgImage() then src} -->
-		<!-- <meta property="og:image:width" content={image.w} />
-			<meta property="og:image:height" content={image.h} /> -->
-		<meta property="og:image" content={'https://www.refact0r.dev' + image} />
+		<meta property="og:image" content={'https://www.refact0r.dev' + image.img.src} />
+		<meta property="og:image:width" content={image.img.w} />
+		<meta property="og:image:height" content={image.img.w} />
 		<meta property="og:image:alt" content={title} />
-		<meta name="twitter:image" content={$page.url.href + image} />
+		<meta name="twitter:image" content={'https://www.refact0r.dev' + image.img.src} />
 		<meta name="twitter:image:alt" content={title} />
 		<!-- {/await} -->
 	{/if}

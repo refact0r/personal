@@ -1,4 +1,4 @@
-import { nameFromPath, importImage } from '$lib/js/posts.js';
+import { nameFromPath, importOgImage } from '$lib/js/posts.js';
 import { error } from '@sveltejs/kit';
 import { dev } from '$app/environment';
 
@@ -21,7 +21,7 @@ export async function load({ params }) {
 	}
 
 	let imagePath = match.path.split('/').slice(0, -1).join('/') + '/' + post.metadata.images[0];
-	let image = await importImage(imagePath);
+	let image = await importOgImage(imagePath);
 
 	return {
 		post,
