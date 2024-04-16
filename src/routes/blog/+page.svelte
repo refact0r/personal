@@ -1,11 +1,8 @@
 <script>
-	import PageHead from '$lib/components/PageHead.svelte';
 	import { formatDate } from '$lib/js/utils.js';
 
 	export let data;
 </script>
-
-<PageHead title="blog" description="posts about various topics." />
 
 <main>
 	<h1>blog</h1>

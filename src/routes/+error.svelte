@@ -1,5 +1,4 @@
 <script>
-	import PageHead from '$lib/components/PageHead.svelte';
 	import { page } from '$app/stores';
 </script>
 
@@ -9,8 +8,6 @@
 		<h2 class="errorMessage">{$page.error.message.toLowerCase()}</h2>
 	{/if}
 </main>
-
-<PageHead title={$page.status} description={$page.error.message} />
 
 <style lang="scss">
 	main {

@@ -1,6 +1,4 @@
 <script>
-	import PageHead from '$lib/components/PageHead.svelte';
-
 	let content = {
 		languages: {
 			web: ['js', 'ts', 'html', 'css', 'scss'],
@@ -14,8 +12,6 @@
 		}
 	};
 </script>
-
-<PageHead title="about" description="info about me." />
 
 <main>
 	<h1>about</h1>

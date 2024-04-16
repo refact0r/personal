@@ -20,5 +20,13 @@ export async function load({ params }) {
 		throw error(404, 'project not found');
 	}
 
-	return { post };
+	return {
+		post,
+		meta: {
+			title: post.metadata.name,
+			description: post.metadata.description,
+			type: 'article',
+			image: post.metadata.images[0]
+		}
+	};
 }

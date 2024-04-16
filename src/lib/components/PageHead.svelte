@@ -4,7 +4,7 @@
 	export let title;
 	export let description;
 	export let type = 'website';
-	export let ogImage = null;
+	export let image = null;
 
 	async function importOgImage() {
 		const images = import.meta.glob(`/src/content/*/*/*.{jpg,png}`, {
@@ -15,7 +15,7 @@
 			}
 		});
 		for (const [path, src] of Object.entries(images)) {
-			if (path.includes(ogImage)) {
+			if (path.includes(image)) {
 				const image = await src();
 				return image.default.img;
 			}
@@ -25,7 +25,6 @@
 
 <svelte:head>
 	<title>{title}</title>
-
 	<meta name="description" content={description} />
 	<meta property="og:site_name" content="refact0r" />
 	<meta property="og:title" content={title} />
@@ -37,7 +36,7 @@
 	<meta name="twitter:creator" content="@refact_r" />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
-	{#if ogImage}
+	{#if image}
 		{#await importOgImage() then image}
 			<meta property="og:image" content={$page.url.origin + image.src} />
 			<meta property="og:image:width" content={image.w} />

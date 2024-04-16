@@ -9,6 +9,7 @@
 	import 'iconify-icon';
 	import { page } from '$app/stores';
 	import Logo from '$lib/components/Logo.svelte';
+	import PageHead from '$lib/components/PageHead.svelte';
 	import { fly } from 'svelte/transition';
 
 	export let data;
@@ -71,6 +72,13 @@
 		}
 	}
 </script>
+
+<PageHead
+	title={$page.error ? $page.status : $page.data.meta.title}
+	description={$page.error ? $page.error.message : $page.data.meta.description}
+	type={$page.data.meta.type}
+	image={$page.data.meta.image}
+/>
 
 <header class:home={$page.url.pathname === '/'}>
 	<div class="row">

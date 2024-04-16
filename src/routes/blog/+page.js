@@ -6,5 +6,11 @@ export async function load() {
 
 	posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-	return { posts };
+	return {
+		posts,
+		meta: {
+			title: 'blog',
+			description: 'posts about various topics.'
+		}
+	};
 }
