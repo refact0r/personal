@@ -76,11 +76,11 @@
 		margin-right: auto;
 	}
 
-	.single-image {
-		width: 70%;
-		max-width: 80rem;
-		margin: auto;
-	}
+	// .single-image {
+	// 	width: 70%;
+	// 	max-width: 80rem;
+	// 	margin: auto;
+	// }
 
 	.head {
 		margin: 1rem auto 3rem auto;
@@ -190,9 +190,9 @@
 			text-align: right;
 			padding-right: 1rem;
 		}
-		.single-image {
-			width: calc(100% - 3rem);
-		}
+		// .single-image {
+		// 	width: calc(100% - 3rem);
+		// }
 	}
 
 	@media (max-width: 650px) {

@@ -20,3 +20,14 @@ export async function getPosts(modules) {
 
 	return posts;
 }
+
+export async function importImage(imagePath) {
+	const images = import.meta.glob(`/src/content/*/*/*.{jpg,png}`, {
+		import: 'default'
+	});
+	for (const [path, src] of Object.entries(images)) {
+		if (path.includes(imagePath)) {
+			return await src();
+		}
+	}
+}
