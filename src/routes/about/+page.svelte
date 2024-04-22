@@ -25,7 +25,6 @@
 		>github profile<span class="arrow">/></span>
 	</a>
 	<br />
-	<br />
 	<!-- <div class="row">
 		<div class="col"></div>
 		<div class="col"></div>
@@ -59,6 +58,9 @@
 	<h2>this site</h2>
 	<a href="https://github.com/refact0r/personal" class="external"
 		>github repo<span class="arrow">/></span></a
+	>
+	<a href="https://us.umami.is/share/HwZnyuHQ5Rqz3NWf/refact0r.dev" class="external"
+		>analytics<span class="arrow">/></span></a
 	>
 	<div class="info">
 		stack <span class="sub">-></span> sveltekit <span class="sub">/</span> mdsvex
@@ -94,6 +96,8 @@
 	a {
 		font-family: 'Space Mono', monospace;
 		font-size: 1.2rem;
+		margin: 0.5rem 0;
+		display: block;
 	}
 
 	.info {

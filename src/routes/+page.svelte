@@ -59,11 +59,6 @@
 		gap: 2rem;
 	}
 
-	// .pfp {
-	// 	width: 3.5rem;
-	// 	height: 3.5rem;
-	// }
-
 	.pfpstart,
 	.pfp {
 		width: 3.75rem;

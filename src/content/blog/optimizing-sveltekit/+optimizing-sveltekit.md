@@ -71,7 +71,7 @@ After building this site, I've started down the rabbit hole of making it as smoo
 
 ## prerendering
 
-Since this site doesn't have any dynamic content, I can use prerendering. This essentially makes SvelteKit into a static site generator (SSG) like Eleventy or Hugo. SvelteKit (through Vite) will render all the pages at build time to generate static HTML files. This is good for performance because the pages don't require any extra server-side or client-side Javascript to load. However, unlike other SSGs, prerendered SvelteKit still allows for client-side hydration, so I can still use smooth client-side routing and transitions.
+Since this site doesn't have any dynamic content, I can use prerendering. This essentially turns SvelteKit into a static site generator (SSG) like Eleventy or Hugo. SvelteKit (through Vite) will render all the pages at build time to generate static HTML files. This is good for performance because the pages don't require any extra server-side or client-side Javascript to load. However, unlike other SSGs, prerendered SvelteKit still allows for client-side hydration, so I can still use smooth client-side routing and transitions.
 
 To enable prerendering on all pages, I added this to the root `+layout.js`:
 
@@ -349,7 +349,7 @@ Now, in the build output HTML, the font files will be preloaded:
 
 Another way to improve performance is to inline CSS. Usually, this refers to adding inline style tags directly to HTML elements. SvelteKit is not capable of this, but it can inline CSS as a giant style tag in the head of the document, instead of linking to an external CSS file.
 
-Inlining CSS can improve performance because it eliminates the need for an extra reqest to fetch an external CSS file. However, it prevents the browser from caching the CSS file, so while the initial load time can be faster, subsequent navigations may be slower. For a static blog site like this one, where users are arriving from external sources and probably only visiting a few pages, this tradeoff is worth it.
+Inlining CSS can improve performance because it eliminates the need for an extra request to fetch an external CSS file. However, it prevents the browser from caching the CSS file, so while the initial load time can be faster, subsequent navigations may be slower. For a static blog site like this one, where users are arriving from external sources and probably only visiting a few pages, this tradeoff is worth it.
 
 Additionally, according to this [Hacker News comment](https://news.ycombinator.com/item?id=39855863), inlining css may be especially effective on sites with hydration and client-side navigation (like this one), because the inlined layout CSS does not need to be re-requested on subsequent navigations.
 
