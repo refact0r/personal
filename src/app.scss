@@ -139,7 +139,7 @@ a.nav {
 	.arrow {
 		position: absolute;
 		top: -0.02em;
-		transform: rotate(-72deg) scale(1, 0.1);
+		transform: rotate(-72deg) scale(1, 0);
 		transition: 0.3s;
 		transform-origin: 50% 53%;
 	}
@@ -155,7 +155,7 @@ a.nav {
 		}
 		.slash {
 			margin-right: 0.4ch;
-			transform: scale(0.5, 0.6) rotate(72deg);
+			transform: scale(0.5, 0.5) rotate(72deg);
 		}
 	}
 }
