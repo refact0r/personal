@@ -83,6 +83,18 @@
 			<div class="color" style="background: var(--blue); color: var(--bg);">blue</div>
 		</div>
 	</div>
+	<br />
+	<h2>webring</h2>
+	<div class="info">
+		<a class="webring previous" href="https://ctp-webr.ing/refact0r/previous">
+			<span> &lt;- </span>&nbsp;
+		</a><a class="webring home" href="https://ctp-webr.ing/">catppuccin webring</a><a
+			class="webring next"
+			href="https://ctp-webr.ing/refact0r/next"
+		>
+			&nbsp;<span> -> </span>
+		</a>
+	</div>
 </main>
 
 <style lang="scss">
@@ -104,6 +116,24 @@
 		font-size: 1.2rem;
 		margin: 0.5rem 0;
 		font-family: 'Space Mono', monospace;
+	}
+
+	.webring {
+		display: inline-block;
+		margin: 0;
+		span {
+			display: inline-block;
+			transition: 0.2s;
+		}
+		&.home:hover {
+			text-decoration: underline;
+		}
+		&.next:hover span {
+			transform: translateX(0.3em);
+		}
+		&.previous:hover span {
+			transform: translateX(-0.3em);
+		}
 	}
 
 	.colors {

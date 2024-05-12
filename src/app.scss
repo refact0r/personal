@@ -168,6 +168,7 @@ a.external {
 		transition: 0.2s;
 	}
 	&:hover {
+		text-decoration: underline;
 		.arrow {
 			transform: translate(0.2em, -0.2em);
 		}

@@ -2,7 +2,7 @@
 	"rewrites": [
 		{
 			"source": "/stats/:match*",
-			"destination": "https://analytics.us.umami.is/:match*"
+			"destination": "https://us.umami.is/:match*"
 		}
 	],
 	"git": {
