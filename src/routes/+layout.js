@@ -7,7 +7,7 @@ export const load = ({ url }) => {
 		pathname,
 		meta: {
 			title: 'refact0r',
-			description: 'my blog and portfolio site.'
+			description: 'my website/portfolio/blog.'
 		}
 	};
 };

@@ -11,7 +11,8 @@
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
 		"test:unit": "vitest",
-		"deploy": "vercel build --prod && vercel deploy --prebuilt --prod"
+		"deploy vercel": "vercel build --prod && vercel deploy --prebuilt --prod",
+		"deploy": "wrangler pages deploy"
 	},
 	"devDependencies": {
 		"@iconify-json/ph": "^1.1.12",
@@ -40,6 +41,7 @@
 		"embla-carousel-svelte": "^8.0.1",
 		"iconify-icon": "^2.0.0",
 		"lottie-web": "^5.12.2",
-		"shiki": "^1.3.0"
+		"shiki": "^1.3.0",
+		"wrangler": "^3.55.0"
 	}
 }
