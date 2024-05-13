@@ -68,7 +68,7 @@
 	</div>
 	<div class="info">
 		fonts <span class="sub">-></span> space mono <span class="sub">/</span>
-		<span style="font-family: 'Space Grotesk'">space grotesk</span>
+		<span style="font-family: 'Space Grotesk Variable'">space grotesk</span>
 	</div>
 	<div class="info">
 		<div class="colors">
