@@ -1,11 +1,7 @@
 <script>
 	import '../app.scss';
-	// import '@fontsource/space-mono/latin-400.css';
-	// import '@fontsource/space-mono/latin-400-italic.css';
-	// import '@fontsource-variable/space-grotesk';
 	import '$lib/assets/fonts/space-mono.css';
 	import '$lib/assets/fonts/space-grotesk.css';
-	// import '$lib/assets/prism-material-oceanic.css';
 	import 'iconify-icon';
 	import { page } from '$app/stores';
 	import Logo from '$lib/components/Logo.svelte';
@@ -27,49 +23,31 @@
 	}
 
 	function xy(path, isIn = true) {
+		if (path === prevTwoPages[0]) {
+			return { x: 0, y: 0 };
+		}
+
+		let currDepth = path.split('/').length;
+		let prevDepth = prevTwoPages[0].split('/').length;
+		const getParentPath = (p) => '/' + p.split('/')[1];
+		const currParent = getParentPath(path);
+		const prevParent = getParentPath(prevTwoPages[0]);
+		let currParentIdx = pages.findIndex((page) => page.path === currParent);
+		let prevParentIdx = pages.findIndex((page) => page.path === prevParent);
+
 		if (path === '/') {
-			return {
-				x: 0,
-				y: isIn ? '-20vh' : '20vh'
-			};
-		} else if (prevTwoPages[0] === '/') {
-			return {
-				x: 0,
-				y: isIn ? '20vh' : '-20vh'
-			};
+			currParentIdx = prevParentIdx;
+			currDepth = 1;
 		}
-		const currIdx = pages.findIndex((page) => path.startsWith(page.path));
-		const prevIdx = pages.findIndex((page) => prevTwoPages[0].startsWith(page.path));
-		if (currIdx == prevIdx) {
-			const currLength = path.split('/').length;
-			const prevLength = prevTwoPages[0].split('/').length;
-			if (currLength === prevLength) {
-				return {
-					x: 0,
-					y: 0
-				};
-			} else if (path.split('/').length > prevTwoPages[0].split('/').length) {
-				return {
-					x: 0,
-					y: isIn ? '20vh' : '-20vh'
-				};
-			} else {
-				return {
-					x: 0,
-					y: isIn ? '-20vh' : '20vh'
-				};
-			}
-		} else if (currIdx > prevIdx) {
-			return {
-				x: isIn ? '20vw' : '-20vw',
-				y: 0
-			};
-		} else {
-			return {
-				x: isIn ? '-20vw' : '20vw',
-				y: 0
-			};
+		if (prevTwoPages[0] === '/') {
+			prevParentIdx = currParentIdx;
+			prevDepth = 1;
 		}
+
+		const xDiff = currParentIdx - prevParentIdx;
+		const yDiff = currDepth - prevDepth;
+
+		return { x: `${isIn ? '' : '-'}${xDiff * 20}vh`, y: `${isIn ? '' : '-'}${yDiff * 20}vh` };
 	}
 </script>
 
