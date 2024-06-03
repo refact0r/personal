@@ -16,6 +16,14 @@
 	box-sizing: border-box;
 }
 
+@media (prefers-reduced-motion) {
+	* {
+		animation-delay: 0ms !important;
+		animation-duration: 0ms !important;
+		transition-duration: 0ms !important;
+	}
+}
+
 html {
 	height: 100%;
 	scrollbar-width: thin;

@@ -26,7 +26,7 @@ Neural networks can "learn" from data in a process called **training**. During t
 
 The **ImageNet dataset** contains millions of labeled images in different categories. Interestingly, the paper mentions the dataset was labeled using Amazon Mechanical Turk, a crowdsourcing platform that pays people to perform tasks that are difficult for computers to do. This highlights that while machine algorithms are powerful, they still rely on humans to learn.
 
-The **ImageNet Large Scale Visual Recognition Challenge** (ILSVRC) is an annual competition where researchers compete to build the best image classification algorithms. It involves classifying images from the ImageNet set into one of 1000 categories. Researchers were given a subset of the dataset for training and a separate subset for testing. The goal was to build a model that could accurately classify images in the test set.
+The **ImageNet Large Scale Visual Recognition Challenge (ILSVRC)** is an annual competition where researchers compete to build the best image classification algorithms. It involves classifying images from the ImageNet set into one of 1000 categories. Researchers were given a subset of the dataset for training and a separate subset for testing. The goal was to build a model that could accurately classify images in the test set.
 
 ImageNet contains images in a variety of resolutions, so the authors of the paper had to process the images to a fixed size of 256x256 pixels. They also centered the RGB values of the pixels around zero.
 
