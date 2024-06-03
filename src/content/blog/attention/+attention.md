@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 name: 'attention is all you need'
 icon: 'ph:files'
 description: a new neural network architecture
