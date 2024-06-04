@@ -2,7 +2,7 @@
 published: true
 name: 'attention is all you need'
 icon: 'ph:files'
-description: a new neural network architecture
+description: a revolutionary neural network architecture
 date: 2024-06-02
 ---
 

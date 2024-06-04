@@ -16,9 +16,9 @@
 <main>
 	<h1>about</h1>
 	<p>
-		hey there! i'm a student in seattle, wa, who goes by the name refact0r online. i'm interested in
-		comp sci, web dev, design, among other topics. i'm passionate about building websites and apps
-		that are both functional and beautiful.
+		hey there! i'm a student in seattle who goes by the name refact0r online. i'm interested in comp
+		sci, web dev, design, among other topics. i'm passionate about building websites and apps that
+		are both functional and beautiful.
 	</p>
 	<h2>links</h2>
 	<a href="https://github.com/refact0r" class="external"
@@ -75,6 +75,7 @@
 			<div class="color" style="background: var(--bg); border: 2px solid var(--bg-2);">bg</div>
 			<div class="color" style="background: var(--bg-2);">bg-2</div>
 			<div class="color" style="background: var(--bg-3);">bg-3</div>
+			<div class="color" style="background: var(--txt-3); color: var(--bg);">txt-3</div>
 			<div class="color" style="background: var(--txt-2); color: var(--bg);">txt-2</div>
 			<div class="color" style="background: var(--txt); color: var(--bg);">txt</div>
 			<div class="color" style="background: var(--txt-0); color: var(--bg);">txt-0</div>
@@ -145,8 +146,9 @@
 	.color {
 		display: inline-block;
 		padding: 0 0.4rem;
-		width: 5.5rem;
+		width: 5rem;
 		text-align: center;
+		font-size: 0.9em;
 	}
 
 	h1 {

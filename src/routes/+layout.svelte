@@ -60,7 +60,7 @@
 
 <header class:home={$page.url.pathname === '/'}>
 	<div class="row">
-		<a class="pfplink" href="/" aria-label="homepage"><Logo --width="2rem" --height="2rem" /></a>
+		<a class="pfp" href="/" aria-label="homepage"><Logo --width="2rem" --height="2rem" /></a>
 		<a href="/"><h1>refact0r</h1></a>
 	</div>
 	<nav>
@@ -110,7 +110,7 @@
 			@include flex(row, null, center);
 			gap: 1.5rem;
 
-			.pfplink {
+			.pfp {
 				display: flex;
 			}
 
