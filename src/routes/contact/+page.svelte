@@ -26,7 +26,12 @@
 <main>
 	<h1>contact</h1>
 	<p>ways to get in touch, in order from fastest to slowest.</p>
-	<div class="info">discord <span class="sub">-></span> @refact0r</div>
+	<div class="info">
+		discord <span class="sub">-></span>
+		<a href="https://discord.com/users/508863359777505290" class="external"
+			>refact0r<span class="arrow">/></span>
+		</a>
+	</div>
 	<div class="info">
 		email <span class="sub">-></span>
 		<a href="mailto:refact0r.contact@gmail.com" class="external"
