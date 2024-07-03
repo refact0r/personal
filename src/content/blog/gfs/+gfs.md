@@ -131,3 +131,7 @@ The example clusters discussed had 100-200TB of total storage, and read rates ar
 The Google File System was an important paper that demonstrated how to build a reliable and efficient distributed file system using commodity hardware, and demonstrated the success of this system at a large scale. It powered massive applications such as Google's search engine. The design decisions of GFS have influenced many distributed file systems, such as Hadoop Distributed File System (HDFS). While GFS itself was replaced by its successor, Colossus, in 2010, its principles continue to be relevant in the field of distributed systems.
 
 For me, this paper demonstrated the complexity of designing large-scale systems. Many of GFS's design decisions seemed counterintuitive at first, but actually served to improve performance or reliability. I found it especially interesting how GFS was able to minimize transfers of data between servers while still maintaining consistency and capabilities such as snapshots. I don't think I'll be designing a distributed file system anytime soon, but this paper was a great learning experience nonetheless.
+
+### source
+
+<a href="https://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf">https://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf</a>

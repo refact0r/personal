@@ -227,7 +227,6 @@ figure {
 		text-decoration: underline;
 		text-decoration-color: var(--txt-3);
 		text-decoration-thickness: 2px;
-		word-break: break-all;
 		transition: text-decoration-color 0.2s;
 		&:hover {
 			text-decoration-color: var(--txt);
