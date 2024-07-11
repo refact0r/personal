@@ -6,7 +6,13 @@ description: a deep learning model learns superhuman atari skills
 date: 2024-07-10
 ---
 
+<script>
+    import CaptionImage from '$lib/components/CaptionImage.svelte';
+</script>
+
 **_Playing Atari with Deep Reinforcement Learning_** is a paper published in 2013 by DeepMind researchers. The paper introduces a new deep learning model that learns to play Atari 2600 games directly from raw pixel input. The model uses a new approach to reinforcement learning to achieve superhuman performance in a variety of Atari games.
+
+<CaptionImage image="atari-transparent.png" alt="Atari 2600 console." source="https://commons.wikimedia.org/wiki/File:Atari-2600-Wood-4Sw-Set.jpg" sizes="50rem"/>
 
 ## background
 
@@ -67,6 +73,8 @@ The DQN uses a convolutional neural network (CNN) to process the raw pixel input
 The authors experimented on 7 popular Atari 2600 games: Beam Rider, Breakout, Enduro, Pong, Q*bert, Seaquest, Space Invaders. They observed that the average action-value function Q increased steadily over time during training, indicating that the model was learning in a stable manner.
 
 The authors compared the performance of the DQN model to other top methods from RL literature and expert human performance. The DQN model outperformed all previous methods on 6 out of 7 games and beat expert human performance on 3 games.
+
+<CaptionImage image="atari-games.png" alt="Atari 2600 Games: Pong, Breakout, Space Invaders, Seaquest, Beam Rider." source="https://arxiv.org/pdf/1312.5602" sizes="50rem" loading="lazy" />
 
 ## conclusion
 
