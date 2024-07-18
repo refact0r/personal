@@ -8,6 +8,7 @@ date: 2024-03-24
 
 <script>
     import CaptionImage from '$lib/components/CaptionImage.svelte';
+    import Icon from '~icons/ph/files';
 </script>
 
 **_ImageNet Classification with Deep Convolutional Neural Networks_** was published in 2012 by Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton. It introduced the AlexNet architecture, which won the ImageNet Large Scale Visual Recognition Challenge in 2012 by a large margin. The paper is considered one of the most influential papers in the fields of deep learning and computer vision because it demonstrated the power of neural networks for image classification tasks.
@@ -68,6 +69,16 @@ The paper demonstrated that deep learning could achieve state-of-the-art results
 
 As for me, reading this paper was a great learning experience. I knew what neural networks were, but I didn't know how they worked. Trying to understand this paper helped me learn how neural networks learn from data and create predictions. It also gave me a better understanding of the various challenges and techniques involved in optimizing neural networks, such as overfitting. Even though the paper is only a decade old, it has important historical context for the development of machine learning. Comparing it to the advanced models of today shows how far the field has come in such a short time.
 
-### source
+## source
 
-<a href="https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf">https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf</a>
+<https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf>
+
+<br>
+
+---
+
+### why did I write this?
+
+This blog post is one of my "papers" posts (labelled with this icon: <Icon class="icon" />). My goal is to read, summarize, and comment on influential or interesting papers in computer science. I want to gain a deeper understanding of topics within the field and improve my communication skills. Hopefully, these posts will be interesting and informative to others as well. Thanks for reading!
+
+---

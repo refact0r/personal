@@ -8,6 +8,7 @@ date: 2024-07-10
 
 <script>
     import CaptionImage from '$lib/components/CaptionImage.svelte';
+    import Icon from '~icons/ph/files';
 </script>
 
 **_Playing Atari with Deep Reinforcement Learning_** is a paper published in 2013 by DeepMind researchers. The paper introduces a new deep learning model that learns to play Atari 2600 games directly from raw pixel input. The model uses a new approach to reinforcement learning to achieve superhuman performance in a variety of Atari games.
@@ -84,6 +85,16 @@ The paper laid the foundation for future research in the new field of DRL. DeepM
 
 Personally, it was once again fascinating to see the underlying mechanics of how an AI model can perform human-like tasks. The results on Atari games beg the obvious question: could AI models learn to play modern video games with the same level of skill? It also makes me wonder how DRL will continue to evolve in the future. Will architectural breakthroughs like DQN continue to drive progress, or will increased computational power and data availability lead to better results? Only time will tell.
 
-### source
+## source
 
 <https://arxiv.org/pdf/1312.5602>
+
+<br>
+
+---
+
+### why did I write this?
+
+This blog post is one of my "papers" posts (labelled with this icon: <Icon class="icon" />). My goal is to read, summarize, and comment on influential or interesting papers in computer science. I want to gain a deeper understanding of topics within the field and improve my communication skills. Hopefully, these posts will be interesting and informative to others as well. Thanks for reading!
+
+---

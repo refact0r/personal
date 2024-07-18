@@ -8,6 +8,7 @@ date: 2024-06-02
 
 <script>
     import CaptionImage from '$lib/components/CaptionImage.svelte';
+    import Icon from '~icons/ph/files';
 </script>
 
 **_Attention is All You Need_** is a paper published in 2017 by Google Brain researchers. It introduced a new type of neural network architecture called the Transformer. Since then, the Transformer model has revolutionized the field of machine learning, especially in regards to natural language processing.
@@ -91,6 +92,16 @@ Since the publication of the paper, the Transformer model has been widely adopte
 
 To me, it is fascinating how a process that is essentially a series of matrix and vector operations can produce real, meaningful language. There is no "understanding", but the model can generate coherent and relevant text simply by learning the patterns of language data. The Transformer model also demonstrated that often important breakthroughs come not from entirely new ideas, but from clever combinations and refinements of existing concepts. Often, a simpler approach can be more effective than a complex one.
 
-### source
+## source
 
-<a href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf</a>
+<https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf>
+
+<br>
+
+---
+
+### why did I write this?
+
+This blog post is one of my "papers" posts (labelled with this icon: <Icon class="icon" />). My goal is to read, summarize, and comment on influential or interesting papers in computer science. I want to gain a deeper understanding of topics within the field and improve my communication skills. Hopefully, these posts will be interesting and informative to others as well. Thanks for reading!
+
+---

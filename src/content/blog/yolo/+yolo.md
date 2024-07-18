@@ -8,6 +8,7 @@ date: 2024-07-02
 
 <script>
     import CaptionImage from '$lib/components/CaptionImage.svelte';
+    import Icon from '~icons/ph/files';
 </script>
 
 **_You Only Look Once: Unified, Real-Time Object Detection_** is a paper published in 2016 by researchers at the University of Washington. The paper introduces a new approach to object detection that is both faster and more accurate than existing methods by using a single neural network instead of complex pipelines.
@@ -80,6 +81,16 @@ Subsequent versions of YOLO and models based on it have improved accuracy and sp
 
 Personally, I find this paper interesting because it really clarifies the process of object detection. It's one of those processes that seems like magic until you understand the underlying mechanics, which are actually somewhat simple. The paper also highlights the power of rethinking traditional architectures to achieve better results. After reading the <a href="/blog/platonic/">Platonic Representation Hypothesis</a>, I wonder if similar breakthroughs will still be made in the future.
 
-### source
+## source
 
 <https://arxiv.org/pdf/1506.02640>
+
+<br>
+
+---
+
+### why did I write this?
+
+This blog post is one of my "papers" posts (labelled with this icon: <Icon class="icon" />). My goal is to read, summarize, and comment on influential or interesting papers in computer science. I want to gain a deeper understanding of topics within the field and improve my communication skills. Hopefully, these posts will be interesting and informative to others as well. Thanks for reading!
+
+---
