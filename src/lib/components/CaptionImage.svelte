@@ -5,7 +5,7 @@
 		alt = '',
 		source = '',
 		sizes = '',
-		loading;
+		loading = '';
 
 	source = source.replace(/</g, '').replace(/>/g, '');
 </script>

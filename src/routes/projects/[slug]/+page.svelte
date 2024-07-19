@@ -29,12 +29,16 @@
 		<div class="row">
 			<h1>{metadata.name}</h1>
 			<div class="links">
-				<a class="external" href={metadata.website} target="_blank">
-					site<span class="arrow">/></span>
-				</a>
-				<a class="external" href={metadata.github} target="_blank">
-					github<span class="arrow">/></span>
-				</a>
+				{#if metadata.website}
+					<a class="external" href={metadata.website} target="_blank">
+						site<span class="arrow">/></span>
+					</a>
+				{/if}
+				{#if metadata.github}
+					<a class="external" href={metadata.github} target="_blank">
+						github<span class="arrow">/></span>
+					</a>
+				{/if}
 			</div>
 		</div>
 		<p class="description">
@@ -75,12 +79,6 @@
 		margin: 0;
 		margin-right: auto;
 	}
-
-	// .single-image {
-	// 	width: 70%;
-	// 	max-width: 80rem;
-	// 	margin: auto;
-	// }
 
 	.head {
 		margin: 1rem auto 3rem auto;
@@ -149,18 +147,21 @@
 
 		span {
 			display: inline-block;
-			opacity: 0;
 			color: var(--txt-0);
 			font-size: 3rem;
 			font-family: 'Space Mono', monospace;
-			mix-blend-mode: exclusion;
 			transform: scale(1);
 			transition: 0.2s;
+			opacity: 0;
+			background: var(--bg-2);
+			width: 3rem;
+			height: 3rem;
+			line-height: 2.9rem;
 		}
 
 		&:hover span {
 			opacity: 1;
-			transform: scale(1.5);
+			transform: scale(1.2);
 		}
 	}
 	.embla__next {
@@ -190,9 +191,6 @@
 			text-align: right;
 			padding-right: 1rem;
 		}
-		// .single-image {
-		// 	width: calc(100% - 3rem);
-		// }
 	}
 
 	@media (max-width: 650px) {
