@@ -35,6 +35,9 @@
 			<a class="nav" href="/blog">
 				<span class="arrow">-></span><span class="slash">/</span>blog
 			</a>
+			<a class="nav" href="/board">
+				<span class="arrow">-></span><span class="slash">/</span>board
+			</a>
 			<a class="nav" href="/about">
 				<span class="arrow">-></span><span class="slash">/</span>about
 			</a>
@@ -75,7 +78,7 @@
 		gap: 2rem;
 
 		a {
-			font-size: 1.6rem;
+			font-size: 1.5rem;
 			font-family: 'Space Mono', monospace;
 		}
 	}

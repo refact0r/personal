@@ -171,7 +171,7 @@
 		left: 0;
 	}
 
-	@media (max-width: 800px) {
+	@media (max-width: 850px) {
 		.embla__slide {
 			flex: 0 0 calc(100% - 3rem);
 			max-width: 50rem;

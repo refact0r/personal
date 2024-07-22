@@ -41,7 +41,7 @@
 		font-size: 1.6rem;
 	}
 
-	@media (max-width: 800px) {
+	@media (max-width: 850px) {
 		main {
 			padding-left: 1.5rem;
 			padding-right: 1.5rem;

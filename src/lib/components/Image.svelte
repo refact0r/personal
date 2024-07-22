@@ -5,7 +5,7 @@
 		loading = 'eager';
 
 	async function importImage(image) {
-		const pictures = import.meta.glob(`/src/content/*/*/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}`, {
+		const pictures = import.meta.glob(`/src/content/**/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}`, {
 			import: 'default',
 			query: {
 				enhanced: true,

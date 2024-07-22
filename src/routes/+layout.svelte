@@ -13,6 +13,7 @@
 	const pages = [
 		{ name: 'projects', path: '/projects' },
 		{ name: 'blog', path: '/blog' },
+		{ name: 'board', path: '/board' },
 		{ name: 'about', path: '/about' },
 		{ name: 'contact', path: '/contact' }
 	];
@@ -123,7 +124,7 @@
 
 		nav {
 			display: flex;
-			gap: 3rem;
+			gap: 2.5rem;
 
 			a {
 				font-size: 1.4rem;
@@ -149,7 +150,7 @@
 		grid-row-end: 2;
 	}
 
-	@media (max-width: 800px) {
+	@media (max-width: 850px) {
 		header {
 			padding: 0 1.5rem;
 			gap: 1.5rem;
