@@ -3,7 +3,7 @@ export async function load() {
 		import: 'default',
 		query: {
 			enhanced: true,
-			w: '2400;2000;1600;1200;800;400'
+			w: '2400;1600;800'
 		}
 	});
 
