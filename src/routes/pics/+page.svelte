@@ -1,5 +1,7 @@
 <script>
 	async function loadImages() {
+		await new Promise((r) => setTimeout(r, 2000));
+
 		const imports = import.meta.glob(
 			'/src/content/images/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}',
 			{
@@ -27,9 +29,11 @@
 
 <main>
 	<h1>pics</h1>
-	<p>just some photos. taken on pixel 8, pixel 5a, and pixel 2.</p>
-	<br />
-	{#await loadImages() then images}
+	{#await loadImages()}
+		<p>just some photos. loading...</p>
+	{:then images}
+		<p>just some photos. taken on pixel 8, pixel 5a, and pixel 2.</p>
+		<br />
 		{#each images as image}
 			<picture>
 				<source srcset={image.sources.avif} type="image/avif" />
