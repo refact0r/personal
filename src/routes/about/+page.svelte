@@ -24,7 +24,7 @@
 	<a href="https://github.com/refact0r" class="external"
 		>github profile<span class="arrow">/></span>
 	</a>
-	<br />
+	<a href="/resume.pdf" class="external">resume<span class="arrow">/></span></a>
 	<!-- <div class="row">
 		<div class="col"></div>
 		<div class="col"></div>
@@ -41,7 +41,6 @@
 			{/each}
 		</div>
 	{/each}
-	<br />
 	<h2>tech</h2>
 	{#each Object.keys(content.tech) as category}
 		<div class="info">
@@ -54,7 +53,6 @@
 			{/each}
 		</div>
 	{/each}
-	<br />
 	<h2>this site</h2>
 	<a href="https://github.com/refact0r/personal" class="external"
 		>github repo<span class="arrow">/></span></a
@@ -84,7 +82,6 @@
 			<div class="color" style="background: var(--blue); color: var(--bg);">blue</div>
 		</div>
 	</div>
-	<br />
 	<h2>webring</h2>
 	<div class="info">
 		<a class="webring previous" href="https://ctp-webr.ing/refact0r/previous">

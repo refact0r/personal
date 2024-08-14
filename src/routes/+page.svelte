@@ -35,8 +35,8 @@
 			<a class="nav" href="/blog">
 				<span class="arrow">-></span><span class="slash">/</span>blog
 			</a>
-			<a class="nav" href="/board">
-				<span class="arrow">-></span><span class="slash">/</span>board
+			<a class="nav" href="/pics">
+				<span class="arrow">-></span><span class="slash">/</span>pics
 			</a>
 			<a class="nav" href="/about">
 				<span class="arrow">-></span><span class="slash">/</span>about

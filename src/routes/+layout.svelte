@@ -13,7 +13,7 @@
 	const pages = [
 		{ name: 'projects', path: '/projects' },
 		{ name: 'blog', path: '/blog' },
-		{ name: 'board', path: '/board' },
+		{ name: 'pics', path: '/pics' },
 		{ name: 'about', path: '/about' },
 		{ name: 'contact', path: '/contact' }
 	];
@@ -161,7 +161,7 @@
 		}
 	}
 
-	@media (max-width: 650px) {
+	@media (max-width: 700px) {
 		header nav {
 			display: none;
 		}
