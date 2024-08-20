@@ -1,52 +1,49 @@
 <script>
-	async function loadImages() {
-		const imports = import.meta.glob(
-			'/src/content/images/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}',
-			{
-				import: 'default',
-				query: {
-					enhanced: true,
-					w: '2000;1200;800'
-				}
-			}
-		);
+	import { onMount } from 'svelte';
 
-		let list = [];
-
-		for (const [path, importFunc] of Object.entries(imports)) {
-			const src = await importFunc();
-			console.log(src);
-			list.push(src);
+	const imports = import.meta.glob('/src/content/images/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}', {
+		import: 'default',
+		query: {
+			enhanced: true,
+			w: '2000;1200;800'
 		}
+	});
+	const entries = Object.entries(imports);
+	entries.reverse();
 
-		list.reverse();
+	let images = [];
 
-		return list;
+	async function loadImages() {
+		for (const [path, importFunc] of entries) {
+			const src = await importFunc();
+			images.push(src);
+			images = images;
+		}
 	}
+
+	onMount(() => {
+		loadImages();
+	});
 </script>
 
 <main>
 	<h1>pics</h1>
-	{#await loadImages()}
-		<p>just some photos. loading...</p>
-	{:then images}
-		<p>just some photos. taken on pixel 8, pixel 5a, and pixel 2.</p>
-		<br />
-		{#each images as image}
-			<picture>
-				<source srcset={image.sources.avif} type="image/avif" />
-				<source srcset={image.sources.webp} type="image/webp" />
-				<img
-					src={image.img.src}
-					alt=""
-					loading="lazy"
-					onload="this.style.opacity=1"
-					width={image.img.w}
-					height={image.img.h}
-				/>
-			</picture>
-		{/each}
-	{/await}
+	<p>just some photos. taken on pixel 8, pixel 5a, and pixel 2.</p>
+	<br />
+	{#each images as image}
+		<picture>
+			<source srcset={image.sources.avif} type="image/avif" />
+			<source srcset={image.sources.webp} type="image/webp" />
+			<img
+				src={image.img.src}
+				alt=""
+				loading="lazy"
+				onload="this.style.opacity=1"
+				width={image.img.w}
+				height={image.img.h}
+			/>
+		</picture>
+	{/each}
 </main>
 
 <style>
