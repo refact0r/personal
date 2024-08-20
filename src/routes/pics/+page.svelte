@@ -1,7 +1,5 @@
 <script>
 	async function loadImages() {
-		await new Promise((r) => setTimeout(r, 2000));
-
 		const imports = import.meta.glob(
 			'/src/content/images/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}',
 			{
