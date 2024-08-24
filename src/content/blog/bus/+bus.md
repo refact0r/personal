@@ -10,15 +10,15 @@ date: 2024-04-09
     import CaptionImage from '$lib/components/CaptionImage.svelte';
 </script>
 
-This strange little project started one April afternoon in 2022 when I was waiting for the bus to take me home from school. For some context, my school is unfortunately located in a way that it takes a transfer across two buses to get home, meaning there are multiple possible routes. Because the whole trip takes about 50 minutes on average, I'm always looking for the fastest route.
+This strange little project started one April afternoon in 2022 when I was waiting for the bus to take me home from school. For some context, my school is unfortunately located in a way that it takes a transfer across at least two buses to get home, meaning there are multiple possible routes. Because of this, I'm always looking for the fastest route.
 
-So on this spring afternoon, I opened up Google Maps, clicked the first option, and walked to the corresponding bus stop. I expected the bus to arrive in a few minutes, because that's what Google Maps said. But 20 minutes later, it still had not arrived. I opened Google Maps again. The same bus was now supposedly 10 minutes away. Frustrated, I ran to a different bus stop to try another route. Just as I arrived, the bus I was waiting for earlier passed by (even though it was still 6 minutes away on Google Maps). If only I had waited a few more minutes, I would have caught it. I ended up waiting another 15 minutes for the second bus, which also happened to be late.
+So on this spring afternoon, I opened up Google Maps, clicked the first option, and walked to the corresponding bus stop. I expected the bus to arrive in a few minutes, because that's what Google Maps said. But 20 minutes later, it still had not arrived. I opened Google Maps again. The same bus was now supposedly 10 minutes away. Frustrated, I ran to a different bus stop to try another route. Just as I arrived, the bus I was waiting for earlier passed by (even though it was still 6 minutes away on Google Maps). If only I had waited a few more minutes, I would have caught it. I ended up waiting another 15 minutes for the second bus.
 
-This infuriating experience, along with multiple others, led me to wonder: why are bus ETAs sometimes so inaccurate? I decided to look into how they created, and if there was a way to make them more accurate.
+This infuriating experience, along with multiple others, led me to wonder: why are bus ETAs sometimes so inaccurate? I decided to look into how they were generated.
 
 ___
 
-**Note:** ETA stands for Estimated Time of Arrival, which is the predicted time a vehicle will arrive at a stop. In this article, I may also use the term "arrival time prediction" to refer to the same thing.
+**Note:** ETA stands for Estimated Time of Arrival, which is the predicted time a vehicle will arrive at a stop. I may also use the term "arrival time prediction" to refer to the same thing.
 ___
 
 ## transit apps and gtfs
@@ -29,7 +29,7 @@ Initially, I used Google Maps to get bus ETAs and plan my routes, but I later tr
 
 Nowadays, GTFS is a standardized format used by countless transit agencies around the world. It includes both static and realtime data.
 
-GTFS static data is a collection of CSV files that describe a transit system. It's sort of like a big address book. Applications that deal with transit data use the GTFS static dataset as a reference to get the correct locations, names, and schedules of buses and stops. The GTFS static dataset for my local agency, King County Metro, includes a file for agencies, calendars, calendar dates, fares, routes, shapes (geographic paths of routes), trips (a specific bus on a route at a specific time), stops, and stop times (when trips arrive at stops). GTFS static datasets are usually updated every few months to reflect schedule changes, but are otherwise unchanged.
+GTFS static data is a collection of CSV files that describe a transit system. It's sort of like a big address book. Applications that deal with transit data use the GTFS static dataset as a reference to get the correct locations, names, and schedules of buses and stops. The GTFS static dataset for my local agency includes a file for agencies, calendars, calendar dates, fares, routes, shapes (geographic paths of routes), trips (a specific bus on route at a specific time), stops, and stop times (when trips arrive at stops). GTFS static datasets are usually updated every few months to reflect schedule changes, but are otherwise unchanged.
 
 GTFS realtime data is different. It's a stream of data, usually an API, that updates every few seconds to reflect the current state of the transit system. This includes the trip updates, vehicle positions, and service alerts. Looking at the format specifically, its surprisingly lacking in complexity. The vehicle positions feed is very straightforward: it's just a list of every single active vehicle, with latitude, longitude, and related ids for each. The trip updates feed includes a list of every active trip, with each trip containing a list of stops, and each stop containing the predicted arrival time. Here is an example trip update:
 
