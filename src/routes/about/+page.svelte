@@ -21,10 +21,10 @@
 		are both functional and beautiful.
 	</p>
 	<h2>links</h2>
-	<a href="https://github.com/refact0r" class="external"
-		>github profile<span class="arrow">/></span>
+	<a href="https://github.com/refact0r" class="external">github<span class="arrow">/></span> </a>
+	<a href="https://discord.com/users/508863359777505290" class="external"
+		>discord<span class="arrow">/></span>
 	</a>
-	<a href="/resume.pdf" class="external">resume<span class="arrow">/></span></a>
 	<!-- <div class="row">
 		<div class="col"></div>
 		<div class="col"></div>
