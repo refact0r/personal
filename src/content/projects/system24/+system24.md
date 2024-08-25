@@ -3,7 +3,7 @@ published: true
 name: system24
 description: a tui-style discord theme 
 thumbnail: s24-preview.png
-images: [s24-ss.png]
+images: [s24-ss.png, s24-1.png, s24-2.png]
 github: https://github.com/refact0r/system24
 website: 
 ---
