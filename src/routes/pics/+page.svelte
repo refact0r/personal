@@ -28,7 +28,7 @@
 
 <main>
 	<h1>pics</h1>
-	<p>just some photos. taken on pixel 8, pixel 5a, and pixel 2.</p>
+	<p>just some random photos. taken on pixel 8, pixel 5a, pixel 2.</p>
 	<br />
 	{#each images as image}
 		<picture>
